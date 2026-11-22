@@ -1,0 +1,58 @@
+{
+  "criteria": {
+    "plain": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:type_specific/fishing_hook": {
+              "in_open_water": true
+            }
+          }
+        },
+        "item": {
+          "items": [
+            "minecraft:name_tag",
+            "minecraft:saddle",
+            "minecraft:nautilus_shell",
+            "minecraft:enchanted_book",
+            "minecraft:bow"
+          ]
+        }
+      }
+    },
+    "rod": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:type_specific/fishing_hook": {
+              "in_open_water": true
+            }
+          }
+        },
+        "item": {
+          "items": "minecraft:fishing_rod",
+          "predicates": {
+            "minecraft:enchantments": [
+              {}
+            ]
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "plain",
+      "rod"
+    ]
+  ],
+  "rewards": {
+    "function": "secret_milestones:milestone/treasure_500/on_catch"
+  }
+}

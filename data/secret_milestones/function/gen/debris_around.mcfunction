@@ -1,0 +1,29 @@
+# GENERADO por tools/generate.py: no editar a mano
+# Las 27 zonas alrededor del jugador, primero la suya
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:0,y:0,z:0}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:0,y:0,z:-1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:0,y:0,z:1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:0,y:-1,z:0}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:0,y:-1,z:-1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:0,y:-1,z:1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:0,y:1,z:0}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:0,y:1,z:-1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:0,y:1,z:1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:-1,y:0,z:0}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:-1,y:0,z:-1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:-1,y:0,z:1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:-1,y:-1,z:0}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:-1,y:-1,z:-1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:-1,y:-1,z:1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:-1,y:1,z:0}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:-1,y:1,z:-1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:-1,y:1,z:1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:1,y:0,z:0}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:1,y:0,z:-1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:1,y:0,z:1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:1,y:-1,z:0}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:1,y:-1,z:-1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:1,y:-1,z:1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:1,y:1,z:0}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:1,y:1,z:-1}
+execute if score #left sm.calc matches 1.. run function secret_milestones:milestone/debris_beacon/scan {x:1,y:1,z:1}

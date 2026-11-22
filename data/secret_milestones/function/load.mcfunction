@@ -25,6 +25,18 @@ scoreboard objectives add sm.valid dummy
 # Hito 2: tipos de mob matados con arco. La meta cambia con la versión del juego.
 scoreboard objectives add sm.bow dummy
 function secret_milestones:gen/bow_goal
+# Hito 3: debris minado desde el último tick y progreso válido.
+# Meta: 164 bloques de netherita x 9 lingotes x 4 de debris = 5904.
+scoreboard objectives add sm.dmined minecraft.mined:minecraft.ancient_debris
+scoreboard objectives add sm.debris dummy
+scoreboard players set #16 sm.calc 16
+# Cuánto debris le cuenta a cada jugador cada zona (medido: desde una se alcanzan 12 como mucho)
+scoreboard players set #debris_cap sm.calc 16
+# Debris Finder: lo tenía en la mano el tick anterior, y espera del radar
+scoreboard objectives add sm.held dummy
+scoreboard objectives add sm.radar dummy
+# Hito 4: tesoros pescados en aguas abiertas
+scoreboard objectives add sm.fish dummy
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []
@@ -34,5 +46,7 @@ execute unless data storage secret_milestones:db {refunded:1b} run function secr
 # Quién cobró cada hito, por UUID (así no se repite al cambiar de nick)
 execute unless data storage secret_milestones:claimed stone_1m run data modify storage secret_milestones:claimed stone_1m set value []
 execute unless data storage secret_milestones:claimed bow_all run data modify storage secret_milestones:claimed bow_all set value []
+execute unless data storage secret_milestones:claimed debris_beacon run data modify storage secret_milestones:claimed debris_beacon set value []
+execute unless data storage secret_milestones:claimed treasure_500 run data modify storage secret_milestones:claimed treasure_500 set value []
 
 execute as @a run function secret_milestones:player/login

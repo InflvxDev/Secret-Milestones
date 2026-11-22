@@ -1,0 +1,1065 @@
+{
+  "criteria": {
+    "x0": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 0.0,
+                    "max": 0.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "x1": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 1.0,
+                    "max": 1.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "x2": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 2.0,
+                    "max": 2.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "x3": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 3.0,
+                    "max": 3.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "x4": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 4.0,
+                    "max": 4.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "x5": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 5.0,
+                    "max": 5.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "x6": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 6.0,
+                    "max": 6.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "x7": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 7.0,
+                    "max": 7.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "x8": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 8.0,
+                    "max": 8.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "x9": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 9.0,
+                    "max": 9.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "x10": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 10.0,
+                    "max": 10.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "x11": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 11.0,
+                    "max": 11.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "x12": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "x": {
+                    "min": 12.0
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y0": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 0.0,
+                    "max": 0.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y1": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 1.0,
+                    "max": 1.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y2": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 2.0,
+                    "max": 2.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y3": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 3.0,
+                    "max": 3.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y4": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 4.0,
+                    "max": 4.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y5": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 5.0,
+                    "max": 5.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y6": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 6.0,
+                    "max": 6.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y7": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 7.0,
+                    "max": 7.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y8": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 8.0,
+                    "max": 8.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y9": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 9.0,
+                    "max": 9.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y10": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 10.0,
+                    "max": 10.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y11": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 11.0,
+                    "max": 11.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "y12": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "y": {
+                    "min": 12.0
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z0": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 0.0,
+                    "max": 0.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z1": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 1.0,
+                    "max": 1.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z2": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 2.0,
+                    "max": 2.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z3": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 3.0,
+                    "max": 3.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z4": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 4.0,
+                    "max": 4.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z5": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 5.0,
+                    "max": 5.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z6": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 6.0,
+                    "max": 6.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z7": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 7.0,
+                    "max": 7.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z8": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 8.0,
+                    "max": 8.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z9": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 9.0,
+                    "max": 9.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z10": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 10.0,
+                    "max": 10.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z11": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 11.0,
+                    "max": 11.999999999
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "z12": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:ancient_debris"
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:distance": {
+                  "z": {
+                    "min": 12.0
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "x0",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8",
+      "x9",
+      "x10",
+      "x11",
+      "x12"
+    ],
+    [
+      "y0",
+      "y1",
+      "y2",
+      "y3",
+      "y4",
+      "y5",
+      "y6",
+      "y7",
+      "y8",
+      "y9",
+      "y10",
+      "y11",
+      "y12"
+    ],
+    [
+      "z0",
+      "z1",
+      "z2",
+      "z3",
+      "z4",
+      "z5",
+      "z6",
+      "z7",
+      "z8",
+      "z9",
+      "z10",
+      "z11",
+      "z12"
+    ]
+  ],
+  "rewards": {
+    "function": "secret_milestones:milestone/debris_beacon/on_place"
+  }
+}
