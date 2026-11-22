@@ -17,7 +17,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.
-- **Colocar descuenta:** cada stone colocada resta una, así poner y romper queda en cero. El contador puede quedar en negativo. Construir en creativo no resta.
+- **Colocar no resta:** construir y terraformar con stone no afecta el progreso. Poner y romper en el mismo sitio lo frena el cupo de la zona. En el panel, alguien con casi tantas colocadas como minadas es sospechoso.
 - El cupo se cambia en `load` (`#cap`). Cambia también el texto de `admin/progress`.
 
 ## Panel de admin
