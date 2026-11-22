@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "minecraft:type_specific/player": {
+      "stats": [
+        {
+          "type": "minecraft:mined",
+          "stat": "minecraft:stone",
+          "value": {"min": 1000000}
+        }
+      ]
+    }
+  }
+}
