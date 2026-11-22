@@ -3,5 +3,10 @@
     "description": [{"text":"[","color":"gray"},{"text":"Secret","color":"#FF5555"},{"text":"-Milestones","color":"#FFD43B"},{"text":"] ","color":"gray"},{"text":"Secretos que premian tus hitos","color":"white"}],
     "min_format": 121,
     "max_format": 130
+  },
+  "overlays": {
+    "entries": [
+      {"directory": "overlay_26_4", "min_format": 124, "max_format": 999}
+    ]
   }
 }
