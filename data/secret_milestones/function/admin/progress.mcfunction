@@ -1,0 +1,5 @@
+# Interno: progreso del hito 1 de todos los jugadores, también los desconectados
+data modify storage secret_milestones:tmp ui set value {type:"minecraft:multi_action",title:{text:"Progreso",color:"red",bold:true},body:[{type:"minecraft:plain_message",width:380,contents:[{text:""},{text:"Chunk Destroyer Infinitum",color:"red"},{text:": meta de 1000000 stone válidas.",color:"gray"}]},{type:"minecraft:plain_message",width:380,contents:{text:"Cada zona de 16x16x16 cuenta hasta 5500. Mucho minado y poco válido suele ser un generador.",color:"dark_gray"}}],columns:1,pause:false,after_action:"wait_for_response",actions:[{label:{text:"Actualizar",color:"green"},action:{type:"minecraft:run_command",command:"trigger sm.admin set 2"}}],exit_action:{label:"Volver",action:{type:"minecraft:run_command",command:"trigger sm.admin set 1"}}}
+data modify storage secret_milestones:tmp queue set from storage secret_milestones:players list
+execute if data storage secret_milestones:tmp queue[0] run function secret_milestones:admin/progress_loop
+function secret_milestones:admin/show with storage secret_milestones:tmp
