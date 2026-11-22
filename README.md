@@ -29,15 +29,16 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.
 - **Colocar no resta:** construir y terraformar con stone no afecta el progreso. Poner y romper en el mismo sitio lo frena el cupo de la zona. En el panel, alguien con casi tantas colocadas como minadas es sospechoso.
-- El cupo se cambia en `load` (`#cap`). Cambia también el texto de `admin/progress`.
+- El cupo se cambia en `load` (`#cap`). Cambia también el texto `rules` en `milestone/registry`.
 
 ## Panel de admin
 `/function secret_milestones:menu` (requiere OP)
 
-- **Obtener pico / arco:** te da solo el ítem.
-- **Progreso del arco:** tipos de mob por jugador.
-- **Progreso del pico:** por jugador, también desconectado: stone válidas, minadas, colocadas y fuera de cupo.
-- **Probar pico / arco:** cierra el panel y reproduce lo que verá el jugador, con el ítem incluido.
+La pantalla principal es la lista de hitos (8 por página). Al tocar uno se abre su detalle, con vista previa y:
+
+- **Obtener recompensa:** te da solo el ítem.
+- **Probar hito:** cierra el panel y reproduce lo que verá el jugador, con el ítem incluido.
+- **Ver progreso:** cuánto lleva cada jugador, también los desconectados.
 
 Probar las recompensas no marca el hito como conseguido. Los botones solo funcionan para quien abrió el panel él mismo, durante **2 minutos desde el último botón**, o hasta que sale o se usa `/reload`. Al quitarle el OP a alguien usa `/reload` para cortarle el permiso al instante.
 
@@ -49,8 +50,8 @@ Probar las recompensas no marca el hito como conseguido. Los botones solo funcio
 ## Agregar un hito
 1. La condición: un score (como `sm.valid`) o un predicate.
 2. `function/reward/<recompensa>.mcfunction`: el premio.
-3. `function/milestone/<hito>/`: copia `stone_1m` y cambia los nombres.
+3. `function/milestone/<hito>/`: `check`, `check_run`, `complete` y `progress` (deja en `tmp line` el texto de la fila del panel).
 4. Una línea en `milestone/check_all` y su lista en `load`.
-5. Vista previa y botones (31 y 32 para el hito 3) en `admin/main`, y sus acciones en `admin/trigger`.
+5. Un bloque en `milestone/registry`. El panel lo muestra solo: no hay que tocar `admin/`.
 
 El ícono se genera con `python tools/icon.py`.

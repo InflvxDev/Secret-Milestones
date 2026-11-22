@@ -22,4 +22,10 @@ data remove storage secret_milestones:tmp queue
 data remove storage secret_milestones:tmp row
 data remove storage secret_milestones:tmp kill
 data remove storage secret_milestones:tmp status
+data remove storage secret_milestones:tmp sel
+data remove storage secret_milestones:tmp m
+data remove storage secret_milestones:tmp h
+data remove storage secret_milestones:tmp b
+data remove storage secret_milestones:tmp line
+data remove storage secret_milestones:db milestones
 tellraw @s {text:"Secret-Milestones desinstalado. Ahora quita el datapack de la carpeta datapacks y usa /reload.",color:"green"}

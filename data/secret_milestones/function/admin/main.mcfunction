@@ -1,6 +1,37 @@
-# Interno: panel para probar recompensas. Si hay un mensaje en tmp status, sale arriba.
-data modify storage secret_milestones:tmp ui set value {type:"minecraft:multi_action",title:{text:"Secret Milestones",color:"red",bold:true},external_title:{text:"Secret Milestones",color:"red"},body:[{type:"minecraft:plain_message",width:310,contents:{text:"Prueba las recompensas. Probarlas no cuenta como conseguir el hito.",color:"gray"}},{type:"minecraft:item",item:{id:"minecraft:netherite_pickaxe",components:{"minecraft:custom_name":{text:"Chunk Destroyer Infinitum",color:"red",italic:false},"minecraft:enchantments":{"minecraft:efficiency":10,"minecraft:silk_touch":1},"minecraft:unbreakable":{}}},description:{width:260,contents:[{text:""},{text:"Chunk Destroyer Infinitum",color:"red",bold:true},{text:" - minar 1.000.000 de piedra",color:"gray"}]}},{type:"minecraft:item",item:{id:"minecraft:bow",components:{"minecraft:custom_name":{text:"Españita Chaos Bow",color:"dark_purple",italic:false},"minecraft:enchantments":{"minecraft:power":5,"minecraft:unbreaking":3,"minecraft:infinity":1,"minecraft:mending":1}}},description:{width:260,contents:[{text:""},{text:"Españita Chaos Bow",color:"dark_purple",bold:true},{text:" - matar con arco a todo tipo de mobs",color:"gray"}]}},{type:"minecraft:plain_message",width:310,contents:[{text:"Pulsa ",color:"gray",italic:true},{text:"Esc",color:"yellow",italic:true},{text:" para salir.",color:"gray",italic:true}]}],columns:2,pause:false,after_action:"wait_for_response",actions:[{label:{text:"Obtener pico",color:"red"},tooltip:{text:"Te da solo el pico"},action:{type:"minecraft:run_command",command:"trigger sm.admin set 11"}},{label:{text:"Probar pico",color:"red"},tooltip:{text:"Cierra el panel y te muestra lo que verá el jugador: título, sonido, partículas y pico"},action:{type:"minecraft:run_command",command:"trigger sm.admin set 12"}},{label:{text:"Obtener arco",color:"dark_purple"},tooltip:{text:"Te da solo el arco"},action:{type:"minecraft:run_command",command:"trigger sm.admin set 21"}},{label:{text:"Probar arco",color:"dark_purple"},tooltip:{text:"Cierra el panel y te muestra lo que verá el jugador: título, sonido, partículas y arco"},action:{type:"minecraft:run_command",command:"trigger sm.admin set 22"}},{label:{text:"Progreso del pico",color:"aqua"},tooltip:{text:"Cuánto minó cada jugador y cuánto le cuenta"},action:{type:"minecraft:run_command",command:"trigger sm.admin set 2"}},{label:{text:"Progreso del arco",color:"aqua"},tooltip:{text:"Cuántos tipos de mob lleva cada jugador"},action:{type:"minecraft:run_command",command:"trigger sm.admin set 3"}}]}
-execute if data storage secret_milestones:tmp status run data modify storage secret_milestones:tmp ui.body prepend value {type:"minecraft:plain_message",width:310,contents:""}
-execute if data storage secret_milestones:tmp status run data modify storage secret_milestones:tmp ui.body[0].contents set from storage secret_milestones:tmp status
-data remove storage secret_milestones:tmp status
+# Interno: lista de hitos, página #p (un botón por hito, las acciones van en admin/detail)
+data modify storage secret_milestones:tmp ui set value {type:"minecraft:multi_action",title:{text:"Secret Milestones",color:"red",bold:true},external_title:{text:"Secret Milestones",color:"red"},body:[],columns:1,pause:false,after_action:"wait_for_response",actions:[]}
+
+# Páginas = (hitos - 1) / tamaño + 1. Se corrige #p si quedó fuera.
+execute store result score #total sm.calc run data get storage secret_milestones:db milestones
+scoreboard players operation #pages sm.calc = #total sm.calc
+scoreboard players remove #pages sm.calc 1
+scoreboard players operation #pages sm.calc /= #page sm.calc
+scoreboard players add #pages sm.calc 1
+# Sin hitos sigue habiendo una página
+execute if score #pages sm.calc matches ..0 run scoreboard players set #pages sm.calc 1
+execute if score #p sm.calc >= #pages sm.calc run scoreboard players operation #p sm.calc = #pages sm.calc
+execute if score #p sm.calc = #pages sm.calc run scoreboard players remove #p sm.calc 1
+
+data modify storage secret_milestones:tmp h set value {}
+execute store result storage secret_milestones:tmp h.k int 1 run scoreboard players get #total sm.calc
+execute store result storage secret_milestones:tmp h.t int 1 run scoreboard players get #pages sm.calc
+scoreboard players operation #v sm.calc = #p sm.calc
+scoreboard players add #v sm.calc 1
+execute store result storage secret_milestones:tmp h.p int 1 run scoreboard players get #v sm.calc
+function secret_milestones:admin/header with storage secret_milestones:tmp h
+
+# Hitos de esta página: de #i hasta antes de #end
+scoreboard players operation #i sm.calc = #p sm.calc
+scoreboard players operation #i sm.calc *= #page sm.calc
+scoreboard players operation #end sm.calc = #i sm.calc
+scoreboard players operation #end sm.calc += #page sm.calc
+execute if score #end sm.calc > #total sm.calc run scoreboard players operation #end sm.calc = #total sm.calc
+execute if score #i sm.calc < #end sm.calc run function secret_milestones:admin/list_loop
+
+execute if score #p sm.calc matches 1.. run function secret_milestones:admin/page_prev
+scoreboard players operation #v sm.calc = #p sm.calc
+scoreboard players add #v sm.calc 1
+execute if score #v sm.calc < #pages sm.calc run function secret_milestones:admin/page_next
+# Un multi_action no admite cero botones
+execute if score #total sm.calc matches 0 run data modify storage secret_milestones:tmp ui.actions append value {width:260,label:{text:"Todavía no hay hitos",color:"gray"},action:{type:"minecraft:run_command",command:"trigger sm.admin set 1"}}
 function secret_milestones:admin/show with storage secret_milestones:tmp

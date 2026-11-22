@@ -1,5 +1,5 @@
 # Interno: recompensa y aviso. Solo lo ve @s, para no revelar el secreto.
-# También lo usa "Probar arco" del panel, por eso aquí no se marca como cobrado.
+# También lo usa "Probar hito" del panel, por eso aquí no se marca como cobrado.
 function secret_milestones:reward/chaos_bow
 title @s times 10 80 20
 title @s subtitle {text:"Españita Chaos Bow",color:"dark_purple"}

@@ -1,5 +1,7 @@
 # Interno: @s tocó un botón del panel (/trigger sm.admin set <valor>)
-#   1 = panel, 2 = progreso del pico, 3 = progreso del arco, hito*10 + acción (1 = obtener recompensa, 2 = probar hito completo)
+#   1 = lista, 100000+p = página p de la lista
+#   hito*10 + acción: 0 = detalle, 1 = obtener recompensa, 2 = probar hito, 3 = progreso
+#   (hito = su posición en milestone/registry, desde 1)
 scoreboard players operation #a sm.calc = @s sm.admin
 scoreboard players set @s sm.admin 0
 # Solo para quien abrió el panel con /function secret_milestones:menu (requiere OP)
@@ -8,13 +10,18 @@ execute unless entity @s[tag=sm.admin] run return run scoreboard players reset @
 scoreboard players set @s sm.time 2400
 scoreboard players enable @s sm.admin
 data remove storage secret_milestones:tmp status
-execute if score #a sm.calc matches 2 run return run function secret_milestones:admin/progress
-execute if score #a sm.calc matches 3 run return run function secret_milestones:admin/bow_progress
-execute unless score #a sm.calc matches 11..12 unless score #a sm.calc matches 21..22 run return run function secret_milestones:admin/main
-# De aquí en adelante todo entrega un ítem
-execute unless function secret_milestones:player/space run return run function secret_milestones:admin/full
 
-execute if score #a sm.calc matches 11 run return run function secret_milestones:admin/get_stone_1m
-execute if score #a sm.calc matches 12 run return run function secret_milestones:admin/test_stone_1m
-execute if score #a sm.calc matches 21 run return run function secret_milestones:admin/get_bow_all
-execute if score #a sm.calc matches 22 run return run function secret_milestones:admin/test_bow_all
+scoreboard players set #p sm.calc 0
+execute if score #a sm.calc matches ..9 run return run function secret_milestones:admin/main
+execute if score #a sm.calc matches 100000.. run scoreboard players operation #p sm.calc = #a sm.calc
+execute if score #a sm.calc matches 100000.. run scoreboard players operation #p sm.calc -= #100000 sm.calc
+execute if score #a sm.calc matches 100000.. run return run function secret_milestones:admin/main
+
+scoreboard players operation #act sm.calc = #a sm.calc
+scoreboard players operation #act sm.calc %= #10 sm.calc
+scoreboard players operation #i sm.calc = #a sm.calc
+scoreboard players operation #i sm.calc /= #10 sm.calc
+scoreboard players remove #i sm.calc 1
+data modify storage secret_milestones:tmp sel set value {}
+execute store result storage secret_milestones:tmp sel.i int 1 run scoreboard players get #i sm.calc
+function secret_milestones:admin/select with storage secret_milestones:tmp sel

@@ -3,4 +3,5 @@
 # pueden usar /trigger sm.admin (sin la pantalla de "Confirm Command Execution").
 execute unless function secret_milestones:admin/grant run return fail
 data remove storage secret_milestones:tmp status
+scoreboard players set #p sm.calc 0
 function secret_milestones:admin/main

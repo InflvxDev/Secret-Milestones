@@ -10,6 +10,11 @@ scoreboard objectives add sm.time dummy
 # (un cierre forzado no suma leave_game y el permiso quedaría guardado)
 scoreboard players reset * sm.admin
 scoreboard players reset * sm.time
+# Panel: hitos que muestra, cuántos por página y constantes para los valores de los botones
+function secret_milestones:milestone/registry
+scoreboard players set #page sm.calc 8
+scoreboard players set #10 sm.calc 10
+scoreboard players set #100000 sm.calc 100000
 # Id numérico de cada jugador (sale de su UUID) y si ya se guardó su nombre
 scoreboard objectives add sm.id dummy
 scoreboard objectives add sm.named dummy

@@ -1,0 +1,2 @@
+# Interno: {refresh, back}
+$data modify storage secret_milestones:tmp ui set value {type:"minecraft:multi_action",title:{text:"",bold:true},body:[{type:"minecraft:plain_message",width:380,contents:{text:"",color:"gray"}}],columns:1,pause:false,after_action:"wait_for_response",actions:[{label:{text:"Actualizar",color:"green"},action:{type:"minecraft:run_command",command:"trigger sm.admin set $(refresh)"}}],exit_action:{label:"Volver",action:{type:"minecraft:run_command",command:"trigger sm.admin set $(back)"}}}
