@@ -7,3 +7,4 @@ function secret_milestones:milestone/bow_all/restore with storage secret_milesto
 function secret_milestones:milestone/debris_beacon/restore with storage secret_milestones:tmp who
 function secret_milestones:milestone/treasure_500/restore with storage secret_milestones:tmp who
 function secret_milestones:milestone/farlands/restore with storage secret_milestones:tmp who
+function secret_milestones:milestone/redstone_1000/restore with storage secret_milestones:tmp who

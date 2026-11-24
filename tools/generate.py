@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Secret-Milestones - genera lo repetitivo de los hitos 2 y 3.
+"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3 y 6.
 
 Hito 2 (Españita Chaos Bow): advancement/bow_kill.json y gen/bow_*, para la base
 (26.3) y para el overlay de 26.4.
 Hito 3 (Debris Finder): advancement/debris_place.json, gen/debris_* y gen/radar.
+Hito 6 (RedKeyStone): gen/red_* (lista de componentes y qué gira la llave).
 Uso: python tools/generate.py
 
 Casos especiales:
@@ -216,6 +217,93 @@ def generate_debris():
     print(f"radar: {len(cells)} bloques")
 
 
+# --- Hito 6: craftear 1000 de cada componente de redstone, y la llave RedKeyStone
+# Sin el bloque de redstone: se craftea y descraftea en bucle con solo 9 de redstone.
+# El crafter (bloque) no suma: no hay jugador que craftee.
+RED_ITEMS = """
+repeater comparator piston sticky_piston observer dispenser dropper hopper
+redstone_torch redstone_lamp lever target daylight_detector tripwire_hook note_block crafter
+""".split()
+RED_GOAL = 1000
+
+# La llave gira al siguiente valor de facing y deja igual los demás estados
+SIX = ["north", "east", "south", "west", "up", "down"]
+FOUR = ["north", "east", "south", "west"]
+HOPPER = ["down", "north", "east", "south", "west"]
+BOOL = ["false", "true"]
+ROTATE = {
+    "repeater": (FOUR, {"delay": ["1", "2", "3", "4"], "locked": BOOL, "powered": BOOL}),
+    "comparator": (FOUR, {"mode": ["compare", "subtract"], "powered": BOOL}),
+    # Extendido no: la cabeza quedaría suelta
+    "piston": (SIX, {"extended": ["false"]}),
+    "sticky_piston": (SIX, {"extended": ["false"]}),
+    "observer": (SIX, {"powered": BOOL}),
+    "dispenser": (SIX, {"triggered": BOOL}),
+    "dropper": (SIX, {"triggered": BOOL}),
+    "hopper": (HOPPER, {"enabled": BOOL}),
+}
+
+
+def generate_redstone():
+    import itertools
+
+    fn = os.path.join("data", NS, "function", "gen")
+    write(
+        os.path.join(fn, "red_load.mcfunction"),
+        HEADER + "# Lo crafteado de cada componente desde el último segundo\n"
+        + "".join(f"scoreboard objectives add sm.r.{i} minecraft.crafted:minecraft.{i}\n" for i in RED_ITEMS)
+        + f"scoreboard players set #red_goal sm.calc {len(RED_ITEMS)}\n",
+    )
+    write(
+        os.path.join(fn, "red_uninstall.mcfunction"),
+        HEADER + "".join(f"scoreboard objectives remove sm.r.{i}\n" for i in RED_ITEMS),
+    )
+    write(
+        os.path.join(fn, "red_discard.mcfunction"),
+        HEADER + "# En creativo no suma\n" + "".join(f"scoreboard players reset @s sm.r.{i}\n" for i in RED_ITEMS),
+    )
+    write(
+        os.path.join(fn, "red_tally.mcfunction"),
+        HEADER + "# Interno: {id}. Suma lo crafteado de cada componente\n"
+        + "".join(
+            f"$execute if score @s sm.r.{i} matches 1.. run function {NS}:milestone/redstone_1000/add "
+            f'{{id:$(id),k:"{i}"}}\n'
+            for i in RED_ITEMS
+        ),
+    )
+    write(
+        os.path.join(fn, "red_sum.mcfunction"),
+        HEADER + "# Interno: {id}. Total para el panel (cada componente cuenta hasta la meta)\n"
+        + "scoreboard players set #s sm.calc 0\n"
+        + "".join(
+            f"$execute store result score #a sm.calc run data get storage {NS}:redstone p$(id).{i}\n"
+            "scoreboard players operation #s sm.calc += #a sm.calc\n"
+            for i in RED_ITEMS
+        )
+        + f"scoreboard players set #red_total sm.calc {RED_GOAL * len(RED_ITEMS)}\n",
+    )
+
+    rot = [HEADER + "# Interno: gira el bloque de esta posición. Falla si no se puede girar\n"]
+    for block, (facings, others) in ROTATE.items():
+        rot.append(f"execute if block ~ ~ ~ minecraft:{block} run return run function {NS}:gen/red_rotate/{block}\n")
+        lines = [HEADER]
+        keys = list(others)
+        for combo in itertools.product(*(others[k] for k in keys)):
+            rest = "".join(f",{k}={v}" for k, v in zip(keys, combo))
+            for n, f in enumerate(facings):
+                nxt = facings[(n + 1) % len(facings)]
+                lines.append(
+                    f"execute if block ~ ~ ~ minecraft:{block}[facing={f}{rest}] run return run "
+                    f'function {NS}:item/red_power/set {{b:"minecraft:{block}[facing={nxt}{rest}]"}}\n'
+                )
+        lines.append("return fail\n")
+        write(os.path.join(fn, "red_rotate", f"{block}.mcfunction"), "".join(lines))
+    rot.append("return fail\n")
+    write(os.path.join(fn, "red_rotate.mcfunction"), "".join(rot))
+    print(f"redstone: {len(RED_ITEMS)} componentes, {len(ROTATE)} bloques que gira la llave")
+
+
+generate_redstone()
 generate_debris()
 generate("", sorted(MOBS))
 for directory, extra in OVERLAYS.items():

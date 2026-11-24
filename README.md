@@ -12,6 +12,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 3 | Minar 5904 de ancient debris: un beacon de netherita completo (164 bloques x 36) | **Debris Finder**: pico de netherita irrompible con Eficiencia V, Fortuna V, radar de debris y Resistencia al fuego en la mano |
 | 4 | Pescar 500 tesoros en aguas abiertas | **Anzuelo del Abismo**: caña irrompible con Suerte marina V y Atracción III, saca tesoros también en agua cerrada (revive las fish farms antiguas) |
 | 5 | Llegar al borde del mundo (las Farlands): 29.999.900 bloques en X o Z | **Farlands Explorer**: botas de netherita irrompibles con todas las protecciones y todos los encantamientos de botas, dan Velocidad II puestas |
+| 6 | Craftear 1000 de cada componente de redstone (16) | **RedKeyStone**: llave irrompible (sin mostrarlo, en su lugar trae una explicación corta) que gira repetidores, comparadores, pistones, observadores, dispensadores, droppers y tolvas sin romperlos |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -58,6 +59,20 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 - **El Nether no cuenta**, porque sus coordenadas valen x8. Se puede viajar por el Nether y salir por un portal cerca del borde.
 - Se revisa una vez por segundo y se guarda lo más lejos que llegó cada jugador (se ve en el panel). En creativo no suma.
 - Si el server achicó el borde con `/worldborder`, cambia `#farlands` en `load` y el texto `rules` en `milestone/registry`.
+
+## RedKeyStone
+- **Clic derecho** sobre el bloque para girarlo un paso. Repetidores, comparadores, dispensadores, droppers y tolvas se abren o cambian al tocarlos: con esos hay que estar **agachado**.
+- Gira a: norte, este, sur, oeste, arriba, abajo (la tolva: abajo y los 4 lados; repetidor y comparador: los 4 lados). Lo demás se queda igual: retardo, modo y el contenido de los contenedores.
+- Los pistones extendidos no se giran. Alcance de 5 bloques, no funciona en aventura.
+- Al girarlo el bloque no se actualiza solo: si queda prendido o apagado de más, cualquier cambio al lado lo corrige.
+- Es una caña con zanahoria por dentro: montado en un cerdo con montura también lo dirige.
+
+## Reglas del hito de redstone
+- Hay que craftear **1000 de cada uno**: repetidor, comparador, pistón, pistón pegajoso, observador, dispensador, dropper, tolva, antorcha de redstone, lámpara, palanca, diana, sensor de luz solar, gancho de cuerda, bloque musical y crafter.
+- El **bloque de redstone no entra**: se craftea y descraftea en bucle con solo 9 de redstone.
+- Cuentan los ítems que salen, no las veces que se craftea (una receta de gancho da 2). Lo que pasa de 1000 en un componente no suma para otro.
+- Lo que craftea el **crafter** (bloque) no cuenta, y en creativo tampoco.
+- La lista está en `tools/generate.py` (`RED_ITEMS`). Después de editarla ejecuta `python tools/generate.py`.
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.

@@ -19,6 +19,9 @@ execute if score #t sm.calc matches 20.. run function secret_milestones:mileston
 scoreboard players remove @a[scores={sm.held=1..}] sm.held 1
 scoreboard players remove @a[scores={sm.radar=1..}] sm.radar 1
 execute as @a[gamemode=!spectator] if items entity @s weapon.mainhand minecraft:netherite_pickaxe[minecraft:custom_data~{secret_milestones:"debris_finder"}] run function secret_milestones:item/debris_finder/hold
+# RedKeyStone
+scoreboard players remove @a[scores={sm.wcd=1..}] sm.wcd 1
+execute as @a[scores={sm.wrench=1..}] run function secret_milestones:item/red_power/use
 # Farlands Explorer (igual que el Debris Finder, pero puestas)
 scoreboard players remove @a[scores={sm.worn=1..}] sm.worn 1
 execute as @a[gamemode=!spectator] if items entity @s armor.feet minecraft:netherite_boots[minecraft:custom_data~{secret_milestones:"farlands_explorer"}] run function secret_milestones:item/farlands_explorer/wear
