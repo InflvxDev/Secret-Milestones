@@ -37,6 +37,12 @@ scoreboard objectives add sm.held dummy
 scoreboard objectives add sm.radar dummy
 # Hito 4: tesoros pescados en aguas abiertas
 scoreboard objectives add sm.fish dummy
+# Hito 5: lo más lejos que llegó cada jugador del centro (X o Z), y la meta.
+# El borde del mundo vanilla está en 29999984: 29999900 es llegar a verlo.
+scoreboard objectives add sm.far dummy
+scoreboard players set #farlands sm.calc 29999900
+# Farlands Explorer: las tenía puestas el tick anterior
+scoreboard objectives add sm.worn dummy
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []
@@ -48,5 +54,6 @@ execute unless data storage secret_milestones:claimed stone_1m run data modify s
 execute unless data storage secret_milestones:claimed bow_all run data modify storage secret_milestones:claimed bow_all set value []
 execute unless data storage secret_milestones:claimed debris_beacon run data modify storage secret_milestones:claimed debris_beacon set value []
 execute unless data storage secret_milestones:claimed treasure_500 run data modify storage secret_milestones:claimed treasure_500 set value []
+execute unless data storage secret_milestones:claimed farlands run data modify storage secret_milestones:claimed farlands set value []
 
 execute as @a run function secret_milestones:player/login

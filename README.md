@@ -11,6 +11,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 2 | Matar con arco cada tipo de mob (87 en 26.3, 88 en 26.4) | **Españita Chaos Bow**: arco con Poder V, Irrompibilidad III, Infinidad y Reparación |
 | 3 | Minar 5904 de ancient debris: un beacon de netherita completo (164 bloques x 36) | **Debris Finder**: pico de netherita irrompible con Eficiencia V, Fortuna V, radar de debris y Resistencia al fuego en la mano |
 | 4 | Pescar 500 tesoros en aguas abiertas | **Anzuelo del Abismo**: caña irrompible con Suerte marina V y Atracción III, saca tesoros también en agua cerrada (revive las fish farms antiguas) |
+| 5 | Llegar al borde del mundo (las Farlands): 29.999.900 bloques en X o Z | **Farlands Explorer**: botas de netherita irrompibles con todas las protecciones y todos los encantamientos de botas, dan Velocidad II puestas |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -47,6 +48,16 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 - Cuentan los **tesoros**: etiqueta, montura, caparazón de nautilo, libro encantado, arco y caña encantada. Peces y basura no.
 - **Solo en aguas abiertas**, también con el Anzuelo: uno prestado no sirve para hacer el hito en una farm.
 - Enganchar un ítem tirado no cuenta, y en creativo tampoco.
+
+## Farlands Explorer
+- **Encantamientos:** Protección, Protección contra el fuego, contra explosiones y contra proyectiles IV, Caída de pluma IV, Espinas III, Agilidad acuática III, Velocidad de alma III y Sigilo rápido III. Combinaciones imposibles en vanilla. Sin maldiciones.
+- **Velocidad II:** mientras están puestas. Dura hasta 3 segundos más al quitarlas.
+
+## Reglas del hito de las Farlands
+- Cuenta llegar a **29.999.900** en X o Z (positivo o negativo), en el **Overworld o el End**. El borde vanilla está en 29.999.984.
+- **El Nether no cuenta**, porque sus coordenadas valen x8. Se puede viajar por el Nether y salir por un portal cerca del borde.
+- Se revisa una vez por segundo y se guarda lo más lejos que llegó cada jugador (se ve en el panel). En creativo no suma.
+- Si el server achicó el borde con `/worldborder`, cambia `#farlands` en `load` y el texto `rules` en `milestone/registry`.
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.
