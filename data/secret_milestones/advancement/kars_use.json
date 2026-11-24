@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "pop": {
+      "trigger": "minecraft:used_totem",
+      "conditions": {
+        "item": {
+          "items": "minecraft:totem_of_undying",
+          "predicates": {
+            "minecraft:custom_data": "{secret_milestones:\"kars_totem\"}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "secret_milestones:item/kars_totem/refill"
+  }
+}

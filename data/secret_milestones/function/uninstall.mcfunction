@@ -1,5 +1,5 @@
 # Desinstalar: /function secret_milestones:uninstall y después quitar el datapack.
-# No borra claimed, players, stone, zones, bow, debris*, fishing, farlands ni redstone: sin esos registros, al reinstalar se
+# No borra claimed, players, stone, zones, bow, debris*, fishing, farlands, redstone ni life: sin esos registros, al reinstalar se
 # repetirían premios, se perdería el progreso y se vaciarían los cupos de los generadores.
 scoreboard objectives remove sm.calc
 scoreboard objectives remove sm.leave
@@ -21,6 +21,10 @@ scoreboard objectives remove sm.worn
 scoreboard objectives remove sm.red
 scoreboard objectives remove sm.wrench
 scoreboard objectives remove sm.wcd
+scoreboard objectives remove sm.life
+scoreboard objectives remove sm.died
+scoreboard objectives remove sm.khand
+scoreboard objectives remove sm.koff
 function secret_milestones:gen/red_uninstall
 tag @a remove sm.admin
 data remove storage secret_milestones:tmp who

@@ -19,6 +19,11 @@ execute if score #t sm.calc matches 20.. run function secret_milestones:mileston
 scoreboard players remove @a[scores={sm.held=1..}] sm.held 1
 scoreboard players remove @a[scores={sm.radar=1..}] sm.radar 1
 execute as @a[gamemode=!spectator] if items entity @s weapon.mainhand minecraft:netherite_pickaxe[minecraft:custom_data~{secret_milestones:"debris_finder"}] run function secret_milestones:item/debris_finder/hold
+# Kars Totem: la mano se anota antes de que el juego revise los tótems (eso pasa después, al morir)
+scoreboard players remove @a[scores={sm.koff=1..}] sm.koff 1
+execute as @a store success score @s sm.khand if items entity @s weapon.mainhand minecraft:totem_of_undying[minecraft:custom_data~{secret_milestones:"kars_totem"}]
+execute as @a[scores={sm.khand=0}] if items entity @s weapon.offhand minecraft:totem_of_undying[minecraft:custom_data~{secret_milestones:"kars_totem"}] run scoreboard players set @s sm.khand 2
+execute as @a[gamemode=!spectator] if items entity @s weapon.offhand minecraft:totem_of_undying[minecraft:custom_data~{secret_milestones:"kars_totem"}] run function secret_milestones:item/kars_totem/hold
 # RedKeyStone
 scoreboard players remove @a[scores={sm.wcd=1..}] sm.wcd 1
 execute as @a[scores={sm.wrench=1..}] run function secret_milestones:item/red_power/use

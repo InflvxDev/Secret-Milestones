@@ -13,6 +13,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 4 | Pescar 500 tesoros en aguas abiertas | **Anzuelo del Abismo**: caña irrompible con Suerte marina V y Atracción III, saca tesoros también en agua cerrada (revive las fish farms antiguas) |
 | 5 | Llegar al borde del mundo (las Farlands): 29.999.900 bloques en X o Z | **Farlands Explorer**: botas de netherita irrompibles con todas las protecciones y todos los encantamientos de botas, dan Velocidad II puestas |
 | 6 | Craftear 1000 de cada componente de redstone (16) | **RedKeyStone**: llave irrompible (sin mostrarlo, en su lugar trae una explicación corta) que gira repetidores, comparadores, pistones, observadores, dispensadores, droppers y tolvas sin romperlos |
+| 7 | Sobrevivir 1000 días del juego sin morir, en tiempo jugado | **Kars Totem**: tótem encantado que vuelve cada vez que te salva y da Regeneración I en la segunda mano |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -73,6 +74,17 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 - Cuentan los ítems que salen, no las veces que se craftea (una receta de gancho da 2). Lo que pasa de 1000 en un componente no suma para otro.
 - Lo que craftea el **crafter** (bloque) no cuenta, y en creativo tampoco.
 - La lista está en `tools/generate.py` (`RED_ITEMS`). Después de editarla ejecuta `python tools/generate.py`.
+
+## Kars Totem
+- **Infinito:** cada vez que te salva vuelve a la misma mano. Salva como uno normal (Regeneración, Absorción y Resistencia al fuego).
+- **No salva** de lo que ningún tótem salva: el vacío y `/kill`.
+- **Regeneración I** mientras está en la segunda mano, curando al mismo ritmo que una poción. Dura hasta 7 segundos más al guardarlo.
+
+## Reglas del hito de los 1000 días
+- 1000 días del juego son 24.000.000 de ticks: unas **333 horas conectado** sin morir.
+- **Morir reinicia la cuenta.** Que te salve un tótem no es morir.
+- Solo suma conectado, vivo y en **survival o aventura**. En creativo o espectador la cuenta se pausa (no se pierde).
+- Dormir o `/time set` no adelantan nada: cuenta el tiempo jugado, no la hora del mundo.
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.

@@ -49,6 +49,15 @@ scoreboard objectives add sm.red dummy
 # RedKeyStone: clic derecho con la caña con zanahoria y espera entre giros
 scoreboard objectives add sm.wrench minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add sm.wcd dummy
+# Hito 7: ticks vivo desde la última muerte (solo conectado), y muertes desde el último segundo.
+# Meta: 1000 días de 24000 ticks.
+scoreboard objectives add sm.life dummy
+scoreboard objectives add sm.died deathCount
+scoreboard players set #life_goal sm.calc 24000000
+scoreboard players set #24000 sm.calc 24000
+# Kars Totem: en qué mano está (1 principal, 2 segunda) y si estaba en la segunda el tick anterior
+scoreboard objectives add sm.khand dummy
+scoreboard objectives add sm.koff dummy
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []
@@ -62,5 +71,6 @@ execute unless data storage secret_milestones:claimed debris_beacon run data mod
 execute unless data storage secret_milestones:claimed treasure_500 run data modify storage secret_milestones:claimed treasure_500 set value []
 execute unless data storage secret_milestones:claimed farlands run data modify storage secret_milestones:claimed farlands set value []
 execute unless data storage secret_milestones:claimed redstone_1000 run data modify storage secret_milestones:claimed redstone_1000 set value []
+execute unless data storage secret_milestones:claimed life_1000 run data modify storage secret_milestones:claimed life_1000 set value []
 
 execute as @a run function secret_milestones:player/login
