@@ -14,6 +14,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 5 | Llegar al borde del mundo (las Farlands): 29.999.900 bloques en X o Z | **Farlands Explorer**: botas de netherita irrompibles con todas las protecciones y todos los encantamientos de botas, dan Velocidad II puestas |
 | 6 | Craftear 1000 de cada componente de redstone (16) | **RedKeyStone**: llave irrompible (sin mostrarlo, en su lugar trae una explicación corta) que gira repetidores, comparadores, pistones, observadores, dispensadores, droppers y tolvas sin romperlos |
 | 7 | Sobrevivir 1000 días del juego sin morir, en tiempo jugado | **Kars Totem**: tótem encantado que vuelve cada vez que te salva y da Regeneración I en la segunda mano |
+| 8 | Talar 100.000 troncos | **Woodozer**: hacha de netherita irrompible con Filo V, Eficiencia V y Fortuna III que tala el árbol entero |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -86,6 +87,17 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 - Solo suma conectado, vivo y en **survival o aventura**. En creativo o espectador la cuenta se pausa (no se pierde).
 - **Anti-AFK:** si pasa **2 minutos sin girar la cámara** la cuenta se pausa (no se pierde) hasta que la vuelva a mover. Se mira la cámara y no la posición, porque el agua, los pistones o una vagoneta mueven a un jugador AFK pero no lo giran. El límite se cambia en `load` (`#afk_limit`, en segundos); cambia también el texto `rules` en `milestone/registry`.
 - Dormir o `/time set` no adelantan nada: cuenta el tiempo jugado, no la hora del mundo.
+
+## Woodozer
+- **Tala el árbol entero:** al romper un tronco con él en la mano principal caen también todos los troncos del mismo tipo conectados (también en diagonal), hasta 256 (`#fell_cap` en `load`). Las hojas se caen solas después.
+- **Agachado** rompe un solo tronco.
+- **Solo árboles:** tala si algún tronco toca hojas naturales (o la copa de un hongo del Nether). Las hojas colocadas no cuentan, así una casa de troncos no se cae entera. Ojo: lo que esté hecho del mismo tronco y pegado a un árbol de verdad sí cae.
+- No funciona en creativo. Los troncos que tala solo no suman para el hito.
+
+## Reglas del hito de los troncos
+- Cuentan los **troncos y tallos** de los 11 árboles: roble, abeto, abedul, jungla, acacia, roble oscuro, mangle, cerezo, roble pálido, carmesí y distorsionado. La madera (6 caras) y los troncos pelados no, porque no salen en árboles naturales.
+- **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 1000 troncos a cada jugador (`#log_cap` en `load`). Es como el stone: poner y romper en el mismo sitio, o una granja de árboles fija, deja de sumar. En el panel, alguien con casi tantos colocados como talados es sospechoso.
+- En creativo no suma. La lista está en `tools/generate.py` (`LOGS`). Después de editarla ejecuta `python tools/generate.py`.
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.

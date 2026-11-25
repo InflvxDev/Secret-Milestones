@@ -63,6 +63,14 @@ scoreboard players set #afk_limit sm.calc 120
 # Kars Totem: en qué mano está (1 principal, 2 segunda) y si estaba en la segunda el tick anterior
 scoreboard objectives add sm.khand dummy
 scoreboard objectives add sm.koff dummy
+# Hito 8: troncos talados y colocados de cada tipo, el total del tick, de qué tipo era y el progreso válido
+function secret_milestones:gen/log_load
+scoreboard objectives add sm.lmined dummy
+scoreboard objectives add sm.lkind dummy
+scoreboard objectives add sm.log dummy
+# Cuántos troncos le cuenta a cada jugador cada zona de 16x16x16, y cuántos tala el Woodozer de una vez
+scoreboard players set #log_cap sm.calc 1000
+scoreboard players set #fell_cap sm.calc 256
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []
@@ -77,5 +85,6 @@ execute unless data storage secret_milestones:claimed treasure_500 run data modi
 execute unless data storage secret_milestones:claimed farlands run data modify storage secret_milestones:claimed farlands set value []
 execute unless data storage secret_milestones:claimed redstone_1000 run data modify storage secret_milestones:claimed redstone_1000 set value []
 execute unless data storage secret_milestones:claimed life_1000 run data modify storage secret_milestones:claimed life_1000 set value []
+execute unless data storage secret_milestones:claimed log_100k run data modify storage secret_milestones:claimed log_100k set value []
 
 execute as @a run function secret_milestones:player/login

@@ -10,6 +10,9 @@ execute as @a[scores={sm.placed=1..}] run function secret_milestones:milestone/s
 execute as @a[scores={sm.mined=1..}] run function secret_milestones:milestone/stone_1m/on_mine
 # Hito 3: solo corre para quien minó debris en este tick
 execute as @a[scores={sm.dmined=1..}] run function secret_milestones:milestone/debris_beacon/on_mine
+# Hito 8: solo corre para quien taló troncos en este tick (y ahí el Woodozer tala el árbol)
+function secret_milestones:gen/log_mined
+execute as @a[scores={sm.lmined=1..}] run function secret_milestones:milestone/log_100k/on_mine
 
 # Los hitos se revisan una vez por segundo
 scoreboard players add #t sm.calc 1
@@ -27,6 +30,9 @@ execute as @a[gamemode=!spectator] if items entity @s weapon.offhand minecraft:t
 # RedKeyStone
 scoreboard players remove @a[scores={sm.wcd=1..}] sm.wcd 1
 execute as @a[scores={sm.wrench=1..}] run function secret_milestones:item/red_power/use
+# Woodozer: después de la tala, anota a qué tronco apunta cada uno para el tick siguiente
+kill @e[type=minecraft:marker,tag=sm.aim]
+execute as @a[gamemode=!spectator,gamemode=!creative] if items entity @s weapon.mainhand minecraft:netherite_axe[minecraft:custom_data~{secret_milestones:"woodozer"}] unless predicate secret_milestones:sneaking at @s anchored eyes positioned ^ ^ ^ run function secret_milestones:item/woodozer/aim
 # Farlands Explorer (igual que el Debris Finder, pero puestas)
 scoreboard players remove @a[scores={sm.worn=1..}] sm.worn 1
 execute as @a[gamemode=!spectator] if items entity @s armor.feet minecraft:netherite_boots[minecraft:custom_data~{secret_milestones:"farlands_explorer"}] run function secret_milestones:item/farlands_explorer/wear

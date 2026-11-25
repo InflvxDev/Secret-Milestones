@@ -16,6 +16,9 @@ execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.red=1..}] if 
 execute as @a[scores={sm.died=1..}] run function secret_milestones:milestone/life_1000/died
 execute as @e[type=minecraft:player,gamemode=!spectator,gamemode=!creative] run function secret_milestones:milestone/life_1000/alive
 execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.life=1..}] if score @s sm.life >= #life_goal sm.calc run function secret_milestones:milestone/life_1000/check
+# Hito 8: lo colocado solo se anota para el panel
+function secret_milestones:gen/log_placed
+execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.log=100000..}] run function secret_milestones:milestone/log_100k/check
 # Hito 5: el Nether no cuenta (sus coordenadas valen x8). En creativo no suma.
 execute as @e[type=minecraft:player,gamemode=!spectator,gamemode=!creative] at @s unless dimension minecraft:the_nether run function secret_milestones:milestone/farlands/scan
 execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.far=1..}] if score @s sm.far >= #farlands sm.calc run function secret_milestones:milestone/farlands/check

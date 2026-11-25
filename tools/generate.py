@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3 y 6.
+"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6 y 8.
 
 Hito 2 (Españita Chaos Bow): advancement/bow_kill.json y gen/bow_*, para la base
 (26.3) y para el overlay de 26.4.
 Hito 3 (Debris Finder): advancement/debris_place.json, gen/debris_* y gen/radar.
 Hito 6 (RedKeyStone): gen/red_* (lista de componentes y qué gira la llave).
+Hito 8 (Woodozer): gen/log_*, gen/fell_start y gen/fell/ (tipos de tronco y la tala).
 Uso: python tools/generate.py
 
 Casos especiales:
@@ -303,6 +304,89 @@ def generate_redstone():
     print(f"redstone: {len(RED_ITEMS)} componentes, {len(ROTATE)} bloques que gira la llave")
 
 
+# --- Hito 8: talar 100.000 troncos, y el Woodozer que tala el árbol entero
+# Solo troncos y tallos de árbol: la madera (6 caras) y los pelados no salen en árboles naturales.
+LOGS = """
+oak_log spruce_log birch_log jungle_log acacia_log dark_oak_log mangrove_log
+cherry_log pale_oak_log crimson_stem warped_stem
+""".split()
+# Lo que dice que es un árbol y no una construcción: hojas naturales, o la copa de los hongos del Nether
+FOLIAGE = {"crimson_stem": "#secret_milestones:fungus_cap", "warped_stem": "#secret_milestones:fungus_cap"}
+LEAVES = "#minecraft:leaves[persistent=false]"
+# Los troncos de un árbol se tocan también en diagonal (ramas de acacia y jungla)
+AROUND = sorted(
+    [(x, y, z) for x in (-1, 0, 1) for y in (-1, 0, 1) for z in (-1, 0, 1) if (x, y, z) != (0, 0, 0)],
+    key=lambda c: (-c[1], abs(c[0]) + abs(c[2])),
+)
+FACES = [(1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1)]
+
+
+def generate_logs():
+    fn = os.path.join("data", NS, "function", "gen")
+    write(
+        os.path.join(fn, "log_load.mcfunction"),
+        HEADER + "# Troncos talados y colocados de cada tipo, desde el último tick o segundo\n"
+        + "".join(
+            f"scoreboard objectives add sm.l.{t} minecraft.mined:minecraft.{t}\n"
+            f"scoreboard objectives add sm.lp.{t} minecraft.used:minecraft.{t}\n"
+            for t in LOGS
+        ),
+    )
+    write(
+        os.path.join(fn, "log_uninstall.mcfunction"),
+        HEADER + "".join(f"scoreboard objectives remove sm.l.{t}\nscoreboard objectives remove sm.lp.{t}\n" for t in LOGS),
+    )
+    write(
+        os.path.join(fn, "log_mined.mcfunction"),
+        HEADER + "# Cada tick: junta lo talado de cada tipo en sm.lmined (y anota el tipo para el Woodozer)\n"
+        + "".join(
+            f'execute as @a[scores={{sm.l.{t}=1..}}] run function {NS}:milestone/log_100k/take {{k:"{t}",i:{i}}}\n'
+            for i, t in enumerate(LOGS, 1)
+        ),
+    )
+    write(
+        os.path.join(fn, "log_placed.mcfunction"),
+        HEADER + "# Cada segundo: lo colocado de cada tipo, solo para el panel\n"
+        + "".join(
+            f'execute as @a[scores={{sm.lp.{t}=1..}}] run function {NS}:milestone/log_100k/placed {{k:"{t}"}}\n'
+            for t in LOGS
+        ),
+    )
+    write(
+        os.path.join(fn, "fell_start.mcfunction"),
+        HEADER + "# Interno: en el hueco del tronco roto. #kind dice de qué tipo era\n"
+        + "".join(
+            f"execute if score #kind sm.calc matches {i} run return run function {NS}:gen/fell/{t}_around\n"
+            for i, t in enumerate(LOGS, 1)
+        ),
+    )
+    for t in LOGS:
+        leaf = FOLIAGE.get(t, LEAVES)
+        visit = [
+            HEADER,
+            f"# Interno: en un {t} del árbol. Lo marca y sigue por los que toca.\n",
+            'summon minecraft:marker ~ ~ ~ {Tags:["sm.fell"]}\n',
+            "scoreboard players add #fell sm.calc 1\n",
+        ]
+        for x, y, z in FACES:
+            visit.append(
+                f"execute if score #leafy sm.calc matches 0 if block ~{x or ''} ~{y or ''} ~{z or ''} {leaf} "
+                "run scoreboard players set #leafy sm.calc 1\n"
+            )
+        visit.append(f"function {NS}:gen/fell/{t}_around\n")
+        write(os.path.join(fn, "fell", f"{t}.mcfunction"), "".join(visit))
+        around = [HEADER, f"# Interno: los 26 bloques alrededor, primero los de arriba\n"]
+        for x, y, z in AROUND:
+            around.append(
+                f"execute if score #fell sm.calc < #fell_cap sm.calc positioned ~{x or ''} ~{y or ''} ~{z or ''} "
+                f"if block ~ ~ ~ minecraft:{t} unless entity @e[type=minecraft:marker,tag=sm.fell,distance=..0.5] "
+                f"run function {NS}:gen/fell/{t}\n"
+            )
+        write(os.path.join(fn, "fell", f"{t}_around.mcfunction"), "".join(around))
+    print(f"troncos: {len(LOGS)} tipos")
+
+
+generate_logs()
 generate_redstone()
 generate_debris()
 generate("", sorted(MOBS))

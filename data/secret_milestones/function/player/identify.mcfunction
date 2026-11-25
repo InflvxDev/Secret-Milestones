@@ -9,3 +9,4 @@ function secret_milestones:milestone/treasure_500/restore with storage secret_mi
 function secret_milestones:milestone/farlands/restore with storage secret_milestones:tmp who
 function secret_milestones:milestone/redstone_1000/restore with storage secret_milestones:tmp who
 function secret_milestones:milestone/life_1000/restore with storage secret_milestones:tmp who
+function secret_milestones:milestone/log_100k/restore with storage secret_milestones:tmp who
