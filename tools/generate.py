@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8 y 9.
+"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8, 9 y 10.
 
 Hito 2 (Españita Chaos Bow): advancement/bow_kill.json y gen/bow_*, para la base
 (26.3) y para el overlay de 26.4.
@@ -7,6 +7,7 @@ Hito 3 (Debris Finder): advancement/debris_place.json, gen/debris_* y gen/radar.
 Hito 6 (RedKeyStone): gen/red_* (lista de componentes y qué gira la llave).
 Hito 8 (Woodozer): gen/log_*, gen/fell_start y gen/fell/ (tipos de tronco y la tala).
 Hito 9 (DeepMine Crown): gen/deep_* (bloques, metas y la fila del panel).
+Hito 10 (Terra Magnet): gen/soil_* y tags/item/soil.json (bloques blandos y lo que atrae).
 Uso: python tools/generate.py
 
 Casos especiales:
@@ -465,6 +466,54 @@ def generate_deep():
     print(f"cuevas profundas: {len(DEEP)} bloques")
 
 
+# --- Hito 10: excavar 250.000 bloques blandos, y la Terra Magnet que atrae lo que excava
+SOIL = """
+dirt grass_block coarse_dirt podzol mycelium rooted_dirt dirt_path sand red_sand gravel clay
+snow snow_block soul_sand soul_soil mud muddy_mangrove_roots
+""".split()
+# Lo que atrae la Terra Magnet: los mismos bloques, y lo que sueltan sin Toque de seda
+SOIL_DROPS = ["flint", "clay_ball", "snowball"]
+
+
+def generate_soil():
+    fn = os.path.join("data", NS, "function", "gen")
+    write(
+        os.path.join(fn, "soil_load.mcfunction"),
+        HEADER + "# Bloques blandos excavados y colocados de cada tipo, desde el último tick o segundo\n"
+        + "".join(
+            f"scoreboard objectives add sm.s.{b} minecraft.mined:minecraft.{b}\n"
+            f"scoreboard objectives add sm.sp.{b} minecraft.used:minecraft.{b}\n"
+            for b in SOIL
+        ),
+    )
+    write(
+        os.path.join(fn, "soil_uninstall.mcfunction"),
+        HEADER + "".join(f"scoreboard objectives remove sm.s.{b}\nscoreboard objectives remove sm.sp.{b}\n" for b in SOIL),
+    )
+    write(
+        os.path.join(fn, "soil_mined.mcfunction"),
+        HEADER + "# Cada tick: junta lo excavado de cada tipo en sm.smined\n"
+        + "".join(
+            f'execute as @a[scores={{sm.s.{b}=1..}}] run function {NS}:milestone/soil_250k/take {{k:"{b}"}}\n'
+            for b in SOIL
+        ),
+    )
+    write(
+        os.path.join(fn, "soil_placed.mcfunction"),
+        HEADER + "# Cada segundo: lo colocado de cada tipo, solo para el panel\n"
+        + "".join(
+            f'execute as @a[scores={{sm.sp.{b}=1..}}] run function {NS}:milestone/soil_250k/placed {{k:"{b}"}}\n'
+            for b in SOIL
+        ),
+    )
+    write(
+        os.path.join("data", NS, "tags", "item", "soil.json"),
+        json.dumps({"values": [f"minecraft:{i}" for i in SOIL + SOIL_DROPS]}, indent=2) + "\n",
+    )
+    print(f"bloques blandos: {len(SOIL)} tipos")
+
+
+generate_soil()
 generate_deep()
 generate_logs()
 generate_redstone()

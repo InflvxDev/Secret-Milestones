@@ -79,6 +79,12 @@ scoreboard players set #cap_deepslate sm.calc 5500
 scoreboard players set #cap_tuff sm.calc 2000
 # DeepMine Crown: la tenía puesta el tick anterior
 scoreboard objectives add sm.crown dummy
+# Hito 10: bloques blandos excavados y colocados de cada tipo, el total del tick y el progreso válido
+function secret_milestones:gen/soil_load
+scoreboard objectives add sm.smined dummy
+scoreboard objectives add sm.soil dummy
+# Cuántos bloques blandos le cuenta a cada jugador cada zona de 16x16x16
+scoreboard players set #soil_cap sm.calc 2000
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []
@@ -95,5 +101,6 @@ execute unless data storage secret_milestones:claimed redstone_1000 run data mod
 execute unless data storage secret_milestones:claimed life_1000 run data modify storage secret_milestones:claimed life_1000 set value []
 execute unless data storage secret_milestones:claimed log_100k run data modify storage secret_milestones:claimed log_100k set value []
 execute unless data storage secret_milestones:claimed deep_mine run data modify storage secret_milestones:claimed deep_mine set value []
+execute unless data storage secret_milestones:claimed soil_250k run data modify storage secret_milestones:claimed soil_250k set value []
 
 execute as @a run function secret_milestones:player/login

@@ -1,0 +1,36 @@
+# GENERADO por tools/generate.py: no editar a mano
+# Bloques blandos excavados y colocados de cada tipo, desde el último tick o segundo
+scoreboard objectives add sm.s.dirt minecraft.mined:minecraft.dirt
+scoreboard objectives add sm.sp.dirt minecraft.used:minecraft.dirt
+scoreboard objectives add sm.s.grass_block minecraft.mined:minecraft.grass_block
+scoreboard objectives add sm.sp.grass_block minecraft.used:minecraft.grass_block
+scoreboard objectives add sm.s.coarse_dirt minecraft.mined:minecraft.coarse_dirt
+scoreboard objectives add sm.sp.coarse_dirt minecraft.used:minecraft.coarse_dirt
+scoreboard objectives add sm.s.podzol minecraft.mined:minecraft.podzol
+scoreboard objectives add sm.sp.podzol minecraft.used:minecraft.podzol
+scoreboard objectives add sm.s.mycelium minecraft.mined:minecraft.mycelium
+scoreboard objectives add sm.sp.mycelium minecraft.used:minecraft.mycelium
+scoreboard objectives add sm.s.rooted_dirt minecraft.mined:minecraft.rooted_dirt
+scoreboard objectives add sm.sp.rooted_dirt minecraft.used:minecraft.rooted_dirt
+scoreboard objectives add sm.s.dirt_path minecraft.mined:minecraft.dirt_path
+scoreboard objectives add sm.sp.dirt_path minecraft.used:minecraft.dirt_path
+scoreboard objectives add sm.s.sand minecraft.mined:minecraft.sand
+scoreboard objectives add sm.sp.sand minecraft.used:minecraft.sand
+scoreboard objectives add sm.s.red_sand minecraft.mined:minecraft.red_sand
+scoreboard objectives add sm.sp.red_sand minecraft.used:minecraft.red_sand
+scoreboard objectives add sm.s.gravel minecraft.mined:minecraft.gravel
+scoreboard objectives add sm.sp.gravel minecraft.used:minecraft.gravel
+scoreboard objectives add sm.s.clay minecraft.mined:minecraft.clay
+scoreboard objectives add sm.sp.clay minecraft.used:minecraft.clay
+scoreboard objectives add sm.s.snow minecraft.mined:minecraft.snow
+scoreboard objectives add sm.sp.snow minecraft.used:minecraft.snow
+scoreboard objectives add sm.s.snow_block minecraft.mined:minecraft.snow_block
+scoreboard objectives add sm.sp.snow_block minecraft.used:minecraft.snow_block
+scoreboard objectives add sm.s.soul_sand minecraft.mined:minecraft.soul_sand
+scoreboard objectives add sm.sp.soul_sand minecraft.used:minecraft.soul_sand
+scoreboard objectives add sm.s.soul_soil minecraft.mined:minecraft.soul_soil
+scoreboard objectives add sm.sp.soul_soil minecraft.used:minecraft.soul_soil
+scoreboard objectives add sm.s.mud minecraft.mined:minecraft.mud
+scoreboard objectives add sm.sp.mud minecraft.used:minecraft.mud
+scoreboard objectives add sm.s.muddy_mangrove_roots minecraft.mined:minecraft.muddy_mangrove_roots
+scoreboard objectives add sm.sp.muddy_mangrove_roots minecraft.used:minecraft.muddy_mangrove_roots

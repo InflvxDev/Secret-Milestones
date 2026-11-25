@@ -15,6 +15,9 @@ function secret_milestones:gen/log_mined
 execute as @a[scores={sm.lmined=1..}] run function secret_milestones:milestone/log_100k/on_mine
 # Hito 9: solo corre para quien minó deepslate, tuff o menas de deepslate en este tick
 function secret_milestones:gen/deep_mined
+# Hito 10: solo corre para quien excavó bloques blandos en este tick (y ahí atrae la Terra Magnet)
+function secret_milestones:gen/soil_mined
+execute as @a[scores={sm.smined=1..}] run function secret_milestones:milestone/soil_250k/on_mine
 
 # Los hitos se revisan una vez por segundo
 scoreboard players add #t sm.calc 1

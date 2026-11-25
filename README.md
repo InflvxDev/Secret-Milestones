@@ -16,6 +16,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 7 | Sobrevivir 1000 días del juego sin morir, en tiempo jugado | **Kars Totem**: tótem encantado que vuelve cada vez que te salva y da Regeneración I en la segunda mano |
 | 8 | Talar 100.000 troncos | **Woodozer**: hacha de netherita irrompible con Filo V, Eficiencia V y Fortuna III que tala el árbol entero |
 | 9 | Minar en las cuevas profundas: 100.000 de deepslate, 25.000 de tuff y menas de deepslate: 3500 de diamante, 5000 de redstone, 3000 de oro, 3000 de hierro, 2000 de lapislázuli y 1000 de cobre | **DeepMine Crown**: casco de netherita irrompible con todas las protecciones, Respiración III, Afinidad acuática y Espinas III, da Visión nocturna e inmunidad a la Oscuridad puesto |
+| 10 | Excavar 250.000 bloques blandos (tierra, arena, grava, nieve, barro...) | **Terra Magnet**: pala de netherita irrompible con Eficiencia V y Toque de seda; lo que excava con ella va directo al inventario |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -111,6 +112,16 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 - **Menas:** con **Toque de seda no cuentan**. Cuentan al romperlas después sin él: la mena solo se consigue con Toque de seda y al romperla sin él ya no vuelve, así cada mena natural cuenta una sola vez. Las menas normales (sin deepslate) no entran.
 - **Deepslate y tuff:** se pueden poner y romper, así que tienen cupo por zona de 16x16x16 y por jugador, como el stone: 5500 de deepslate y 2000 de tuff (una mancha natural tiene unos 600) (`#cap_deepslate` y `#cap_tuff` en `load`). Con Toque de seda sí cuentan. En el panel salen los colocados y lo que quedó fuera de cupo.
 - En creativo no suma. La lista y las metas están en `tools/generate.py` (`DEEP`). Después de editarla ejecuta `python tools/generate.py`, y cambia también los textos en `milestone/registry`.
+
+## Terra Magnet
+- **Imán:** lo que sueltan los bloques blandos que rompe con ella en la mano principal va directo al inventario. Solo esos bloques (la misma lista del hito, `tags/item/soil.json`): la piedra o los minerales caen normal.
+- Lo que no entra en el inventario queda a los pies. Los ítems tirados con Q no los atrae.
+- No funciona en creativo (ahí el juego no anota lo excavado).
+
+## Reglas del hito de los bloques blandos
+- Cuentan tierra, pasto, tierra gruesa, podzol, micelio, tierra enraizada, caminos, arena, arena roja, grava, arcilla, capas y bloques de nieve, soul sand, soul soil, barro y raíces de mangle con barro. Con cualquier herramienta, o a mano.
+- **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 2000 a cada jugador (`#soil_cap` en `load`). Así poner y romper en el mismo sitio, o la nieve que dejan los golems de nieve, deja de sumar. En el panel salen los colocados y lo que quedó fuera de cupo.
+- En creativo no suma. La lista está en `tools/generate.py` (`SOIL`). Después de editarla ejecuta `python tools/generate.py`.
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.
