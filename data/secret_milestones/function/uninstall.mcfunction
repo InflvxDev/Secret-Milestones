@@ -23,6 +23,9 @@ scoreboard objectives remove sm.wrench
 scoreboard objectives remove sm.wcd
 scoreboard objectives remove sm.life
 scoreboard objectives remove sm.died
+scoreboard objectives remove sm.afk
+scoreboard objectives remove sm.yaw
+scoreboard objectives remove sm.pitch
 scoreboard objectives remove sm.khand
 scoreboard objectives remove sm.koff
 function secret_milestones:gen/red_uninstall

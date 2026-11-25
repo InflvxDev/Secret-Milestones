@@ -81,9 +81,10 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 - **Regeneración I** mientras está en la segunda mano, curando al mismo ritmo que una poción. Dura hasta 7 segundos más al guardarlo.
 
 ## Reglas del hito de los 1000 días
-- 1000 días del juego son 24.000.000 de ticks: unas **333 horas conectado** sin morir.
+- 1000 días del juego son 24.000.000 de ticks: unas **333 horas jugando** sin morir.
 - **Morir reinicia la cuenta.** Que te salve un tótem no es morir.
 - Solo suma conectado, vivo y en **survival o aventura**. En creativo o espectador la cuenta se pausa (no se pierde).
+- **Anti-AFK:** si pasa **2 minutos sin girar la cámara** la cuenta se pausa (no se pierde) hasta que la vuelva a mover. Se mira la cámara y no la posición, porque el agua, los pistones o una vagoneta mueven a un jugador AFK pero no lo giran. El límite se cambia en `load` (`#afk_limit`, en segundos); cambia también el texto `rules` en `milestone/registry`.
 - Dormir o `/time set` no adelantan nada: cuenta el tiempo jugado, no la hora del mundo.
 
 ## Contra los generadores de stone

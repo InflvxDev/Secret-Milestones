@@ -55,6 +55,11 @@ scoreboard objectives add sm.life dummy
 scoreboard objectives add sm.died deathCount
 scoreboard players set #life_goal sm.calc 24000000
 scoreboard players set #24000 sm.calc 24000
+# Anti-AFK: segundos sin girar la cámara (y la última cámara vista) antes de que deje de sumar
+scoreboard objectives add sm.afk dummy
+scoreboard objectives add sm.yaw dummy
+scoreboard objectives add sm.pitch dummy
+scoreboard players set #afk_limit sm.calc 120
 # Kars Totem: en qué mano está (1 principal, 2 segunda) y si estaba en la segunda el tick anterior
 scoreboard objectives add sm.khand dummy
 scoreboard objectives add sm.koff dummy
