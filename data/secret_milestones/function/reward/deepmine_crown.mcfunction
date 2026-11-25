@@ -1,0 +1,3 @@
+# Recompensa del hito 9. Si la cambias, cambia también su item en milestone/registry.
+# custom_data es lo que reconoce item/deepmine_crown (Visión nocturna e inmunidad a la Oscuridad).
+give @s minecraft:netherite_helmet[minecraft:custom_name={text:"DeepMine Crown",color:"dark_aqua",italic:false},minecraft:enchantments={"minecraft:protection":4,"minecraft:fire_protection":4,"minecraft:blast_protection":4,"minecraft:projectile_protection":4,"minecraft:respiration":3,"minecraft:aqua_affinity":1,"minecraft:thorns":3},minecraft:unbreakable={},minecraft:custom_data={secret_milestones:"deepmine_crown"}] 1

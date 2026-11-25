@@ -19,6 +19,9 @@ execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.life=1..}] if
 # Hito 8: lo colocado solo se anota para el panel
 function secret_milestones:gen/log_placed
 execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.log=100000..}] run function secret_milestones:milestone/log_100k/check
+# Hito 9: lo colocado solo se anota para el panel
+function secret_milestones:gen/deep_placed
+execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.deep=1..}] if score @s sm.deep >= #deep_goal sm.calc run function secret_milestones:milestone/deep_mine/check
 # Hito 5: el Nether no cuenta (sus coordenadas valen x8). En creativo no suma.
 execute as @e[type=minecraft:player,gamemode=!spectator,gamemode=!creative] at @s unless dimension minecraft:the_nether run function secret_milestones:milestone/farlands/scan
 execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.far=1..}] if score @s sm.far >= #farlands sm.calc run function secret_milestones:milestone/farlands/check

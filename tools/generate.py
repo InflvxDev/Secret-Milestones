@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6 y 8.
+"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8 y 9.
 
 Hito 2 (Españita Chaos Bow): advancement/bow_kill.json y gen/bow_*, para la base
 (26.3) y para el overlay de 26.4.
 Hito 3 (Debris Finder): advancement/debris_place.json, gen/debris_* y gen/radar.
 Hito 6 (RedKeyStone): gen/red_* (lista de componentes y qué gira la llave).
 Hito 8 (Woodozer): gen/log_*, gen/fell_start y gen/fell/ (tipos de tronco y la tala).
+Hito 9 (DeepMine Crown): gen/deep_* (bloques, metas y la fila del panel).
 Uso: python tools/generate.py
 
 Casos especiales:
@@ -386,6 +387,85 @@ def generate_logs():
     print(f"troncos: {len(LOGS)} tipos")
 
 
+# --- Hito 9: minar en las cuevas profundas, y la DeepMine Crown
+# (bloque, meta, nombre en el panel, cómo se protege)
+# Metas según cuánto sale de cada uno por chunk en deepslate (datos de 26.4): diamante ~29,
+# hierro ~28 más las vetas, oro ~26, redstone ~41, lapislázuli ~17, cobre ~8 (casi todo está sobre Y=0).
+#   zone: se puede poner y romper -> cupo por zona (#cap_<bloque> en load), como el stone
+#   ore:  con Toque de seda no cuenta. La mena solo se consigue así, y al romperla sin él ya no
+#         vuelve: cada mena natural cuenta una sola vez.
+DEEP = [
+    ("deepslate", 100000, "Deepslate", "zone"),
+    ("tuff", 25000, "Tuff", "zone"),
+    ("deepslate_diamond_ore", 3500, "Diamante", "ore"),
+    ("deepslate_redstone_ore", 5000, "Redstone", "ore"),
+    ("deepslate_gold_ore", 3000, "Oro", "ore"),
+    ("deepslate_iron_ore", 3000, "Hierro", "ore"),
+    ("deepslate_copper_ore", 1000, "Cobre", "ore"),
+    ("deepslate_lapis_ore", 2000, "Lapislázuli", "ore"),
+]
+
+
+def generate_deep():
+    fn = os.path.join("data", NS, "function", "gen")
+    zone = [b for b, _, _, k in DEEP if k == "zone"]
+    write(
+        os.path.join(fn, "deep_load.mcfunction"),
+        HEADER + "# Lo minado de cada bloque desde el último tick, y lo colocado (los que tienen cupo)\n"
+        + "".join(f"scoreboard objectives add sm.dp.{b} minecraft.mined:minecraft.{b}\n" for b, *_ in DEEP)
+        + "".join(f"scoreboard objectives add sm.du.{b} minecraft.used:minecraft.{b}\n" for b in zone)
+        + f"scoreboard players set #deep_goal sm.calc {len(DEEP)}\n",
+    )
+    write(
+        os.path.join(fn, "deep_uninstall.mcfunction"),
+        HEADER
+        + "".join(f"scoreboard objectives remove sm.dp.{b}\n" for b, *_ in DEEP)
+        + "".join(f"scoreboard objectives remove sm.du.{b}\n" for b in zone),
+    )
+    write(
+        os.path.join(fn, "deep_mined.mcfunction"),
+        HEADER + "# Cada tick: lo minado de cada bloque\n"
+        + "".join(
+            f'execute as @a[scores={{sm.dp.{b}=1..}}] run function {NS}:milestone/deep_mine/{k} {{k:"{b}",g:{g}}}\n'
+            for b, g, _, k in DEEP
+        ),
+    )
+    write(
+        os.path.join(fn, "deep_placed.mcfunction"),
+        HEADER + "# Cada segundo: lo colocado, solo para el panel\n"
+        + "".join(
+            f'execute as @a[scores={{sm.du.{b}=1..}}] run function {NS}:milestone/deep_mine/placed {{k:"{b}"}}\n'
+            for b in zone
+        ),
+    )
+    prog = [HEADER, "# Interno: {id}. Fila del panel\n",
+            f"$execute store result storage {NS}:tmp row.done int 1 run data get storage {NS}:deep p$(id).done\n"]
+    for b, *_ in DEEP:
+        prog.append(f"$execute store result storage {NS}:tmp row.{b} int 1 run data get storage {NS}:deep p$(id).{b}\n")
+    for b in zone:
+        prog.append(f"$execute store result storage {NS}:tmp row.p_{b} int 1 run data get storage {NS}:deep p$(id).placed_{b}\n")
+        prog.append(f"$execute store result storage {NS}:tmp row.o_{b} int 1 run data get storage {NS}:deep p$(id).over_{b}\n")
+    prog.append(f"function {NS}:gen/deep_progress_text with storage {NS}:tmp row\n")
+    write(os.path.join(fn, "deep_progress.mcfunction"), "".join(prog))
+
+    rows = [DEEP[:2]] + [DEEP[i:i + 3] for i in range(2, len(DEEP), 3)]
+    extra = [
+        '{text:"\\n' + "  ·  ".join(f"{name} $({b})/{g}" for b, g, name, _ in row) + '",color:"gray"}'
+        for row in rows
+    ]
+    extra.append(
+        '{text:"\\nColocados: ' + "  ·  ".join(f"{b} $(p_{b})" for b in zone)
+        + "  ·  Fuera de cupo: " + "  ·  ".join(f"{b} $(o_{b})" for b in zone) + '",color:"red"}'
+    )
+    write(
+        os.path.join(fn, "deep_progress_text.mcfunction"),
+        HEADER + "# Interno: lo que dejó gen/deep_progress en tmp row\n"
+        + f'$data modify storage {NS}:tmp line set value {{text:"  $(done)/{len(DEEP)} bloques",color:"dark_aqua",extra:[{",".join(extra)}]}}\n',
+    )
+    print(f"cuevas profundas: {len(DEEP)} bloques")
+
+
+generate_deep()
 generate_logs()
 generate_redstone()
 generate_debris()

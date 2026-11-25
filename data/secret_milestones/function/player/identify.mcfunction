@@ -10,3 +10,4 @@ function secret_milestones:milestone/farlands/restore with storage secret_milest
 function secret_milestones:milestone/redstone_1000/restore with storage secret_milestones:tmp who
 function secret_milestones:milestone/life_1000/restore with storage secret_milestones:tmp who
 function secret_milestones:milestone/log_100k/restore with storage secret_milestones:tmp who
+function secret_milestones:milestone/deep_mine/restore with storage secret_milestones:tmp who

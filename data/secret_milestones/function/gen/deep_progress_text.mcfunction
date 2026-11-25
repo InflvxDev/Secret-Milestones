@@ -1,0 +1,3 @@
+# GENERADO por tools/generate.py: no editar a mano
+# Interno: lo que dejó gen/deep_progress en tmp row
+$data modify storage secret_milestones:tmp line set value {text:"  $(done)/8 bloques",color:"dark_aqua",extra:[{text:"\nDeepslate $(deepslate)/100000  ·  Tuff $(tuff)/25000",color:"gray"},{text:"\nDiamante $(deepslate_diamond_ore)/3500  ·  Redstone $(deepslate_redstone_ore)/5000  ·  Oro $(deepslate_gold_ore)/3000",color:"gray"},{text:"\nHierro $(deepslate_iron_ore)/3000  ·  Cobre $(deepslate_copper_ore)/1000  ·  Lapislázuli $(deepslate_lapis_ore)/2000",color:"gray"},{text:"\nColocados: deepslate $(p_deepslate)  ·  tuff $(p_tuff)  ·  Fuera de cupo: deepslate $(o_deepslate)  ·  tuff $(o_tuff)",color:"red"}]}

@@ -13,6 +13,8 @@ execute as @a[scores={sm.dmined=1..}] run function secret_milestones:milestone/d
 # Hito 8: solo corre para quien taló troncos en este tick (y ahí el Woodozer tala el árbol)
 function secret_milestones:gen/log_mined
 execute as @a[scores={sm.lmined=1..}] run function secret_milestones:milestone/log_100k/on_mine
+# Hito 9: solo corre para quien minó deepslate, tuff o menas de deepslate en este tick
+function secret_milestones:gen/deep_mined
 
 # Los hitos se revisan una vez por segundo
 scoreboard players add #t sm.calc 1
@@ -30,6 +32,9 @@ execute as @a[gamemode=!spectator] if items entity @s weapon.offhand minecraft:t
 # RedKeyStone
 scoreboard players remove @a[scores={sm.wcd=1..}] sm.wcd 1
 execute as @a[scores={sm.wrench=1..}] run function secret_milestones:item/red_power/use
+# DeepMine Crown (igual que las Farlands Explorer)
+scoreboard players remove @a[scores={sm.crown=1..}] sm.crown 1
+execute as @a[gamemode=!spectator] if items entity @s armor.head minecraft:netherite_helmet[minecraft:custom_data~{secret_milestones:"deepmine_crown"}] run function secret_milestones:item/deepmine_crown/wear
 # Woodozer: después de la tala, anota a qué tronco apunta cada uno para el tick siguiente
 kill @e[type=minecraft:marker,tag=sm.aim]
 execute as @a[gamemode=!spectator,gamemode=!creative] if items entity @s weapon.mainhand minecraft:netherite_axe[minecraft:custom_data~{secret_milestones:"woodozer"}] unless predicate secret_milestones:sneaking at @s anchored eyes positioned ^ ^ ^ run function secret_milestones:item/woodozer/aim

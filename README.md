@@ -15,6 +15,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 6 | Craftear 1000 de cada componente de redstone (16) | **RedKeyStone**: llave irrompible (sin mostrarlo, en su lugar trae una explicación corta) que gira repetidores, comparadores, pistones, observadores, dispensadores, droppers y tolvas sin romperlos |
 | 7 | Sobrevivir 1000 días del juego sin morir, en tiempo jugado | **Kars Totem**: tótem encantado que vuelve cada vez que te salva y da Regeneración I en la segunda mano |
 | 8 | Talar 100.000 troncos | **Woodozer**: hacha de netherita irrompible con Filo V, Eficiencia V y Fortuna III que tala el árbol entero |
+| 9 | Minar en las cuevas profundas: 100.000 de deepslate, 25.000 de tuff y menas de deepslate: 3500 de diamante, 5000 de redstone, 3000 de oro, 3000 de hierro, 2000 de lapislázuli y 1000 de cobre | **DeepMine Crown**: casco de netherita irrompible con todas las protecciones, Respiración III, Afinidad acuática y Espinas III, da Visión nocturna e inmunidad a la Oscuridad puesto |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -98,6 +99,18 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 - Cuentan los **troncos y tallos** de los 11 árboles: roble, abeto, abedul, jungla, acacia, roble oscuro, mangle, cerezo, roble pálido, carmesí y distorsionado. La madera (6 caras) y los troncos pelados no, porque no salen en árboles naturales.
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 1000 troncos a cada jugador (`#log_cap` en `load`). Es como el stone: poner y romper en el mismo sitio, o una granja de árboles fija, deja de sumar. En el panel, alguien con casi tantos colocados como talados es sospechoso.
 - En creativo no suma. La lista está en `tools/generate.py` (`LOGS`). Después de editarla ejecuta `python tools/generate.py`.
+
+## DeepMine Crown
+- **Encantamientos:** Protección, Protección contra el fuego, contra explosiones y contra proyectiles IV, Respiración III, Afinidad acuática y Espinas III. Sin maldiciones.
+- **Visión nocturna:** mientras está puesta, sin el parpadeo de los últimos segundos. Dura hasta 13 segundos más al quitarla.
+- **Inmune a la Oscuridad** del Warden y del sculk shrieker: se quita al instante.
+
+## Reglas del hito de las cuevas profundas
+- Hay que llegar a la meta de **cada uno**: 100.000 de deepslate, 25.000 de tuff, y de menas de deepslate 3500 de diamante, 5000 de redstone, 3000 de oro, 3000 de hierro, 2000 de lapislázuli y 1000 de cobre. Lo que pasa de la meta en uno no suma para otro.
+- **Balance:** cada meta va según cuánto sale de esa mena en deepslate (datos de 26.4), así todas tardan parecido. El cobre es el más escaso porque casi todo está sobre Y=0: el de deepslate solo sale entre Y −16 y 8. Se cuentan bloques minados, no lo que sueltan: Fortuna no ayuda.
+- **Menas:** con **Toque de seda no cuentan**. Cuentan al romperlas después sin él: la mena solo se consigue con Toque de seda y al romperla sin él ya no vuelve, así cada mena natural cuenta una sola vez. Las menas normales (sin deepslate) no entran.
+- **Deepslate y tuff:** se pueden poner y romper, así que tienen cupo por zona de 16x16x16 y por jugador, como el stone: 5500 de deepslate y 2000 de tuff (una mancha natural tiene unos 600) (`#cap_deepslate` y `#cap_tuff` en `load`). Con Toque de seda sí cuentan. En el panel salen los colocados y lo que quedó fuera de cupo.
+- En creativo no suma. La lista y las metas están en `tools/generate.py` (`DEEP`). Después de editarla ejecuta `python tools/generate.py`, y cambia también los textos en `milestone/registry`.
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.
