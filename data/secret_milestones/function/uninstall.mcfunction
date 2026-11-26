@@ -1,5 +1,5 @@
 # Desinstalar: /function secret_milestones:uninstall y después quitar el datapack.
-# No borra claimed, players, stone, zones, bow, debris*, fishing, farlands, redstone, life, logs, log_zones, deep, deep_zones, soils ni soil_zones: sin esos registros, al reinstalar se
+# No borra claimed, players, stone, zones, bow, debris*, fishing, farlands, redstone, life, logs, log_zones, deep, deep_zones, soils, soil_zones, moves ni jump_zones: sin esos registros, al reinstalar se
 # repetirían premios, se perdería el progreso y se vaciarían los cupos de los generadores.
 scoreboard objectives remove sm.calc
 scoreboard objectives remove sm.leave
@@ -39,6 +39,20 @@ scoreboard objectives remove sm.crown
 scoreboard objectives remove sm.lmined
 scoreboard objectives remove sm.lkind
 scoreboard objectives remove sm.log
+scoreboard objectives remove sm.crouch
+scoreboard objectives remove sm.sprint
+scoreboard objectives remove sm.jump
+scoreboard objectives remove sm.mc
+scoreboard objectives remove sm.ms
+scoreboard objectives remove sm.mj
+scoreboard objectives remove sm.dcd
+scoreboard objectives remove sm.jprev
+scoreboard objectives remove sm.dtap
+scoreboard objectives remove sm.dair
+scoreboard objectives remove sm.dgo
+scoreboard objectives remove sm.dpb
+scoreboard objectives remove sm.dgt
+tag @a remove sm.msave
 kill @e[type=minecraft:marker,tag=sm.aim]
 tag @a remove sm.admin
 data remove storage secret_milestones:tmp who

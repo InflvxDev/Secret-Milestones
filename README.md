@@ -17,6 +17,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 8 | Talar 100.000 troncos | **Woodozer**: hacha de netherita irrompible con Filo V, Eficiencia V y Fortuna III que tala el árbol entero |
 | 9 | Minar en las cuevas profundas: 100.000 de deepslate, 25.000 de tuff y menas de deepslate: 3500 de diamante, 5000 de redstone, 3000 de oro, 3000 de hierro, 2000 de lapislázuli y 1000 de cobre | **DeepMine Crown**: casco de netherita irrompible con todas las protecciones, Respiración III, Afinidad acuática y Espinas III, da Visión nocturna e inmunidad a la Oscuridad puesto |
 | 10 | Excavar 250.000 bloques blandos (tierra, arena, grava, nieve, barro...) | **Terra Magnet**: pala de netherita irrompible con Eficiencia V y Toque de seda; lo que excava con ella va directo al inventario |
+| 11 | Recorrer 300 km agachado, 1000 km corriendo y saltar 100.000 veces | **Dash Shadow**: pantalones de netherita irrompibles con todas las protecciones, Sigilo rápido V y Espinas III; doble espacio con WASD apretada da un dash hacia esa dirección |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -122,6 +123,22 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 - Cuentan tierra, pasto, tierra gruesa, podzol, micelio, tierra enraizada, caminos, arena, arena roja, grava, arcilla, capas y bloques de nieve, soul sand, soul soil, barro y raíces de mangle con barro. Con cualquier herramienta, o a mano.
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 2000 a cada jugador (`#soil_cap` en `load`). Así poner y romper en el mismo sitio, o la nieve que dejan los golems de nieve, deja de sumar. En el panel salen los colocados y lo que quedó fuera de cupo.
 - En creativo no suma. La lista está en `tools/generate.py` (`SOIL`). Después de editarla ejecuta `python tools/generate.py`.
+
+## Dash Shadow
+- **Encantamientos:** Protección, Protección contra el fuego, contra explosiones y contra proyectiles IV, Sigilo rápido V (en vanilla el máximo es III) y Espinas III. Sin maldiciones. Trae también **Dash**, un encantamiento propio del datapack que es el que empuja.
+- **Dash:** apretar **espacio dos veces seguidas** (dentro de 7 ticks, `#dash_window` en `load`) con **W, A, S o D** apretada. Va hacia esa dirección según adónde mira la cámara, siempre en horizontal y un poco hacia arriba. W+A va en diagonal. En el suelo, el primer espacio salta y el segundo dashea en el aire.
+- **Límites:** un dash por salto (se recarga al tocar el suelo) y 1,5 segundos de espera (`#dash_cd` en `load`, en ticks). Mantener el espacio apretado no dashea.
+- **No dashea** con elytra puesta (el doble espacio la abre), montado, en agua, lava o columnas de burbujas, ni en creativo (ahí el doble espacio es para volar).
+- La fuerza se cambia en `tools/generate.py` (`DASH_SPEED` y `DASH_LIFT`). Después de editarla ejecuta `python tools/generate.py` y `/reload`.
+- **Ojo:** la piedra de afilar le quita los encantamientos, también el Dash.
+
+## Reglas del hito de agacharse, correr y saltar
+- Hay que llegar a la meta de **cada uno**: 300 km agachado, 1000 km corriendo y 100.000 saltos. Lo que pasa de la meta en uno no suma para otro.
+- **Agachado:** solo cuenta apretando agacharse **y** una tecla WASD. Así no suman las corrientes de agua, los pistones ni el hielo.
+- **Corriendo:** solo cuenta apretando W. Sigilo rápido y correr saltando ayudan, y está bien: correr saltando suma a dos metas a la vez.
+- **Saltos:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 500 a cada jugador (`#jump_cap` en `load`). Saltar en el mismo lugar con una macro deja de sumar. En el panel salen los saltos fuera de cupo.
+- **Anti-AFK:** el mismo del hito de los 1000 días. Si pasa 2 minutos sin girar la cámara no suma nada.
+- Solo en survival o aventura. Las metas están en `milestone/check_all` (en cm para las distancias) y los textos en `milestone/registry` y `milestone/movement/`.
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.

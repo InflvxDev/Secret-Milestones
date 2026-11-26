@@ -85,6 +85,28 @@ scoreboard objectives add sm.smined dummy
 scoreboard objectives add sm.soil dummy
 # Cuántos bloques blandos le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #soil_cap sm.calc 2000
+# Hito 11: lo movido agachado y corriendo (cm) y los saltos desde el último tick, y el progreso válido.
+# Metas: 300 km agachado, 1000 km corriendo y 100.000 saltos (en milestone/check_all).
+scoreboard objectives add sm.crouch minecraft.custom:minecraft.crouch_one_cm
+scoreboard objectives add sm.sprint minecraft.custom:minecraft.sprint_one_cm
+scoreboard objectives add sm.jump minecraft.custom:minecraft.jump
+scoreboard objectives add sm.mc dummy
+scoreboard objectives add sm.ms dummy
+scoreboard objectives add sm.mj dummy
+# Cuántos saltos le cuenta a cada jugador cada zona de 16x16x16
+scoreboard players set #jump_cap sm.calc 500
+# Dash Shadow: espera entre dashes, ventana del doble espacio (ticks), y el estado de cada jugador:
+# espacio el tick anterior, ventana abierta, ya dasheó en este salto, dirección, tramo de cámara y su vida
+scoreboard players set #dash_cd sm.calc 30
+scoreboard players set #dash_window sm.calc 7
+scoreboard players set #3 sm.calc 3
+scoreboard objectives add sm.dcd dummy
+scoreboard objectives add sm.jprev dummy
+scoreboard objectives add sm.dtap dummy
+scoreboard objectives add sm.dair dummy
+scoreboard objectives add sm.dgo dummy
+scoreboard objectives add sm.dpb dummy
+scoreboard objectives add sm.dgt dummy
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []
@@ -102,5 +124,6 @@ execute unless data storage secret_milestones:claimed life_1000 run data modify 
 execute unless data storage secret_milestones:claimed log_100k run data modify storage secret_milestones:claimed log_100k set value []
 execute unless data storage secret_milestones:claimed deep_mine run data modify storage secret_milestones:claimed deep_mine set value []
 execute unless data storage secret_milestones:claimed soil_250k run data modify storage secret_milestones:claimed soil_250k set value []
+execute unless data storage secret_milestones:claimed movement run data modify storage secret_milestones:claimed movement set value []
 
 execute as @a run function secret_milestones:player/login

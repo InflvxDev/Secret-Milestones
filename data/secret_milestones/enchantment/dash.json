@@ -1,0 +1,4776 @@
+{
+  "description": {
+    "text": "Dash"
+  },
+  "supported_items": "minecraft:netherite_leggings",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 1,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 8,
+  "slots": [
+    "legs"
+  ],
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.702,
+                0.2072
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 0
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.7274,
+                0.0822
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 1
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.7306,
+                -0.0454
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 2
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.7116,
+                -0.1715
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 3
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.671,
+                -0.2925
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 4
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.61,
+                -0.4046
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 5
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.5305,
+                -0.5044
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 6
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.4349,
+                -0.5888
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 7
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.326,
+                -0.6554
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 8
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.2072,
+                -0.702
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 9
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.0822,
+                -0.7274
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 10
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.0454,
+                -0.7306
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 11
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.1715,
+                -0.7116
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 12
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.2925,
+                -0.671
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 13
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.4046,
+                -0.61
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 14
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.5044,
+                -0.5305
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 15
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.5888,
+                -0.4349
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 16
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.6554,
+                -0.326
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 1,
+            "sm.dpb": 17
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.9832,
+                0.1826
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 0
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                1.0,
+                0.0091
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 1
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.9864,
+                -0.1646
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 2
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.9428,
+                -0.3334
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 3
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.8706,
+                -0.4921
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 4
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.7719,
+                -0.6358
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 5
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.6498,
+                -0.7601
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 6
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.5079,
+                -0.8614
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 7
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.3506,
+                -0.9365
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 8
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.1826,
+                -0.9832
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 9
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.0091,
+                -1.0
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 10
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.1646,
+                -0.9864
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 11
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.3334,
+                -0.9428
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 12
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.4921,
+                -0.8706
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 13
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.6358,
+                -0.7719
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 14
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.7601,
+                -0.6498
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 15
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.8614,
+                -0.5079
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 16
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.9365,
+                -0.3506
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 2,
+            "sm.dpb": 17
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.702,
+                0.2072
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 0
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.7274,
+                0.0822
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 1
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.7306,
+                -0.0454
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 2
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.7116,
+                -0.1715
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 3
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.671,
+                -0.2925
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 4
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.61,
+                -0.4046
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 5
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.5305,
+                -0.5044
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 6
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.4349,
+                -0.5888
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 7
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.326,
+                -0.6554
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 8
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.2072,
+                -0.702
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 9
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.0822,
+                -0.7274
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 10
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.0454,
+                -0.7306
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 11
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.1715,
+                -0.7116
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 12
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.2925,
+                -0.671
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 13
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.4046,
+                -0.61
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 14
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.5044,
+                -0.5305
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 15
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.5888,
+                -0.4349
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 16
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.6554,
+                -0.326
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 3,
+            "sm.dpb": 17
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.0233,
+                0.2666
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 0
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.0693,
+                0.2585
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 1
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.1131,
+                0.2426
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 2
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.1535,
+                0.2192
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 3
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.1893,
+                0.1893
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 4
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.2192,
+                0.1535
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 5
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.2426,
+                0.1131
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 6
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.2585,
+                0.0693
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 7
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.2666,
+                0.0233
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 8
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.2666,
+                -0.0233
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 9
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.2585,
+                -0.0693
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 10
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.2426,
+                -0.1131
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 11
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.2192,
+                -0.1535
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 12
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.1893,
+                -0.1893
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 13
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.1535,
+                -0.2192
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 14
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.1131,
+                -0.2426
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 15
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.0693,
+                -0.2585
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 16
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.9635,
+                0.0233,
+                -0.2666
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 4,
+            "sm.dpb": 17
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.0233,
+                0.2666
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 0
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.0693,
+                0.2585
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 1
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.1131,
+                0.2426
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 2
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.1535,
+                0.2192
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 3
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.1893,
+                0.1893
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 4
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.2192,
+                0.1535
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 5
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.2426,
+                0.1131
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 6
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.2585,
+                0.0693
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 7
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.2666,
+                0.0233
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 8
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.2666,
+                -0.0233
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 9
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.2585,
+                -0.0693
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 10
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.2426,
+                -0.1131
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 11
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.2192,
+                -0.1535
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 12
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.1893,
+                -0.1893
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 13
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.1535,
+                -0.2192
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 14
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.1131,
+                -0.2426
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 15
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.0693,
+                -0.2585
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 16
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.9635,
+                0.0233,
+                -0.2666
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 6,
+            "sm.dpb": 17
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.6554,
+                0.326
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 0
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.5888,
+                0.4349
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 1
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.5044,
+                0.5305
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 2
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.4046,
+                0.61
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 3
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.2925,
+                0.671
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 4
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.1715,
+                0.7116
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 5
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                -0.0454,
+                0.7306
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 6
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.0822,
+                0.7274
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 7
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.2072,
+                0.702
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 8
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.326,
+                0.6554
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 9
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.4349,
+                0.5888
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 10
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.5305,
+                0.5044
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 11
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.61,
+                0.4046
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 12
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.671,
+                0.2925
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 13
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.7116,
+                0.1715
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 14
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.7306,
+                0.0454
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 15
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.7274,
+                -0.0822
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 16
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                -0.6813,
+                0.702,
+                -0.2072
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 7,
+            "sm.dpb": 17
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.9365,
+                0.3506
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 0
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.8614,
+                0.5079
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 1
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.7601,
+                0.6498
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 2
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.6358,
+                0.7719
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 3
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.4921,
+                0.8706
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 4
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.3334,
+                0.9428
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 5
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                -0.1646,
+                0.9864
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 6
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.0091,
+                1.0
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 7
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.1826,
+                0.9832
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 8
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.3506,
+                0.9365
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 9
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.5079,
+                0.8614
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 10
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.6498,
+                0.7601
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 11
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.7719,
+                0.6358
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 12
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.8706,
+                0.4921
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 13
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.9428,
+                0.3334
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 14
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.9864,
+                0.1646
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 15
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                1.0,
+                -0.0091
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 16
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.0,
+                0.9832,
+                -0.1826
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 8,
+            "sm.dpb": 17
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.6554,
+                0.326
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 0
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.5888,
+                0.4349
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 1
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.5044,
+                0.5305
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 2
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.4046,
+                0.61
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 3
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.2925,
+                0.671
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 4
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.1715,
+                0.7116
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 5
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                -0.0454,
+                0.7306
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 6
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.0822,
+                0.7274
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 7
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.2072,
+                0.702
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 8
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.326,
+                0.6554
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 9
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.4349,
+                0.5888
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 10
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.5305,
+                0.5044
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 11
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.61,
+                0.4046
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 12
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.671,
+                0.2925
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 13
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.7116,
+                0.1715
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 14
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.7306,
+                0.0454
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 15
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.7274,
+                -0.0822
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 16
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0.6813,
+                0.702,
+                -0.2072
+              ],
+              "coordinate_scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "magnitude": 0.9341
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "secret_milestones:item/dash_shadow/done"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "sm.dgo": 9,
+            "sm.dpb": 17
+          }
+        }
+      }
+    ]
+  }
+}

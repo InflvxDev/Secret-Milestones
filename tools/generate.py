@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8, 9 y 10.
+"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8, 9, 10 y 11.
 
 Hito 2 (Españita Chaos Bow): advancement/bow_kill.json y gen/bow_*, para la base
 (26.3) y para el overlay de 26.4.
@@ -8,6 +8,7 @@ Hito 6 (RedKeyStone): gen/red_* (lista de componentes y qué gira la llave).
 Hito 8 (Woodozer): gen/log_*, gen/fell_start y gen/fell/ (tipos de tronco y la tala).
 Hito 9 (DeepMine Crown): gen/deep_* (bloques, metas y la fila del panel).
 Hito 10 (Terra Magnet): gen/soil_* y tags/item/soil.json (bloques blandos y lo que atrae).
+Hito 11 (Dash Shadow): enchantment/dash.json (el empuje del dash en cada dirección).
 Uso: python tools/generate.py
 
 Casos especiales:
@@ -513,6 +514,70 @@ def generate_soil():
     print(f"bloques blandos: {len(SOIL)} tipos")
 
 
+# Hito 11 (Dash Shadow): el empuje del dash. item/dash_shadow/try deja en sm.dgo la dirección
+# (código (f+1)*3 + s + 2: f adelante +1 / atrás -1, s izquierda +1 / derecha -1) y en sm.dpb
+# el tramo de la cámara (pitch de -90 a 90 de a DASH_STEP grados). Para cada par hay una entrada
+# del encantamiento con el vector ya calculado en coordenadas locales (como ^ ^ ^: x izquierda,
+# y arriba, z adelante), así el dash va en horizontal mire donde mire, más un poco hacia arriba.
+DASH_SPEED = 0.9  # empuje horizontal (bloques por tick)
+DASH_LIFT = 0.25  # empuje hacia arriba
+DASH_STEP = 10  # grados por tramo: si lo cambias, cambia también el /= #10 de item/dash_shadow/try
+
+
+def generate_dash():
+    import math
+
+    entries = []
+    for f in (-1, 0, 1):
+        for s in (-1, 0, 1):
+            if f == 0 and s == 0:
+                continue
+            code = (f + 1) * 3 + s + 2
+            n = math.hypot(f, s)
+            for b in range(180 // DASH_STEP):
+                p = math.radians(-90 + DASH_STEP * b + DASH_STEP / 2)
+                # horizontal hacia adelante = cos(p)*adelante + sin(p)*arriba; vertical = cos(p)*arriba - sin(p)*adelante
+                x = DASH_SPEED * s / n
+                y = DASH_SPEED * f / n * math.sin(p) + DASH_LIFT * math.cos(p)
+                z = DASH_SPEED * f / n * math.cos(p) - DASH_LIFT * math.sin(p)
+                mag = math.sqrt(x * x + y * y + z * z)
+                entries.append(
+                    {
+                        "effect": {
+                            "type": "minecraft:all_of",
+                            "effects": [
+                                {
+                                    "type": "minecraft:apply_impulse",
+                                    "direction": [round(x / mag, 4), round(y / mag, 4), round(z / mag, 4)],
+                                    "coordinate_scale": [1.0, 1.0, 1.0],
+                                    "magnitude": round(mag, 4),
+                                },
+                                {"type": "minecraft:run_function", "function": f"{NS}:item/dash_shadow/done"},
+                            ],
+                        },
+                        "requirements": {
+                            "type": "minecraft:entity_scores",
+                            "entity": "this",
+                            "scores": {"sm.dgo": code, "sm.dpb": b},
+                        },
+                    }
+                )
+    enchantment = {
+        "description": {"text": "Dash"},
+        "supported_items": "minecraft:netherite_leggings",
+        "weight": 1,
+        "max_level": 1,
+        "min_cost": {"base": 1, "per_level_above_first": 0},
+        "max_cost": {"base": 1, "per_level_above_first": 0},
+        "anvil_cost": 8,
+        "slots": ["legs"],
+        "effects": {"minecraft:tick": entries},
+    }
+    write(os.path.join("data", NS, "enchantment", "dash.json"), json.dumps(enchantment, indent=2) + "\n")
+    print(f"dash: {len(entries)} direcciones")
+
+
+generate_dash()
 generate_soil()
 generate_deep()
 generate_logs()

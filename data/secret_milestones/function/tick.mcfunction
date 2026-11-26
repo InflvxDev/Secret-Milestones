@@ -18,6 +18,10 @@ function secret_milestones:gen/deep_mined
 # Hito 10: solo corre para quien excavó bloques blandos en este tick (y ahí atrae la Terra Magnet)
 function secret_milestones:gen/soil_mined
 execute as @a[scores={sm.smined=1..}] run function secret_milestones:milestone/soil_250k/on_mine
+# Hito 11: cada tick, para revisar qué teclas aprieta mientras se mueve
+execute as @a[scores={sm.crouch=1..}] run function secret_milestones:milestone/movement/crouch
+execute as @a[scores={sm.sprint=1..}] run function secret_milestones:milestone/movement/sprint
+execute as @a[scores={sm.jump=1..}] run function secret_milestones:milestone/movement/jump
 
 # Los hitos se revisan una vez por segundo
 scoreboard players add #t sm.calc 1
@@ -44,3 +48,8 @@ execute as @a[gamemode=!spectator,gamemode=!creative] if items entity @s weapon.
 # Farlands Explorer (igual que el Debris Finder, pero puestas)
 scoreboard players remove @a[scores={sm.worn=1..}] sm.worn 1
 execute as @a[gamemode=!spectator] if items entity @s armor.feet minecraft:netherite_boots[minecraft:custom_data~{secret_milestones:"farlands_explorer"}] run function secret_milestones:item/farlands_explorer/wear
+# Dash Shadow: si el encantamiento no llegó a usar la dirección (se los quitó), se borra igual
+scoreboard players remove @a[scores={sm.dgt=1..}] sm.dgt 1
+scoreboard players set @a[scores={sm.dgt=0,sm.dgo=1..}] sm.dgo 0
+# En creativo no: ahí el doble espacio es para volar
+execute as @a[gamemode=!spectator,gamemode=!creative] if items entity @s armor.legs minecraft:netherite_leggings[minecraft:custom_data~{secret_milestones:"dash_shadow"}] run function secret_milestones:item/dash_shadow/wear

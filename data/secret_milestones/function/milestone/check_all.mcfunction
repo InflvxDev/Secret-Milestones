@@ -25,6 +25,9 @@ execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.deep=1..}] if
 # Hito 10: lo colocado solo se anota para el panel
 function secret_milestones:gen/soil_placed
 execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.soil=250000..}] run function secret_milestones:milestone/soil_250k/check
+# Hito 11: primero se guarda lo sumado en el último segundo. Metas: 300 km agachado y 1000 km corriendo (en cm), y 100.000 saltos.
+execute as @a[tag=sm.msave] run function secret_milestones:milestone/movement/save
+execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.mc=30000000..,sm.ms=100000000..,sm.mj=100000..}] run function secret_milestones:milestone/movement/check
 # Hito 5: el Nether no cuenta (sus coordenadas valen x8). En creativo no suma.
 execute as @e[type=minecraft:player,gamemode=!spectator,gamemode=!creative] at @s unless dimension minecraft:the_nether run function secret_milestones:milestone/farlands/scan
 execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.far=1..}] if score @s sm.far >= #farlands sm.calc run function secret_milestones:milestone/farlands/check
