@@ -1,0 +1,16 @@
+{
+  "criteria": {
+    "place": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:match_block",
+          "blocks": "#secret_milestones:harvest_fruit"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "secret_milestones:milestone/harvest/on_place"
+  }
+}

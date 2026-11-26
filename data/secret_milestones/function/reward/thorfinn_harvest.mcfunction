@@ -1,0 +1,5 @@
+# Recompensa del hito 14. Si la cambias, cambia también su item en milestone/registry.
+# Es una azada de verdad: el clic izquierdo y arar funcionan como siempre.
+# custom_data es lo que reconoce advancement/thorfinn_use. consumable hace que el clic derecho "use" la azada
+# (sin animación, sonido ni consumirse: nunca llega a terminar) y así se detecta; use_effects quita la lentitud.
+give @s minecraft:netherite_hoe[minecraft:custom_name={text:"Thorfinn Harvest",color:"gold",italic:false},minecraft:lore=[{text:"Clic derecho en un cultivo: lánzala",color:"gray",italic:false},{text:"\"No tengo enemigos.\"",color:"dark_gray",italic:true}],minecraft:enchantments={"minecraft:fortune":5,"minecraft:efficiency":5},minecraft:unbreakable={},minecraft:custom_data={secret_milestones:"thorfinn_harvest"},minecraft:consumable={consume_seconds:100000,animation:"none",sound:{sound_id:"minecraft:intentionally_empty"},has_consume_particles:false},minecraft:use_effects={can_sprint:true,speed_multiplier:1.0}] 1

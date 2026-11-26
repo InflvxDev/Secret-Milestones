@@ -20,6 +20,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 11 | Recorrer 300 km agachado, 1000 km corriendo y saltar 100.000 veces | **Dash Shadow**: pantalones de netherita irrompibles con todas las protecciones, Sigilo rápido V y Espinas III; doble espacio con WASD apretada da un dash hacia esa dirección |
 | 12 | Aguantar daño (antes de la armadura): 50.000 corazones de golpes, 25.000 de proyectiles, 10.000 de explosiones, 10.000 de fuego y lava y 5.000 de jefes | **Aegis Heart**: pechera de netherita irrompible con todas las protecciones y Espinas III; puesta da Resistencia II y te hace inmune al Wither |
 | 13 | Conseguir las 4 piezas de armadura secretas (hitos 5, 9, 11 y 12) | **Españita Chaos Sword**: espada de netherita irrompible con Filo V, Castigo V, Perdición de los artrópodos V, Botín V y Barrido V; en la mano da Fuerza II, y sus golpes a veces dan un efecto negativo |
+| 14 | Cosechar cultivos maduros: 10.000 de trigo, zanahoria, papa, remolacha y verruga del Nether, y 5.000 melones y calabazas | **Thorfinn Harvest**: azada de netherita irrompible con Fortuna V y Eficiencia V; clic derecho en un cultivo la lanza como un boomerang que cosecha en cadena, replanta y vuelve con lo cosechado |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -169,6 +170,26 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 - Cuenta haber **cobrado** los 4 hitos de armadura: DeepMine Crown (9), Aegis Heart (12), Dash Shadow (11) y Farlands Explorer (5). No hace falta tenerlas encima, y perder una no lo quita.
 - Las que se sacan con "Obtener recompensa" del panel no cuentan.
 - Si ya cobró las 4 antes de esta versión, la espada llega sola en el siguiente segundo.
+
+## Thorfinn Harvest
+Por Thorfinn, de Vinland Saga.
+- **Es una azada normal:** el clic izquierdo rompe y el clic derecho en tierra ara, como siempre.
+- **Boomerang:** clic derecho en un cultivo (trigo, zanahoria, papa, remolacha, verruga del Nether, melón, calabaza o sus tallos). La azada sale volando, girando, hasta ese cultivo y desde ahí cosecha en **reacción en cadena**: cada 2 ticks pasa a los cultivos de al lado (también en diagonal y un bloque más arriba o abajo), hasta 12 bloques del primero (`#harvest_reach` en `load`). Después vuelve al jugador y trae lo cosechado.
+- **Solo corta lo maduro.** Los verdes y los tallos no se tocan, pero la cadena pasa por ellos.
+- **No toca la decoración:** solo corta un melón o una calabaza si su tallo lo está mirando (creció de ahí). La cadena no pasa por los frutos, sino por los tallos: una pared de calabazas al lado del campo queda entera.
+- **Replanta** cada cultivo con una de sus propias semillas (se descuenta de lo que soltó). Los melones y calabazas se cortan y el tallo sigue dando.
+- Corta con **Fortuna V**, igual que si la rompieras con la azada.
+- Un boomerang por jugador: hasta que vuelve no se puede lanzar otro. Si el jugador se va lejos, a otra dimensión o se desconecta, la cosecha queda tirada en el campo. Si algo falla, a los 30 segundos termina solo.
+- No funciona en creativo. Lo que cosecha el boomerang no suma para el hito.
+
+## Reglas del hito de la cosecha
+- Hay que llegar a la meta de **cada uno**: 10.000 de trigo, zanahoria, papa, remolacha y verruga del Nether, y 5.000 melones y calabazas. Lo que pasa de la meta en uno no suma para otro.
+- **Solo cuenta lo maduro:** se mira lo que soltó al romperlo. El trigo y la remolacha solo sueltan su producto maduros; la zanahoria, la papa y la verruga sueltan uno solo verdes y dos o más maduras (una zanahoria o papa madura que suelta una sola, pocas veces, no cuenta).
+- **Melones y calabazas:** solo cuentan los que **crecieron de su tallo**: al romperlo se mira el hueco donde estaba (por lo que soltó) y que al lado haya un tallo crecido.
+- **Decoración:** cada melón o calabaza que alguien coloca se anota por su posición exacta, para todo el server. Romperlo no cuenta para nadie, y ponerlo no resta nada. Al romperlo se borra la anotación. Ojo: si se mueve con pistones, la anotación se queda en el lugar viejo.
+- No cuentan las granjas automáticas (aldeanos, pistones, agua): solo lo que rompe el jugador.
+- **Anti-AFK:** el mismo del hito de los 1000 días. Solo en survival o aventura.
+- La lista y las metas están en `tools/generate.py` (`CROPS`, `FRUITS` y `CHAIN`). Después de editarla ejecuta `python tools/generate.py`, y cambia también los textos en `milestone/registry`.
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.

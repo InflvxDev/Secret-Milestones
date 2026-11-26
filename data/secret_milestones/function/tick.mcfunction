@@ -18,6 +18,8 @@ function secret_milestones:gen/deep_mined
 # Hito 10: solo corre para quien excavó bloques blandos en este tick (y ahí atrae la Terra Magnet)
 function secret_milestones:gen/soil_mined
 execute as @a[scores={sm.smined=1..}] run function secret_milestones:milestone/soil_250k/on_mine
+# Hito 14: solo corre para quien cosechó en este tick (mira lo que soltó para saber si estaba maduro)
+function secret_milestones:gen/harvest_mined
 # Hito 11: cada tick, para revisar qué teclas aprieta mientras se mueve
 execute as @a[scores={sm.crouch=1..}] run function secret_milestones:milestone/movement/crouch
 execute as @a[scores={sm.sprint=1..}] run function secret_milestones:milestone/movement/sprint
@@ -51,6 +53,10 @@ execute as @a[gamemode=!spectator] if items entity @s armor.feet minecraft:nethe
 # Dash Shadow: si el encantamiento no llegó a usar la dirección (se los quitó), se borra igual
 scoreboard players remove @a[scores={sm.dgt=1..}] sm.dgt 1
 scoreboard players set @a[scores={sm.dgt=0,sm.dgo=1..}] sm.dgo 0
+# Thorfinn Harvest: el boomerang vuela, corta la cadena y vuelve (el lanzamiento va por advancement/thorfinn_use)
+execute as @e[type=minecraft:item_display,tag=sm.hb] at @s run function secret_milestones:item/thorfinn/fly
+# sm.huse: 2 mientras mantiene el clic derecho con la azada; baja a 0 al soltar (un lanzamiento por clic)
+scoreboard players remove @a[scores={sm.huse=1..}] sm.huse 1
 # Españita Chaos Sword (igual que el Debris Finder, con Fuerza II). El caos al golpear va por enchantment/chaos.json
 scoreboard players remove @a[scores={sm.sheld=1..}] sm.sheld 1
 execute as @a[gamemode=!spectator] if items entity @s weapon.mainhand minecraft:netherite_sword[minecraft:custom_data~{secret_milestones:"chaos_sword"}] run function secret_milestones:item/chaos_sword/hold

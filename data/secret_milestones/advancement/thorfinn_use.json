@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "use": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": "minecraft:netherite_hoe",
+          "predicates": {
+            "minecraft:custom_data": "{secret_milestones:\"thorfinn_harvest\"}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "secret_milestones:item/thorfinn/use"
+  }
+}

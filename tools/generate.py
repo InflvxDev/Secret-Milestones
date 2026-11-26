@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8, 9, 10, 11 y 12.
+"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8, 9, 10, 11, 12 y 14.
 
 Hito 2 (Españita Chaos Bow): advancement/bow_kill.json y gen/bow_*, para la base
 (26.3) y para el overlay de 26.4.
@@ -10,6 +10,7 @@ Hito 9 (DeepMine Crown): gen/deep_* (bloques, metas y la fila del panel).
 Hito 10 (Terra Magnet): gen/soil_* y tags/item/soil.json (bloques blandos y lo que atrae).
 Hito 11 (Dash Shadow): enchantment/dash.json (el empuje del dash en cada dirección).
 Hito 12 (Aegis Heart): advancement/hurt_*, gen/hurt_* y tags/entity_type/ (tramos de daño y atacantes).
+Hito 14 (Thorfinn Harvest): gen/harvest_*, tags/block/harvest_* y tags/item/harvest_* (cultivos, metas y la cadena).
 Uso: python tools/generate.py
 
 Casos especiales:
@@ -641,6 +642,128 @@ def generate_hurt():
     print(f"daño: {len(HURT)} tipos, {len(buckets)} tramos, {len(values)} atacantes")
 
 
+# Hito 14 (Thorfinn Harvest): cosechar cultivos maduros, y la cadena del boomerang.
+# Cultivos: (bloque, producto, mínimo de producto si está maduro, edad madura, semilla, meta, nombre).
+# Para saber si estaba maduro se mira lo que soltó en ese tick: el trigo y la remolacha solo sueltan su
+# producto maduros; la zanahoria, la papa y la verruga sueltan 1 verdes y 2 o más maduras.
+CROPS = [
+    ("wheat", "wheat", 1, 7, "wheat_seeds", 10000, "Trigo"),
+    ("carrots", "carrot", 2, 7, "carrot", 10000, "Zanahoria"),
+    ("potatoes", "potato", 2, 7, "potato", 10000, "Papa"),
+    ("beetroots", "beetroot", 1, 3, "beetroot_seeds", 10000, "Remolacha"),
+    ("nether_wart", "nether_wart", 2, 3, "nether_wart", 10000, "Verruga"),
+]
+# Frutos: solo cuentan (y el boomerang solo corta) los que crecieron de su tallo. Los colocados se anotan
+# por posición (advancement fruit_place): romper la decoración no cuenta, y ponerla no resta.
+# (bloque, meta, nombre, lo que suelta, tallo, tallo con fruto)
+FRUITS = [
+    ("melon", 5000, "Melón", ["melon_slice", "melon"], "melon_stem", "attached_melon_stem"),
+    ("pumpkin", 5000, "Calabaza", ["pumpkin"], "pumpkin_stem", "attached_pumpkin_stem"),
+]
+# Por dónde pasa la cadena: cultivos (también verdes) y tallos. Los frutos no: así una pared de melones
+# de adorno no se corta entera. El fruto se corta desde su tallo.
+CHAIN = [c[0] for c in CROPS] + [s for f in FRUITS for s in f[4:6]]
+# Dónde se puede hacer clic para lanzar el boomerang
+CLICK = CHAIN + [f[0] for f in FRUITS]
+# Lado del fruto -> dónde está su tallo y hacia dónde mira (offset x, z del tallo, facing del tallo)
+SIDES = [((1, 0), "west"), ((-1, 0), "east"), ((0, 1), "north"), ((0, -1), "south")]
+
+
+def generate_harvest():
+    fn = os.path.join("data", NS, "function", "gen")
+    allk = [c[0] for c in CROPS] + [f[0] for f in FRUITS]
+    write(
+        os.path.join(fn, "harvest_load.mcfunction"),
+        HEADER + "# Lo cosechado de cada cultivo desde el último tick\n"
+        + "".join(f"scoreboard objectives add sm.hv.{k} minecraft.mined:minecraft.{k}\n" for k in allk)
+        + f"scoreboard players set #harvest_goal sm.calc {len(allk)}\n",
+    )
+    write(
+        os.path.join(fn, "harvest_uninstall.mcfunction"),
+        HEADER + "".join(f"scoreboard objectives remove sm.hv.{k}\n" for k in allk),
+    )
+    lines = [HEADER, "# Cada tick: lo cosechado de cada cultivo (solo cuenta si estaba maduro) y los frutos\n"]
+    for b, p, mn, _, _, g, _ in CROPS:
+        lines.append(
+            f'execute as @a[scores={{sm.hv.{b}=1..}}] run function {NS}:milestone/harvest/crop {{k:"{b}",p:"minecraft:{p}",min:{mn},g:{g}}}\n')
+    for b, g, _, _, s, a in FRUITS:
+        lines.append(
+            f'execute as @a[scores={{sm.hv.{b}=1..}}] run function {NS}:milestone/harvest/fruit {{k:"{b}",g:{g},s:"{s}",a:"{a}"}}\n')
+    write(os.path.join(fn, "harvest_mined.mcfunction"), "".join(lines))
+
+    prog = [HEADER, "# Interno: {id}. Fila del panel\n",
+            f"$execute store result storage {NS}:tmp row.done int 1 run data get storage {NS}:harvest p$(id).done\n"]
+    for k in allk:
+        prog.append(f"$execute store result score #v sm.calc run data get storage {NS}:harvest p$(id).{k}\n")
+        prog.append("execute if score #v sm.calc matches ..-1 run scoreboard players set #v sm.calc 0\n")
+        prog.append(f"execute store result storage {NS}:tmp row.{k} int 1 run scoreboard players get #v sm.calc\n")
+    prog.append(f"function {NS}:gen/harvest_progress_text with storage {NS}:tmp row\n")
+    write(os.path.join(fn, "harvest_progress.mcfunction"), "".join(prog))
+    named = [(c[0], c[5], c[6]) for c in CROPS] + [f[:3] for f in FRUITS]
+    rows = [named[i:i + 4] for i in range(0, len(named), 4)]
+    extra = ['{text:"\\n' + "  ·  ".join(f"{n} $({k})/{g}" for k, g, n in row) + '",color:"gray"}' for row in rows]
+    write(
+        os.path.join(fn, "harvest_progress_text.mcfunction"),
+        HEADER + "# Interno: lo que dejó gen/harvest_progress en tmp row\n"
+        + f'$data modify storage {NS}:tmp line set value {{text:"  $(done)/{len(allk)} cultivos",color:"gold",extra:[{",".join(extra)}]}}\n',
+    )
+
+    # Thorfinn Harvest: lo que corta en cada bloque de la cadena (solo lo maduro) y hacia dónde sigue
+    cut = [HEADER, "# Interno: como un marker de la cadena, en su bloque. Corta si está maduro y replanta.\n"]
+    for b, _, _, age, seed, _, _ in CROPS:
+        cut.append(
+            f'execute if block ~ ~ ~ minecraft:{b}[age={age}] run return run function {NS}:item/thorfinn/crop {{b:"{b}",s:"{seed}"}}\n')
+    # Un fruto solo se corta si su tallo lo está mirando: cuando se hizo clic en él, o desde el tallo.
+    # Así la decoración no se toca.
+    for b, _, _, _, _, a in FRUITS:
+        for (dx, dz), facing in SIDES:
+            cut.append(
+                f"execute if block ~ ~ ~ minecraft:{b} if block ~{dx or ''} ~ ~{dz or ''} minecraft:{a}[facing={facing}]"
+                f" run return run function {NS}:item/thorfinn/fruit\n")
+        for (dx, dz), facing in SIDES:
+            cut.append(
+                f"execute if block ~ ~ ~ minecraft:{a}[facing={facing}] positioned ~{-dx or ''} ~ ~{-dz or ''}"
+                f" if block ~ ~ ~ minecraft:{b} run return run function {NS}:item/thorfinn/fruit\n")
+    write(os.path.join(fn, "harvest_cut.mcfunction"), "".join(cut))
+    spread = [HEADER, "# Interno: como un marker de la cadena. Sigue a los 26 bloques de alrededor que sean cultivos.\n"]
+    for dx in (-1, 0, 1):
+        for dy in (-1, 0, 1):
+            for dz in (-1, 0, 1):
+                if dx == dy == dz == 0:
+                    continue
+                spread.append(
+                    f"execute positioned ~{dx or ''} ~{dy or ''} ~{dz or ''} if block ~ ~ ~ #{NS}:harvest_chain"
+                    f" unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5]"
+                    f" summon minecraft:marker run function {NS}:item/thorfinn/new\n")
+    write(os.path.join(fn, "harvest_spread.mcfunction"), "".join(spread))
+    write(
+        os.path.join("data", NS, "tags", "block", "harvest_chain.json"),
+        json.dumps({"values": [f"minecraft:{b}" for b in CHAIN]}, indent=2) + "\n",
+    )
+    write(
+        os.path.join("data", NS, "tags", "block", "harvest_click.json"),
+        json.dumps({"values": [f"minecraft:{b}" for b in CLICK]}, indent=2) + "\n",
+    )
+    write(
+        os.path.join("data", NS, "tags", "block", "harvest_fruit.json"),
+        json.dumps({"values": [f"minecraft:{f[0]}" for f in FRUITS]}, indent=2) + "\n",
+    )
+    # Hito: lo que suelta cada fruto (para encontrar dónde estaba) y si su tallo está al lado
+    for b, _, _, drops, _, _ in FRUITS:
+        write(os.path.join("data", NS, "tags", "item", f"harvest_{b}.json"),
+              json.dumps({"values": [f"minecraft:{d}" for d in drops]}, indent=2) + "\n")
+    stem = [HEADER, "# Interno: {s, a}. En el hueco de un fruto roto: #st = 1 si al lado está su tallo\n",
+            "# (crecido, o todavía mirándolo). Así solo cuentan los que crecieron, no la decoración.\n",
+            "scoreboard players set #st sm.calc 0\n"]
+    for (dx, dz), facing in SIDES:
+        off = f"~{dx or ''} ~ ~{dz or ''}"
+        stem.append(f"$execute if block {off} minecraft:$(s)[age=7] run scoreboard players set #st sm.calc 1\n")
+        stem.append(f"$execute if block {off} minecraft:$(a)[facing={facing}] run scoreboard players set #st sm.calc 1\n")
+    write(os.path.join(fn, "harvest_stem.mcfunction"), "".join(stem))
+    print(f"cosecha: {len(CROPS)} cultivos y {len(FRUITS)} frutos")
+
+
+generate_harvest()
 generate_hurt()
 generate_dash()
 generate_soil()

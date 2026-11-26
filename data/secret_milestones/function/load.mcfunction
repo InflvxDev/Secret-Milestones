@@ -130,6 +130,18 @@ scoreboard objectives add sm.chaos dummy
 scoreboard players set #chaos_base sm.calc 2
 scoreboard players set #chaos_step sm.calc 2
 scoreboard players set #chaos_max sm.calc 50
+# Hito 14: lo cosechado de cada cultivo desde el último tick, y cuántos llegaron a su meta (metas en tools/generate.py)
+function secret_milestones:gen/harvest_load
+scoreboard objectives add sm.harv dummy
+scoreboard players set #2 sm.calc 2
+scoreboard players set #-1 sm.calc -1
+# Thorfinn Harvest: hasta cuántos bloques del cultivo clicado llega la cadena, y el estado de cada
+# boomerang (ola de cada marker, ida o vuelta, ticks en el aire)
+scoreboard players set #harvest_reach sm.calc 12
+scoreboard objectives add sm.hg dummy
+scoreboard objectives add sm.hbs dummy
+scoreboard objectives add sm.hage dummy
+scoreboard objectives add sm.huse dummy
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []
@@ -150,5 +162,6 @@ execute unless data storage secret_milestones:claimed soil_250k run data modify 
 execute unless data storage secret_milestones:claimed movement run data modify storage secret_milestones:claimed movement set value []
 execute unless data storage secret_milestones:claimed hurt run data modify storage secret_milestones:claimed hurt set value []
 execute unless data storage secret_milestones:claimed armor_set run data modify storage secret_milestones:claimed armor_set set value []
+execute unless data storage secret_milestones:claimed harvest run data modify storage secret_milestones:claimed harvest set value []
 
 execute as @a run function secret_milestones:player/login

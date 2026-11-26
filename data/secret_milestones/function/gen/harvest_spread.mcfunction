@@ -1,0 +1,28 @@
+# GENERADO por tools/generate.py: no editar a mano
+# Interno: como un marker de la cadena. Sigue a los 26 bloques de alrededor que sean cultivos.
+execute positioned ~-1 ~-1 ~-1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~-1 ~-1 ~ if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~-1 ~-1 ~1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~-1 ~ ~-1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~-1 ~ ~ if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~-1 ~ ~1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~-1 ~1 ~-1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~-1 ~1 ~ if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~-1 ~1 ~1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~ ~-1 ~-1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~ ~-1 ~ if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~ ~-1 ~1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~ ~ ~-1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~ ~ ~1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~ ~1 ~-1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~ ~1 ~ if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~ ~1 ~1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~1 ~-1 ~-1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~1 ~-1 ~ if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~1 ~-1 ~1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~1 ~ ~-1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~1 ~ ~ if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~1 ~ ~1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~1 ~1 ~-1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~1 ~1 ~ if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
+execute positioned ~1 ~1 ~1 if block ~ ~ ~ #secret_milestones:harvest_chain unless entity @e[type=minecraft:marker,tag=sm.hx,distance=..0.5] summon minecraft:marker run function secret_milestones:item/thorfinn/new
