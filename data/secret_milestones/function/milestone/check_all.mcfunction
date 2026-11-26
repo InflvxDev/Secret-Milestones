@@ -28,6 +28,9 @@ execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.soil=250000..
 # Hito 11: primero se guarda lo sumado en el último segundo. Metas: 300 km agachado y 1000 km corriendo (en cm), y 100.000 saltos.
 execute as @a[tag=sm.msave] run function secret_milestones:milestone/movement/save
 execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.mc=30000000..,sm.ms=100000000..,sm.mj=100000..}] run function secret_milestones:milestone/movement/check
+# Hito 12: el daño se suma al recibirlo (advancements hurt_*). Metas en décimas de vida:
+# 50.000 corazones de golpes, 25.000 de proyectiles, 10.000 de explosiones, 10.000 de fuego y lava y 5.000 de jefes.
+execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.hmel=1000000..,sm.hpro=500000..,sm.hexp=200000..,sm.hfir=200000..,sm.hbos=100000..}] run function secret_milestones:milestone/hurt/check
 # Hito 5: el Nether no cuenta (sus coordenadas valen x8). En creativo no suma.
 execute as @e[type=minecraft:player,gamemode=!spectator,gamemode=!creative] at @s unless dimension minecraft:the_nether run function secret_milestones:milestone/farlands/scan
 execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.far=1..}] if score @s sm.far >= #farlands sm.calc run function secret_milestones:milestone/farlands/check

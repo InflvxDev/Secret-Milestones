@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8, 9, 10 y 11.
+"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8, 9, 10, 11 y 12.
 
 Hito 2 (Españita Chaos Bow): advancement/bow_kill.json y gen/bow_*, para la base
 (26.3) y para el overlay de 26.4.
@@ -9,6 +9,7 @@ Hito 8 (Woodozer): gen/log_*, gen/fell_start y gen/fell/ (tipos de tronco y la t
 Hito 9 (DeepMine Crown): gen/deep_* (bloques, metas y la fila del panel).
 Hito 10 (Terra Magnet): gen/soil_* y tags/item/soil.json (bloques blandos y lo que atrae).
 Hito 11 (Dash Shadow): enchantment/dash.json (el empuje del dash en cada dirección).
+Hito 12 (Aegis Heart): advancement/hurt_*, gen/hurt_* y tags/entity_type/ (tramos de daño y atacantes).
 Uso: python tools/generate.py
 
 Casos especiales:
@@ -577,6 +578,70 @@ def generate_dash():
     print(f"dash: {len(entries)} direcciones")
 
 
+# Hito 12 (Aegis Heart): daño recibido antes de la armadura (damage.dealt de entity_hurt_player).
+# Ninguna estadística guarda ese daño, así que cada tipo tiene un advancement con un criterio por
+# tramo de daño, y gen/hurt_<k> suma el valor del tramo que se cumplió. Todo va en décimas de vida
+# (1 corazón = 20). Tramos: de 0,5 en 0,5 hasta 40 de vida (exacto para el daño vanilla, que va
+# de a medio punto), de 5 en 5 hasta 100 (cuenta el medio del tramo), y 100 o más cuenta 100.
+# Los atacantes válidos son los mobs (sin jugadores): así no cuentan PvP, TNT, camas ni end crystals.
+HURT_EXTRA = ["creaking", "giant", "illusioner"]  # atacan pero no están en MOBS (no se matan con arco)
+BOSSES = ["wither", "ender_dragon", "warden", "elder_guardian"]
+NOT = lambda tag: {"id": f"#minecraft:{tag}", "expected": False}  # noqa: E731
+IS = lambda tag: {"id": f"#minecraft:{tag}", "expected": True}  # noqa: E731
+MOB = {"entity_type": f"#{NS}:attackers"}
+HURT = {
+    # k: (qué cuenta, condiciones del daño)
+    "mel": ("golpes", {"type": {"tags": [NOT("is_projectile"), NOT("is_explosion"), NOT("is_fire")]}, "source_entity": MOB}),
+    "pro": ("proyectiles", {"type": {"tags": [IS("is_projectile")]}, "source_entity": MOB}),
+    "exp": ("explosiones", {"type": {"tags": [IS("is_explosion")]}, "source_entity": MOB}),
+    "fir": ("fuego y lava", {"type": {"tags": [IS("is_fire")]}}),
+    "bos": ("jefes", {"source_entity": {"entity_type": f"#{NS}:bosses"}}),
+}
+
+
+def hurt_buckets():
+    """(min, max, valor en décimas) de cada tramo, en puntos de vida."""
+    out = [(i * 0.5, i * 0.5 + 0.4999, max(2, i * 5)) for i in range(80)]
+    out += [(40 + i * 5, 40 + i * 5 + 4.9999, 400 + i * 50 + 25) for i in range(12)]
+    out.append((100, 100000, 1000))
+    return out
+
+
+def generate_hurt():
+    fn = os.path.join("data", NS, "function", "gen")
+    buckets = hurt_buckets()
+    for k, (label, cond) in HURT.items():
+        criteria = {}
+        lines = [HEADER, f"# Interno: @s recibió daño de {label}. Cuánto (#hp, en décimas de vida) según el tramo que se cumplió.\n"]
+        lines.append("scoreboard players set #hp sm.calc 0\n")
+        for i, (lo, hi, v) in enumerate(buckets):
+            damage = {"dealt": {"min": lo, "max": hi}, "blocked": False}
+            damage.update(json.loads(json.dumps(cond)))
+            criteria[f"b{i}"] = {"trigger": "minecraft:entity_hurt_player", "conditions": {"damage": damage}}
+            lines.append(
+                f"execute if entity @s[advancements={{{NS}:hurt_{k}={{b{i}=true}}}}] run scoreboard players set #hp sm.calc {v}\n"
+            )
+        lines.append(f"advancement revoke @s only {NS}:hurt_{k}\n")
+        lines.append(f'execute if score #hp sm.calc matches 1.. run function {NS}:milestone/hurt/add {{k:"{k}"}}\n')
+        advancement = {
+            "criteria": criteria,
+            "requirements": [list(criteria)],
+            "rewards": {"function": f"{NS}:gen/hurt_{k}"},
+        }
+        write(os.path.join("data", NS, "advancement", f"hurt_{k}.json"), json.dumps(advancement, indent=2) + "\n")
+        write(os.path.join(fn, f"hurt_{k}.mcfunction"), "".join(lines))
+    # Atacantes: los mobs del hito del arco más los que faltan. Los de un overlay van como no obligatorios,
+    # así el tag carga también en la versión que no los tiene.
+    extra = sorted({m for ms in OVERLAYS.values() for m in ms})
+    values = [f"minecraft:{m}" for m in sorted(set(MOBS + HURT_EXTRA))]
+    values += [{"id": f"minecraft:{m}", "required": False} for m in extra]
+    tags = os.path.join("data", NS, "tags", "entity_type")
+    write(os.path.join(tags, "attackers.json"), json.dumps({"values": values}, indent=2) + "\n")
+    write(os.path.join(tags, "bosses.json"), json.dumps({"values": [f"minecraft:{m}" for m in BOSSES]}, indent=2) + "\n")
+    print(f"daño: {len(HURT)} tipos, {len(buckets)} tramos, {len(values)} atacantes")
+
+
+generate_hurt()
 generate_dash()
 generate_soil()
 generate_deep()

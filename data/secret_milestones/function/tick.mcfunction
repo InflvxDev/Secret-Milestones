@@ -51,5 +51,8 @@ execute as @a[gamemode=!spectator] if items entity @s armor.feet minecraft:nethe
 # Dash Shadow: si el encantamiento no llegó a usar la dirección (se los quitó), se borra igual
 scoreboard players remove @a[scores={sm.dgt=1..}] sm.dgt 1
 scoreboard players set @a[scores={sm.dgt=0,sm.dgo=1..}] sm.dgo 0
-# En creativo no: ahí el doble espacio es para volar
+# Aegis Heart: la Absorción al recibir un golpe va por el advancement aegis_hit; aquí la espera y el Wither
+scoreboard players remove @a[scores={sm.acd=1..}] sm.acd 1
+execute as @a[gamemode=!spectator] if items entity @s armor.chest minecraft:netherite_chestplate[minecraft:custom_data~{secret_milestones:"aegis_heart"}] run function secret_milestones:item/aegis_heart/wear
+# Dash Shadow en creativo no: ahí el doble espacio es para volar
 execute as @a[gamemode=!spectator,gamemode=!creative] if items entity @s armor.legs minecraft:netherite_leggings[minecraft:custom_data~{secret_milestones:"dash_shadow"}] run function secret_milestones:item/dash_shadow/wear

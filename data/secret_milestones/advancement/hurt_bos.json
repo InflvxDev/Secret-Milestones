@@ -1,0 +1,1499 @@
+{
+  "criteria": {
+    "b0": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 0.0,
+            "max": 0.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b1": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 0.5,
+            "max": 0.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b2": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 1.0,
+            "max": 1.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b3": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 1.5,
+            "max": 1.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b4": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 2.0,
+            "max": 2.4999000000000002
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b5": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 2.5,
+            "max": 2.9999000000000002
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b6": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 3.0,
+            "max": 3.4999000000000002
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b7": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 3.5,
+            "max": 3.9999000000000002
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b8": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 4.0,
+            "max": 4.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b9": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 4.5,
+            "max": 4.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b10": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 5.0,
+            "max": 5.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b11": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 5.5,
+            "max": 5.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b12": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 6.0,
+            "max": 6.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b13": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 6.5,
+            "max": 6.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b14": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 7.0,
+            "max": 7.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b15": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 7.5,
+            "max": 7.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b16": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 8.0,
+            "max": 8.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b17": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 8.5,
+            "max": 8.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b18": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 9.0,
+            "max": 9.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b19": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 9.5,
+            "max": 9.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b20": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 10.0,
+            "max": 10.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b21": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 10.5,
+            "max": 10.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b22": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 11.0,
+            "max": 11.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b23": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 11.5,
+            "max": 11.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b24": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 12.0,
+            "max": 12.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b25": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 12.5,
+            "max": 12.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b26": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 13.0,
+            "max": 13.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b27": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 13.5,
+            "max": 13.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b28": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 14.0,
+            "max": 14.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b29": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 14.5,
+            "max": 14.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b30": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 15.0,
+            "max": 15.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b31": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 15.5,
+            "max": 15.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b32": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 16.0,
+            "max": 16.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b33": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 16.5,
+            "max": 16.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b34": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 17.0,
+            "max": 17.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b35": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 17.5,
+            "max": 17.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b36": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 18.0,
+            "max": 18.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b37": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 18.5,
+            "max": 18.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b38": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 19.0,
+            "max": 19.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b39": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 19.5,
+            "max": 19.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b40": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 20.0,
+            "max": 20.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b41": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 20.5,
+            "max": 20.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b42": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 21.0,
+            "max": 21.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b43": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 21.5,
+            "max": 21.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b44": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 22.0,
+            "max": 22.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b45": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 22.5,
+            "max": 22.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b46": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 23.0,
+            "max": 23.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b47": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 23.5,
+            "max": 23.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b48": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 24.0,
+            "max": 24.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b49": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 24.5,
+            "max": 24.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b50": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 25.0,
+            "max": 25.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b51": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 25.5,
+            "max": 25.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b52": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 26.0,
+            "max": 26.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b53": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 26.5,
+            "max": 26.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b54": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 27.0,
+            "max": 27.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b55": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 27.5,
+            "max": 27.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b56": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 28.0,
+            "max": 28.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b57": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 28.5,
+            "max": 28.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b58": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 29.0,
+            "max": 29.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b59": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 29.5,
+            "max": 29.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b60": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 30.0,
+            "max": 30.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b61": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 30.5,
+            "max": 30.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b62": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 31.0,
+            "max": 31.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b63": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 31.5,
+            "max": 31.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b64": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 32.0,
+            "max": 32.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b65": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 32.5,
+            "max": 32.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b66": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 33.0,
+            "max": 33.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b67": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 33.5,
+            "max": 33.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b68": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 34.0,
+            "max": 34.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b69": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 34.5,
+            "max": 34.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b70": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 35.0,
+            "max": 35.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b71": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 35.5,
+            "max": 35.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b72": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 36.0,
+            "max": 36.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b73": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 36.5,
+            "max": 36.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b74": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 37.0,
+            "max": 37.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b75": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 37.5,
+            "max": 37.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b76": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 38.0,
+            "max": 38.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b77": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 38.5,
+            "max": 38.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b78": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 39.0,
+            "max": 39.4999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b79": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 39.5,
+            "max": 39.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b80": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 40,
+            "max": 44.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b81": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 45,
+            "max": 49.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b82": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 50,
+            "max": 54.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b83": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 55,
+            "max": 59.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b84": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 60,
+            "max": 64.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b85": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 65,
+            "max": 69.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b86": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 70,
+            "max": 74.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b87": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 75,
+            "max": 79.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b88": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 80,
+            "max": 84.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b89": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 85,
+            "max": 89.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b90": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 90,
+            "max": 94.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b91": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 95,
+            "max": 99.9999
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    },
+    "b92": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 100,
+            "max": 100000
+          },
+          "blocked": false,
+          "source_entity": {
+            "entity_type": "#secret_milestones:bosses"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "b0",
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7",
+      "b8",
+      "b9",
+      "b10",
+      "b11",
+      "b12",
+      "b13",
+      "b14",
+      "b15",
+      "b16",
+      "b17",
+      "b18",
+      "b19",
+      "b20",
+      "b21",
+      "b22",
+      "b23",
+      "b24",
+      "b25",
+      "b26",
+      "b27",
+      "b28",
+      "b29",
+      "b30",
+      "b31",
+      "b32",
+      "b33",
+      "b34",
+      "b35",
+      "b36",
+      "b37",
+      "b38",
+      "b39",
+      "b40",
+      "b41",
+      "b42",
+      "b43",
+      "b44",
+      "b45",
+      "b46",
+      "b47",
+      "b48",
+      "b49",
+      "b50",
+      "b51",
+      "b52",
+      "b53",
+      "b54",
+      "b55",
+      "b56",
+      "b57",
+      "b58",
+      "b59",
+      "b60",
+      "b61",
+      "b62",
+      "b63",
+      "b64",
+      "b65",
+      "b66",
+      "b67",
+      "b68",
+      "b69",
+      "b70",
+      "b71",
+      "b72",
+      "b73",
+      "b74",
+      "b75",
+      "b76",
+      "b77",
+      "b78",
+      "b79",
+      "b80",
+      "b81",
+      "b82",
+      "b83",
+      "b84",
+      "b85",
+      "b86",
+      "b87",
+      "b88",
+      "b89",
+      "b90",
+      "b91",
+      "b92"
+    ]
+  ],
+  "rewards": {
+    "function": "secret_milestones:gen/hurt_bos"
+  }
+}

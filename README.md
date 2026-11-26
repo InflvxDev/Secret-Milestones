@@ -18,6 +18,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 9 | Minar en las cuevas profundas: 100.000 de deepslate, 25.000 de tuff y menas de deepslate: 3500 de diamante, 5000 de redstone, 3000 de oro, 3000 de hierro, 2000 de lapislázuli y 1000 de cobre | **DeepMine Crown**: casco de netherita irrompible con todas las protecciones, Respiración III, Afinidad acuática y Espinas III, da Visión nocturna e inmunidad a la Oscuridad puesto |
 | 10 | Excavar 250.000 bloques blandos (tierra, arena, grava, nieve, barro...) | **Terra Magnet**: pala de netherita irrompible con Eficiencia V y Toque de seda; lo que excava con ella va directo al inventario |
 | 11 | Recorrer 300 km agachado, 1000 km corriendo y saltar 100.000 veces | **Dash Shadow**: pantalones de netherita irrompibles con todas las protecciones, Sigilo rápido V y Espinas III; doble espacio con WASD apretada da un dash hacia esa dirección |
+| 12 | Aguantar daño (antes de la armadura): 50.000 corazones de golpes, 25.000 de proyectiles, 10.000 de explosiones, 10.000 de fuego y lava y 5.000 de jefes | **Aegis Heart**: pechera de netherita irrompible con todas las protecciones y Espinas III; al recibir un golpe da Absorción II y te hace inmune al Wither |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -139,6 +140,22 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 - **Saltos:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 500 a cada jugador (`#jump_cap` en `load`). Saltar en el mismo lugar con una macro deja de sumar. En el panel salen los saltos fuera de cupo.
 - **Anti-AFK:** el mismo del hito de los 1000 días. Si pasa 2 minutos sin girar la cámara no suma nada.
 - Solo en survival o aventura. Las metas están en `milestone/check_all` (en cm para las distancias) y los textos en `milestone/registry` y `milestone/movement/`.
+
+## Aegis Heart
+- **Encantamientos:** Protección, Protección contra el fuego, contra explosiones y contra proyectiles IV y Espinas III. Sin maldiciones.
+- **Corazón de hierro:** al recibir daño (de lo que sea) da Absorción II por 10 segundos: 4 corazones extra. Después espera 20 segundos (`#aegis_cd` en `load`, en ticks).
+- **Inmune al Wither:** el efecto del Wither y del wither skeleton se quita al instante.
+
+## Reglas del hito del daño
+- Hay que llegar a la meta de **cada uno**: 50.000 corazones de golpes, 25.000 de proyectiles, 10.000 de explosiones, 10.000 de fuego y lava y 5.000 de jefes. Lo que pasa de la meta en uno no suma para otro.
+- **Cuenta el daño antes de la armadura**: lo que pega el golpe, sin restar armadura, encantamientos, Resistencia ni Absorción. Así el mejor equipo no frena el hito. En Difícil los mobs pegan más y se avanza más rápido.
+- **Golpes, proyectiles y explosiones:** solo si los causa un mob (`tags/entity_type/attackers.json`). No cuentan PvP, TNT, camas, anclas de reaparición, end crystals ni dispensadores.
+- **Fuego y lava:** fuego, lava, magma y quemarse. Lo que anula la Resistencia al fuego no cuenta, porque el juego ni registra el golpe.
+- **Jefes:** Wither, Ender Dragon, Warden y Elder Guardian (`tags/entity_type/bosses.json`). Su daño cuenta también para su tipo (golpe, proyectil o explosión).
+- **Lo bloqueado con escudo no cuenta.** Tampoco la caída, el ahogo, la asfixia, el vacío ni `/kill`.
+- **Cupo por zona:** cada zona de 16x16x16 le cuenta a cada jugador hasta 250 corazones de cada tipo y 50 de fuego y lava (`#hcap_*` en `load`, en décimas de vida: 1 corazón = 20). Una granja de mobs fija o quedarse en lava curándose deja de sumar. Los jefes no tienen cupo. En el panel sale lo que quedó fuera de cupo.
+- **Anti-AFK:** el mismo del hito de los 1000 días. Solo en survival o aventura.
+- **Cómo se mide:** ninguna estadística guarda el daño antes de la armadura. Cada tipo tiene un advancement (`hurt_*`) con un criterio por tramo de daño: de medio punto de vida en medio punto hasta 20 corazones (exacto para el daño vanilla), de a 2,5 corazones hasta 50, y un tramo de 50 o más. Se generan con `python tools/generate.py` (`HURT`, `BOSSES`, `HURT_EXTRA`).
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.

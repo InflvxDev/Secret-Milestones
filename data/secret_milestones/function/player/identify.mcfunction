@@ -13,3 +13,4 @@ function secret_milestones:milestone/log_100k/restore with storage secret_milest
 function secret_milestones:milestone/deep_mine/restore with storage secret_milestones:tmp who
 function secret_milestones:milestone/soil_250k/restore with storage secret_milestones:tmp who
 function secret_milestones:milestone/movement/restore with storage secret_milestones:tmp who
+function secret_milestones:milestone/hurt/restore with storage secret_milestones:tmp who

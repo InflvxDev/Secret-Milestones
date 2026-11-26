@@ -107,6 +107,23 @@ scoreboard objectives add sm.dair dummy
 scoreboard objectives add sm.dgo dummy
 scoreboard objectives add sm.dpb dummy
 scoreboard objectives add sm.dgt dummy
+# Hito 12: daño recibido antes de la armadura, en décimas de vida (1 corazón = 20), de cada tipo:
+# golpes, proyectiles, explosiones, fuego y lava, y jefes. Metas en milestone/check_all.
+scoreboard objectives add sm.hmel dummy
+scoreboard objectives add sm.hpro dummy
+scoreboard objectives add sm.hexp dummy
+scoreboard objectives add sm.hfir dummy
+scoreboard objectives add sm.hbos dummy
+scoreboard players set #20 sm.calc 20
+# Cuánto daño le cuenta a cada jugador cada zona de 16x16x16 (en décimas: 5000 = 250 corazones; 0 = sin cupo)
+scoreboard players set #hcap_mel sm.calc 5000
+scoreboard players set #hcap_pro sm.calc 5000
+scoreboard players set #hcap_exp sm.calc 5000
+scoreboard players set #hcap_fir sm.calc 1000
+scoreboard players set #hcap_bos sm.calc 0
+# Aegis Heart: espera entre una Absorción y la siguiente (ticks)
+scoreboard objectives add sm.acd dummy
+scoreboard players set #aegis_cd sm.calc 400
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []
@@ -125,5 +142,6 @@ execute unless data storage secret_milestones:claimed log_100k run data modify s
 execute unless data storage secret_milestones:claimed deep_mine run data modify storage secret_milestones:claimed deep_mine set value []
 execute unless data storage secret_milestones:claimed soil_250k run data modify storage secret_milestones:claimed soil_250k set value []
 execute unless data storage secret_milestones:claimed movement run data modify storage secret_milestones:claimed movement set value []
+execute unless data storage secret_milestones:claimed hurt run data modify storage secret_milestones:claimed hurt set value []
 
 execute as @a run function secret_milestones:player/login
