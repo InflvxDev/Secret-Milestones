@@ -34,3 +34,5 @@ execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.hmel=1000000.
 # Hito 5: el Nether no cuenta (sus coordenadas valen x8). En creativo no suma.
 execute as @e[type=minecraft:player,gamemode=!spectator,gamemode=!creative] at @s unless dimension minecraft:the_nether run function secret_milestones:milestone/farlands/scan
 execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.far=1..}] if score @s sm.far >= #farlands sm.calc run function secret_milestones:milestone/farlands/check
+# Hito 13: va al final para que, si una pieza se cobra en este segundo, la espada llegue en el mismo
+execute as @e[type=minecraft:player,gamemode=!spectator] run function secret_milestones:milestone/armor_set/check

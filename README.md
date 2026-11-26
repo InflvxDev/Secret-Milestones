@@ -19,6 +19,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 10 | Excavar 250.000 bloques blandos (tierra, arena, grava, nieve, barro...) | **Terra Magnet**: pala de netherita irrompible con Eficiencia V y Toque de seda; lo que excava con ella va directo al inventario |
 | 11 | Recorrer 300 km agachado, 1000 km corriendo y saltar 100.000 veces | **Dash Shadow**: pantalones de netherita irrompibles con todas las protecciones, Sigilo rápido V y Espinas III; doble espacio con WASD apretada da un dash hacia esa dirección |
 | 12 | Aguantar daño (antes de la armadura): 50.000 corazones de golpes, 25.000 de proyectiles, 10.000 de explosiones, 10.000 de fuego y lava y 5.000 de jefes | **Aegis Heart**: pechera de netherita irrompible con todas las protecciones y Espinas III; puesta da Resistencia II y te hace inmune al Wither |
+| 13 | Conseguir las 4 piezas de armadura secretas (hitos 5, 9, 11 y 12) | **Españita Chaos Sword**: espada de netherita irrompible con Filo V, Castigo V, Perdición de los artrópodos V, Botín V y Barrido V; en la mano da Fuerza II, y sus golpes a veces dan un efecto negativo |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -156,6 +157,18 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 - **Cupo por zona:** cada zona de 16x16x16 le cuenta a cada jugador hasta 250 corazones de cada tipo y 50 de fuego y lava (`#hcap_*` en `load`, en décimas de vida: 1 corazón = 20). Una granja de mobs fija o quedarse en lava curándose deja de sumar. Los jefes no tienen cupo. En el panel sale lo que quedó fuera de cupo.
 - **Anti-AFK:** el mismo del hito de los 1000 días. Solo en survival o aventura.
 - **Cómo se mide:** ninguna estadística guarda el daño antes de la armadura. Cada tipo tiene un advancement (`hurt_*`) con un criterio por tramo de daño: de medio punto de vida en medio punto hasta 20 corazones (exacto para el daño vanilla), de a 2,5 corazones hasta 50, y un tramo de 50 o más. Se generan con `python tools/generate.py` (`HURT`, `BOSSES`, `HURT_EXTRA`).
+
+## Españita Chaos Sword
+- **Encantamientos:** Filo, Castigo y Perdición de los artrópodos V juntos, Botín V y Barrido V (en vanilla Botín y Barrido llegan a III). Sin maldiciones. Trae también **Caos**, un encantamiento propio del datapack que es el que da los efectos.
+- **Fuerza II:** mientras está en la mano principal. Dura hasta 3 segundos más al guardarla.
+- **Caos:** cada golpe con la espada puede darle a lo golpeado un efecto al azar: Wither (4 s), Náusea (6 s), Ceguera (3 s), Lentitud II (4 s) o Debilidad (5 s). La probabilidad es **acumulable**: empieza en 0,2%, sube 0,2% por cada golpe sin suerte hasta un máximo de 5%, y cuando sale vuelve a 0,2%. En promedio sale cada unos 25 golpes. Se cambia en `load` (`#chaos_base`, `#chaos_step` y `#chaos_max`, en milésimas).
+- Cuentan también los golpes del Barrido, cada uno por su lado. Cada jugador lleva su propia probabilidad; se reinicia con `/reload`.
+- La Náusea solo se nota en jugadores, y los mobs muertos vivientes son inmunes al Wither. La piedra de afilar le quita los encantamientos, también el Caos.
+
+## Reglas del hito de la armadura
+- Cuenta haber **cobrado** los 4 hitos de armadura: DeepMine Crown (9), Aegis Heart (12), Dash Shadow (11) y Farlands Explorer (5). No hace falta tenerlas encima, y perder una no lo quita.
+- Las que se sacan con "Obtener recompensa" del panel no cuentan.
+- Si ya cobró las 4 antes de esta versión, la espada llega sola en el siguiente segundo.
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.

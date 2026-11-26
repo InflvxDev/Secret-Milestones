@@ -123,6 +123,13 @@ scoreboard players set #hcap_fir sm.calc 1000
 scoreboard players set #hcap_bos sm.calc 0
 # Aegis Heart: la tenía puesta el tick anterior
 scoreboard objectives add sm.aworn dummy
+# Hito 13: Españita Chaos Sword. La tenía en la mano el tick anterior, y su probabilidad de caos en milésimas:
+# empieza en #chaos_base, sube #chaos_step por cada golpe sin suerte hasta #chaos_max, y al salir vuelve a empezar.
+scoreboard objectives add sm.sheld dummy
+scoreboard objectives add sm.chaos dummy
+scoreboard players set #chaos_base sm.calc 2
+scoreboard players set #chaos_step sm.calc 2
+scoreboard players set #chaos_max sm.calc 50
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []
@@ -142,5 +149,6 @@ execute unless data storage secret_milestones:claimed deep_mine run data modify 
 execute unless data storage secret_milestones:claimed soil_250k run data modify storage secret_milestones:claimed soil_250k set value []
 execute unless data storage secret_milestones:claimed movement run data modify storage secret_milestones:claimed movement set value []
 execute unless data storage secret_milestones:claimed hurt run data modify storage secret_milestones:claimed hurt set value []
+execute unless data storage secret_milestones:claimed armor_set run data modify storage secret_milestones:claimed armor_set set value []
 
 execute as @a run function secret_milestones:player/login

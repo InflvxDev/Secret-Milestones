@@ -51,6 +51,9 @@ execute as @a[gamemode=!spectator] if items entity @s armor.feet minecraft:nethe
 # Dash Shadow: si el encantamiento no llegó a usar la dirección (se los quitó), se borra igual
 scoreboard players remove @a[scores={sm.dgt=1..}] sm.dgt 1
 scoreboard players set @a[scores={sm.dgt=0,sm.dgo=1..}] sm.dgo 0
+# Españita Chaos Sword (igual que el Debris Finder, con Fuerza II). El caos al golpear va por enchantment/chaos.json
+scoreboard players remove @a[scores={sm.sheld=1..}] sm.sheld 1
+execute as @a[gamemode=!spectator] if items entity @s weapon.mainhand minecraft:netherite_sword[minecraft:custom_data~{secret_milestones:"chaos_sword"}] run function secret_milestones:item/chaos_sword/hold
 # Aegis Heart (igual que las Farlands Explorer, con Resistencia II)
 scoreboard players remove @a[scores={sm.aworn=1..}] sm.aworn 1
 execute as @a[gamemode=!spectator] if items entity @s armor.chest minecraft:netherite_chestplate[minecraft:custom_data~{secret_milestones:"aegis_heart"}] run function secret_milestones:item/aegis_heart/wear
