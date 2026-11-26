@@ -18,7 +18,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 9 | Minar en las cuevas profundas: 100.000 de deepslate, 25.000 de tuff y menas de deepslate: 3500 de diamante, 5000 de redstone, 3000 de oro, 3000 de hierro, 2000 de lapislázuli y 1000 de cobre | **DeepMine Crown**: casco de netherita irrompible con todas las protecciones, Respiración III, Afinidad acuática y Espinas III, da Visión nocturna e inmunidad a la Oscuridad puesto |
 | 10 | Excavar 250.000 bloques blandos (tierra, arena, grava, nieve, barro...) | **Terra Magnet**: pala de netherita irrompible con Eficiencia V y Toque de seda; lo que excava con ella va directo al inventario |
 | 11 | Recorrer 300 km agachado, 1000 km corriendo y saltar 100.000 veces | **Dash Shadow**: pantalones de netherita irrompibles con todas las protecciones, Sigilo rápido V y Espinas III; doble espacio con WASD apretada da un dash hacia esa dirección |
-| 12 | Aguantar daño (antes de la armadura): 50.000 corazones de golpes, 25.000 de proyectiles, 10.000 de explosiones, 10.000 de fuego y lava y 5.000 de jefes | **Aegis Heart**: pechera de netherita irrompible con todas las protecciones y Espinas III; al recibir un golpe da Absorción II y te hace inmune al Wither |
+| 12 | Aguantar daño (antes de la armadura): 50.000 corazones de golpes, 25.000 de proyectiles, 10.000 de explosiones, 10.000 de fuego y lava y 5.000 de jefes | **Aegis Heart**: pechera de netherita irrompible con todas las protecciones y Espinas III; puesta da Resistencia II y te hace inmune al Wither |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -143,7 +143,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 
 ## Aegis Heart
 - **Encantamientos:** Protección, Protección contra el fuego, contra explosiones y contra proyectiles IV y Espinas III. Sin maldiciones.
-- **Corazón de hierro:** al recibir daño (de lo que sea) da Absorción II por 10 segundos: 4 corazones extra. Después espera 20 segundos (`#aegis_cd` en `load`, en ticks).
+- **Resistencia II:** mientras está puesta (40% menos de daño). Dura hasta 3 segundos más al quitarla.
 - **Inmune al Wither:** el efecto del Wither y del wither skeleton se quita al instante.
 
 ## Reglas del hito del daño

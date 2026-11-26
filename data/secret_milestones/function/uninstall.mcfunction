@@ -58,7 +58,7 @@ scoreboard objectives remove sm.hpro
 scoreboard objectives remove sm.hexp
 scoreboard objectives remove sm.hfir
 scoreboard objectives remove sm.hbos
-scoreboard objectives remove sm.acd
+scoreboard objectives remove sm.aworn
 kill @e[type=minecraft:marker,tag=sm.aim]
 tag @a remove sm.admin
 data remove storage secret_milestones:tmp who

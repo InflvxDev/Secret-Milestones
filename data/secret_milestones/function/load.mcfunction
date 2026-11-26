@@ -121,9 +121,8 @@ scoreboard players set #hcap_pro sm.calc 5000
 scoreboard players set #hcap_exp sm.calc 5000
 scoreboard players set #hcap_fir sm.calc 1000
 scoreboard players set #hcap_bos sm.calc 0
-# Aegis Heart: espera entre una Absorción y la siguiente (ticks)
-scoreboard objectives add sm.acd dummy
-scoreboard players set #aegis_cd sm.calc 400
+# Aegis Heart: la tenía puesta el tick anterior
+scoreboard objectives add sm.aworn dummy
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []
