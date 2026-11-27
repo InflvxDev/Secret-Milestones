@@ -62,6 +62,11 @@ scoreboard objectives remove sm.aworn
 scoreboard objectives remove sm.sheld
 scoreboard objectives remove sm.chaos
 scoreboard objectives remove sm.mchaos
+scoreboard objectives remove sm.tchaos
+scoreboard objectives remove sm.tproc
+scoreboard objectives remove sm.tgo
+scoreboard objectives remove sm.tfall
+scoreboard objectives remove sm.tcd
 function secret_milestones:gen/feast_uninstall
 scoreboard objectives remove sm.food
 kill @e[type=minecraft:marker,tag=sm.mimp]

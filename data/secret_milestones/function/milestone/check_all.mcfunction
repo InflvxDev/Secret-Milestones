@@ -43,3 +43,5 @@ execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.food=1..}] if
 execute as @e[type=minecraft:player,gamemode=!spectator] run function secret_milestones:milestone/armor_set/check
 # Hito 15: igual, con las 4 herramientas
 execute as @e[type=minecraft:player,gamemode=!spectator] run function secret_milestones:milestone/tool_set/check
+# Hito 17: después de la espada y el mazo, para que si uno se cobra en este segundo el tridente llegue en el mismo
+execute as @e[type=minecraft:player,gamemode=!spectator] run function secret_milestones:milestone/weapon_set/check

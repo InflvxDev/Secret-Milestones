@@ -60,6 +60,12 @@ scoreboard players set @a[scores={sm.dgt=0,sm.dgo=1..}] sm.dgo 0
 execute as @e[type=minecraft:item_display,tag=sm.hb] at @s run function secret_milestones:item/thorfinn/fly
 # sm.huse: 2 mientras mantiene el clic derecho con la azada; baja a 0 al soltar (un lanzamiento por clic)
 scoreboard players remove @a[scores={sm.huse=1..}] sm.huse 1
+# Españita Chaos Trident: cada tridente nuevo se revisa una vez (agachado al lanzarlo sale con Propulsión).
+# Los rayos van por enchantment/trident_chaos.json. Sin daño de caída hasta tocar el suelo (después de 10 ticks).
+execute as @e[type=minecraft:trident,tag=!sm.tseen] run function secret_milestones:item/chaos_trident/thrown
+scoreboard players remove @a[scores={sm.tcd=1..}] sm.tcd 1
+scoreboard players remove @a[scores={sm.tfall=1..}] sm.tfall 1
+execute as @a[scores={sm.tfall=1..90}] if predicate secret_milestones:on_ground run scoreboard players set @s sm.tfall 0
 # Españita Chaos Sword (igual que el Debris Finder, con Fuerza II). El caos al golpear va por enchantment/chaos.json
 scoreboard players remove @a[scores={sm.sheld=1..}] sm.sheld 1
 execute as @a[gamemode=!spectator] if items entity @s weapon.mainhand minecraft:netherite_sword[minecraft:custom_data~{secret_milestones:"chaos_sword"}] run function secret_milestones:item/chaos_sword/hold

@@ -1,0 +1,82 @@
+{
+  "description": {"text": "Caos"},
+  "supported_items": "minecraft:trident",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {"base": 1, "per_level_above_first": 0},
+  "max_cost": {"base": 1, "per_level_above_first": 0},
+  "anvil_cost": 8,
+  "slots": ["mainhand"],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "secret_milestones:item/chaos_trident/hit"
+        },
+        "requirements": {
+          "type": "minecraft:entity_properties",
+          "entity": "direct_attacker",
+          "predicate": {"minecraft:entity_type": "minecraft:trident"}
+        }
+      },
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {"type": "minecraft:summon_entity", "entity": "minecraft:lightning_bolt"},
+            {"type": "minecraft:play_sound", "sound": "minecraft:item.trident.thunder", "volume": 5.0, "pitch": 1.0},
+            {"type": "minecraft:run_function", "function": "secret_milestones:item/chaos_trident/struck"}
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {"minecraft:entity_type": "minecraft:trident"}
+            },
+            {"type": "minecraft:entity_scores", "entity": "attacker", "scores": {"sm.tproc": 1}}
+          ]
+        }
+      }
+    ],
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [0.0, 0.0, 1.0],
+              "coordinate_scale": [1.0, 1.0, 1.0],
+              "magnitude": 2.5
+            },
+            {"type": "minecraft:run_function", "function": "secret_milestones:item/chaos_trident/launched"}
+          ]
+        },
+        "requirements": {"type": "minecraft:entity_scores", "entity": "this", "scores": {"sm.tgo": 1}}
+      }
+    ],
+    "minecraft:damage_immunity": [
+      {
+        "effect": {},
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:damage_source_properties",
+              "predicate": {"tags": [{"id": "#minecraft:is_fall", "expected": true}]}
+            },
+            {"type": "minecraft:entity_scores", "entity": "this", "scores": {"sm.tfall": {"min": 1}}}
+          ]
+        }
+      }
+    ]
+  }
+}
