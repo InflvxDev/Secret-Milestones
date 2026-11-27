@@ -142,6 +142,14 @@ scoreboard objectives add sm.hg dummy
 scoreboard objectives add sm.hbs dummy
 scoreboard objectives add sm.hage dummy
 scoreboard objectives add sm.huse dummy
+# Hito 15: Españita Chaos Mace. Probabilidad de caos de cada golpe pesado, en milésimas (como la espada, más alta
+# porque los golpes pesados son pocos): empieza en #mchaos_base, sube #mchaos_step por golpe sin suerte hasta #mchaos_max.
+# En promedio sale cada unos 10 golpes pesados. #mchaos_lift: fuerza hacia arriba con la que salen los mobs (milésimas).
+scoreboard objectives add sm.mchaos dummy
+scoreboard players set #mchaos_base sm.calc 15
+scoreboard players set #mchaos_step sm.calc 15
+scoreboard players set #mchaos_max sm.calc 250
+scoreboard players set #mchaos_lift sm.calc 1100
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []
@@ -163,5 +171,6 @@ execute unless data storage secret_milestones:claimed movement run data modify s
 execute unless data storage secret_milestones:claimed hurt run data modify storage secret_milestones:claimed hurt set value []
 execute unless data storage secret_milestones:claimed armor_set run data modify storage secret_milestones:claimed armor_set set value []
 execute unless data storage secret_milestones:claimed harvest run data modify storage secret_milestones:claimed harvest set value []
+execute unless data storage secret_milestones:claimed tool_set run data modify storage secret_milestones:claimed tool_set set value []
 
 execute as @a run function secret_milestones:player/login

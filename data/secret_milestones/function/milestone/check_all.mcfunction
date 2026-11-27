@@ -38,3 +38,5 @@ execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.far=1..}] if 
 execute as @e[type=minecraft:player,gamemode=!spectator,scores={sm.harv=1..}] if score @s sm.harv >= #harvest_goal sm.calc run function secret_milestones:milestone/harvest/check
 # Hito 13: va al final para que, si una pieza se cobra en este segundo, la espada llegue en el mismo
 execute as @e[type=minecraft:player,gamemode=!spectator] run function secret_milestones:milestone/armor_set/check
+# Hito 15: igual, con las 4 herramientas
+execute as @e[type=minecraft:player,gamemode=!spectator] run function secret_milestones:milestone/tool_set/check

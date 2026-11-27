@@ -21,6 +21,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 12 | Aguantar daño (antes de la armadura): 50.000 corazones de golpes, 25.000 de proyectiles, 10.000 de explosiones, 10.000 de fuego y lava y 5.000 de jefes | **Aegis Heart**: pechera de netherita irrompible con todas las protecciones y Espinas III; puesta da Resistencia II y te hace inmune al Wither |
 | 13 | Conseguir las 4 piezas de armadura secretas (hitos 5, 9, 11 y 12) | **Españita Chaos Sword**: espada de netherita irrompible con Filo V, Castigo V, Perdición de los artrópodos V, Botín V y Barrido V; en la mano da Fuerza II, y sus golpes a veces dan un efecto negativo |
 | 14 | Cosechar cultivos maduros: 10.000 de trigo, zanahoria, papa, remolacha y verruga del Nether, y 5.000 melones y calabazas | **Thorfinn Harvest**: azada de netherita irrompible con Fortuna V y Eficiencia V; clic derecho en un cultivo la lanza como un boomerang que cosecha en cadena, replanta y vuelve con lo cosechado |
+| 15 | Conseguir las 4 herramientas secretas (un pico de los hitos 1 o 3, y los hitos 8, 10 y 14) | **Españita Chaos Mace**: mazo irrompible con Densidad V, Brecha IV y Carga de viento III; sus golpes pesados a veces lanzan por el aire a los mobs cercanos |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -190,6 +191,18 @@ Por Thorfinn, de Vinland Saga.
 - No cuentan las granjas automáticas (aldeanos, pistones, agua): solo lo que rompe el jugador.
 - **Anti-AFK:** el mismo del hito de los 1000 días. Solo en survival o aventura.
 - La lista y las metas están en `tools/generate.py` (`CROPS`, `FRUITS` y `CHAIN`). Después de editarla ejecuta `python tools/generate.py`, y cambia también los textos en `milestone/registry`.
+
+## Españita Chaos Mace
+- **Encantamientos:** Densidad V, Brecha IV y Carga de viento III. Densidad y Brecha juntos no se pueden en vanilla. Sin maldiciones. Trae también **Caos**, un encantamiento propio del datapack (otro que el de la espada, con el mismo nombre) que es el que lanza a los mobs.
+- **Caos:** cada **golpe pesado** (cayendo 1,5 bloques o más, como el golpe pesado de vanilla) puede lanzar por el aire, hacia afuera desde el golpe, a los mobs que estén a 5 bloques o menos de lo golpeado, incluido lo golpeado. La caída después les hace daño. La probabilidad es **acumulable**, el mismo sistema que la espada: empieza en 1,5%, sube 1,5% por cada golpe pesado sin suerte hasta un máximo de 25%, y cuando sale vuelve a 1,5%. En promedio sale cada unos 10 golpes pesados. Se cambia en `load` (`#mchaos_base`, `#mchaos_step` y `#mchaos_max`, en milésimas; `#mchaos_lift` es la fuerza hacia arriba).
+- **Solo mobs** (`tags/entity_type/attackers.json`): no lanza jugadores ni jefes (Wither, Ender Dragon, Warden, Elder Guardian). Ojo: también lanza a los mobs mansos y a las mascotas que estén cerca.
+- Cada jugador lleva su propia probabilidad, aparte de la de la espada; se reinicia con `/reload`. Más allá de los 2.147.000 bloques (camino a las Farlands) los mobs solo salen hacia arriba.
+- **Ojo:** la piedra de afilar le quita los encantamientos, también el Caos.
+
+## Reglas del hito de las herramientas
+- Cuenta haber **cobrado** los 4 hitos de herramientas: un pico (Chunk Destroyer Infinitum, 1, **o** Debris Finder, 3), Woodozer (8), Terra Magnet (10) y Thorfinn Harvest (14). No hace falta tenerlas encima, y perder una no lo quita.
+- Las que se sacan con "Obtener recompensa" del panel no cuentan.
+- Si ya cobró las 4 antes de esta versión, el mazo llega solo en el siguiente segundo.
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.

@@ -61,6 +61,9 @@ scoreboard objectives remove sm.hbos
 scoreboard objectives remove sm.aworn
 scoreboard objectives remove sm.sheld
 scoreboard objectives remove sm.chaos
+scoreboard objectives remove sm.mchaos
+kill @e[type=minecraft:marker,tag=sm.mimp]
+kill @e[type=minecraft:marker,tag=sm.mdir]
 function secret_milestones:gen/harvest_uninstall
 scoreboard objectives remove sm.harv
 scoreboard objectives remove sm.hg
