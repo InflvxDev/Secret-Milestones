@@ -1,0 +1,43 @@
+# GENERADO por tools/generate.py: no editar a mano
+# Lo comido de cada comida desde el último segundo
+scoreboard objectives add sm.f.apple minecraft.used:minecraft.apple
+scoreboard objectives add sm.f.baked_potato minecraft.used:minecraft.baked_potato
+scoreboard objectives add sm.f.beef minecraft.used:minecraft.beef
+scoreboard objectives add sm.f.beetroot minecraft.used:minecraft.beetroot
+scoreboard objectives add sm.f.beetroot_soup minecraft.used:minecraft.beetroot_soup
+scoreboard objectives add sm.f.bread minecraft.used:minecraft.bread
+scoreboard objectives add sm.f.carrot minecraft.used:minecraft.carrot
+scoreboard objectives add sm.f.chicken minecraft.used:minecraft.chicken
+scoreboard objectives add sm.f.chorus_fruit minecraft.used:minecraft.chorus_fruit
+scoreboard objectives add sm.f.cod minecraft.used:minecraft.cod
+scoreboard objectives add sm.f.cooked_beef minecraft.used:minecraft.cooked_beef
+scoreboard objectives add sm.f.cooked_chicken minecraft.used:minecraft.cooked_chicken
+scoreboard objectives add sm.f.cooked_cod minecraft.used:minecraft.cooked_cod
+scoreboard objectives add sm.f.cooked_mutton minecraft.used:minecraft.cooked_mutton
+scoreboard objectives add sm.f.cooked_porkchop minecraft.used:minecraft.cooked_porkchop
+scoreboard objectives add sm.f.cooked_rabbit minecraft.used:minecraft.cooked_rabbit
+scoreboard objectives add sm.f.cooked_salmon minecraft.used:minecraft.cooked_salmon
+scoreboard objectives add sm.f.cookie minecraft.used:minecraft.cookie
+scoreboard objectives add sm.f.dried_kelp minecraft.used:minecraft.dried_kelp
+scoreboard objectives add sm.f.glow_berries minecraft.used:minecraft.glow_berries
+scoreboard objectives add sm.f.golden_apple minecraft.used:minecraft.golden_apple
+scoreboard objectives add sm.f.golden_carrot minecraft.used:minecraft.golden_carrot
+scoreboard objectives add sm.f.honey_bottle minecraft.used:minecraft.honey_bottle
+scoreboard objectives add sm.f.melon_slice minecraft.used:minecraft.melon_slice
+scoreboard objectives add sm.f.mushroom_stew minecraft.used:minecraft.mushroom_stew
+scoreboard objectives add sm.f.mutton minecraft.used:minecraft.mutton
+scoreboard objectives add sm.f.poisonous_potato minecraft.used:minecraft.poisonous_potato
+scoreboard objectives add sm.f.porkchop minecraft.used:minecraft.porkchop
+scoreboard objectives add sm.f.potato minecraft.used:minecraft.potato
+scoreboard objectives add sm.f.pufferfish minecraft.used:minecraft.pufferfish
+scoreboard objectives add sm.f.pumpkin_pie minecraft.used:minecraft.pumpkin_pie
+scoreboard objectives add sm.f.rabbit minecraft.used:minecraft.rabbit
+scoreboard objectives add sm.f.rabbit_stew minecraft.used:minecraft.rabbit_stew
+scoreboard objectives add sm.f.rotten_flesh minecraft.used:minecraft.rotten_flesh
+scoreboard objectives add sm.f.salmon minecraft.used:minecraft.salmon
+scoreboard objectives add sm.f.spider_eye minecraft.used:minecraft.spider_eye
+scoreboard objectives add sm.f.suspicious_stew minecraft.used:minecraft.suspicious_stew
+scoreboard objectives add sm.f.sweet_berries minecraft.used:minecraft.sweet_berries
+scoreboard objectives add sm.f.tropical_fish minecraft.used:minecraft.tropical_fish
+scoreboard objectives add sm.f.cake minecraft.custom:minecraft.eat_cake_slice
+scoreboard players set #food_goal sm.calc 40

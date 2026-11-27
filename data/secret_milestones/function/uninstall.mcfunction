@@ -1,5 +1,5 @@
 # Desinstalar: /function secret_milestones:uninstall y después quitar el datapack.
-# No borra claimed, players, stone, zones, bow, debris*, fishing, farlands, redstone, life, logs, log_zones, deep, deep_zones, soils, soil_zones, moves, jump_zones, hurt, hurt_zones, harvest ni fruit_marks: sin esos registros, al reinstalar se
+# No borra claimed, players, stone, zones, bow, debris*, fishing, farlands, redstone, life, logs, log_zones, deep, deep_zones, soils, soil_zones, moves, jump_zones, hurt, hurt_zones, harvest, fruit_marks ni feast: sin esos registros, al reinstalar se
 # repetirían premios, se perdería el progreso y se vaciarían los cupos de los generadores.
 scoreboard objectives remove sm.calc
 scoreboard objectives remove sm.leave
@@ -62,6 +62,8 @@ scoreboard objectives remove sm.aworn
 scoreboard objectives remove sm.sheld
 scoreboard objectives remove sm.chaos
 scoreboard objectives remove sm.mchaos
+function secret_milestones:gen/feast_uninstall
+scoreboard objectives remove sm.food
 kill @e[type=minecraft:marker,tag=sm.mimp]
 kill @e[type=minecraft:marker,tag=sm.mdir]
 function secret_milestones:gen/harvest_uninstall

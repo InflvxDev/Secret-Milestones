@@ -150,6 +150,11 @@ scoreboard players set #mchaos_base sm.calc 15
 scoreboard players set #mchaos_step sm.calc 15
 scoreboard players set #mchaos_max sm.calc 250
 scoreboard players set #mchaos_lift sm.calc 1100
+# Hito 16: lo comido de cada comida desde el último segundo, y cuántas llegaron a 500 (lista en tools/generate.py)
+function secret_milestones:gen/feast_load
+scoreboard objectives add sm.food dummy
+# Eternal Feast: probabilidad de la bendición (un efecto bueno fuerte por 1 minuto) cada vez que se come, en milésimas
+scoreboard players set #feast_boost sm.calc 20
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []
@@ -172,5 +177,6 @@ execute unless data storage secret_milestones:claimed hurt run data modify stora
 execute unless data storage secret_milestones:claimed armor_set run data modify storage secret_milestones:claimed armor_set set value []
 execute unless data storage secret_milestones:claimed harvest run data modify storage secret_milestones:claimed harvest set value []
 execute unless data storage secret_milestones:claimed tool_set run data modify storage secret_milestones:claimed tool_set set value []
+execute unless data storage secret_milestones:claimed feast_500 run data modify storage secret_milestones:claimed feast_500 set value []
 
 execute as @a run function secret_milestones:player/login

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8, 9, 10, 11, 12 y 14.
+"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8, 9, 10, 11, 12, 14 y 16.
 
 Hito 2 (Españita Chaos Bow): advancement/bow_kill.json y gen/bow_*, para la base
 (26.3) y para el overlay de 26.4.
@@ -11,6 +11,7 @@ Hito 10 (Terra Magnet): gen/soil_* y tags/item/soil.json (bloques blandos y lo q
 Hito 11 (Dash Shadow): enchantment/dash.json (el empuje del dash en cada dirección).
 Hito 12 (Aegis Heart): advancement/hurt_*, gen/hurt_* y tags/entity_type/ (tramos de daño y atacantes).
 Hito 14 (Thorfinn Harvest): gen/harvest_*, tags/block/harvest_* y tags/item/harvest_* (cultivos, metas y la cadena).
+Hito 16 (Eternal Feast): gen/feast_* (lista de comidas y el ítem, que se vuelve a llenar al comerlo).
 Uso: python tools/generate.py
 
 Casos especiales:
@@ -763,6 +764,112 @@ def generate_harvest():
     print(f"cosecha: {len(CROPS)} cultivos y {len(FRUITS)} frutos")
 
 
+# --- Hito 16: comer 500 de cada comida, y el Eternal Feast que no se acaba
+# Cuenta minecraft.used (se suma al terminar de comer). La torta no es un ítem que se use: va por la
+# estadística eat_cake_slice (cada porción). Sin la manzana de oro encantada: no se craftea, solo sale
+# en cofres, y 500 sería casi imposible.
+FOODS = """
+apple baked_potato beef beetroot beetroot_soup bread carrot chicken chorus_fruit cod
+cooked_beef cooked_chicken cooked_cod cooked_mutton cooked_porkchop cooked_rabbit cooked_salmon cookie
+dried_kelp glow_berries golden_apple golden_carrot honey_bottle melon_slice mushroom_stew mutton
+poisonous_potato porkchop potato pufferfish pumpkin_pie rabbit rabbit_stew rotten_flesh salmon
+spider_eye suspicious_stew sweet_berries tropical_fish
+""".split()
+FOOD_GOAL = 500
+FOOD_STATS = {f: f"minecraft.used:minecraft.{f}" for f in FOODS} | {"cake": "minecraft.custom:minecraft.eat_cake_slice"}
+
+# El ítem: un estofado de conejo que no se gasta. Al comerlo el juego lo cambia por su use_remainder, que es
+# una copia marcada con refill:1b; al tick siguiente gen/feast_refill la cambia por el completo (con su
+# use_remainder otra vez). Si lo cambias, cambia también su item en milestone/registry.
+FEAST_BASE = "minecraft:rabbit_stew"
+FEAST_COLOR = "#FFA94D"
+FEAST_COOLDOWN = 15  # segundos entre usos
+# Los efectos negativos (categoría harmful de vanilla) que quita al comerlo
+FEAST_CLEAR = """
+slowness mining_fatigue instant_damage nausea blindness hunger weakness poison wither levitation
+unluck darkness infested oozing weaving wind_charged
+""".split()
+
+
+def feast_components(refill):
+    clear = ",".join(f'"minecraft:{e}"' for e in FEAST_CLEAR)
+    data = '{secret_milestones:"eternal_feast",refill:1b}' if refill else '{secret_milestones:"eternal_feast"}'
+    return [
+        ("minecraft:custom_name", f'{{text:"Eternal Feast",color:"{FEAST_COLOR}",italic:false}}'),
+        ("minecraft:lore", '[{text:"Servido a quien probó cada sabor del mundo.",color:"gray",italic:true},{text:"Ni el hambre de mil inviernos podría vaciarlo.",color:"gray",italic:true}]'),
+        ("minecraft:enchantment_glint_override", "true"),
+        ("minecraft:food", "{nutrition:20,saturation:20.0f,can_always_eat:true}"),
+        ("minecraft:consumable", '{consume_seconds:1.6f,animation:"eat",sound:"minecraft:entity.generic.eat",'
+                                 f'has_consume_particles:true,on_consume_effects:[{{type:"minecraft:remove_effects",effects:[{clear}]}}]}}'),
+        ("minecraft:use_cooldown", f'{{seconds:{FEAST_COOLDOWN}.0f,cooldown_group:"{NS}:eternal_feast"}}'),
+        ("minecraft:custom_data", data),
+    ]
+
+
+def feast_item():
+    """El ítem completo, como en /give: [componente=valor,...] y su copia de use_remainder."""
+    copy = ",".join(f'"{k}":{v}' for k, v in feast_components(True))
+    comps = feast_components(False) + [("minecraft:use_remainder", f'{{id:"{FEAST_BASE}",count:1,components:{{{copy}}}}}')]
+    return FEAST_BASE + "[" + ",".join(f"{k}={v}" for k, v in comps) + "]"
+
+
+def generate_food():
+    fn = os.path.join("data", NS, "function", "gen")
+    keys = list(FOOD_STATS)
+    write(
+        os.path.join(fn, "feast_load.mcfunction"),
+        HEADER + "# Lo comido de cada comida desde el último segundo\n"
+        + "".join(f"scoreboard objectives add sm.f.{k} {st}\n" for k, st in FOOD_STATS.items())
+        + f"scoreboard players set #food_goal sm.calc {len(keys)}\n",
+    )
+    write(
+        os.path.join(fn, "feast_uninstall.mcfunction"),
+        HEADER + "".join(f"scoreboard objectives remove sm.f.{k}\n" for k in keys),
+    )
+    write(
+        os.path.join(fn, "feast_discard.mcfunction"),
+        HEADER + "# En creativo no suma\n" + "".join(f"scoreboard players reset @s sm.f.{k}\n" for k in keys),
+    )
+    write(
+        os.path.join(fn, "feast_tally.mcfunction"),
+        HEADER + "# Interno: {id}. Suma lo comido de cada comida\n"
+        + "".join(
+            f"$execute if score @s sm.f.{k} matches 1.. run function {NS}:milestone/feast_500/add "
+            f'{{id:$(id),k:"{k}"}}\n'
+            for k in keys
+        ),
+    )
+    write(
+        os.path.join(fn, "feast_sum.mcfunction"),
+        HEADER + "# Interno: {id}. Total para el panel (cada comida cuenta hasta la meta)\n"
+        + "scoreboard players set #s sm.calc 0\n"
+        + "".join(
+            f"$execute store result score #a sm.calc run data get storage {NS}:feast p$(id).{k}\n"
+            "scoreboard players operation #s sm.calc += #a sm.calc\n"
+            for k in keys
+        )
+        + f"scoreboard players set #food_total sm.calc {FOOD_GOAL * len(keys)}\n",
+    )
+    item = feast_item()
+    write(
+        os.path.join(fn, "feast_give.mcfunction"),
+        HEADER + "# Interno: da el Eternal Feast a @s (lo usa reward/eternal_feast)\n" + f"give @s {item} 1\n",
+    )
+    mark = f'{FEAST_BASE}[minecraft:custom_data~{{secret_milestones:"eternal_feast",refill:1b}}]'
+    base = FEAST_BASE.split(":")[1]
+    write(
+        os.path.join(fn, "feast_refill.mcfunction"),
+        HEADER + "# Interno: cada tick, para quien tiene en una mano la copia que dejó al comerlo.\n"
+        + "# Vuelve a poner el Eternal Feast completo, y lo comido con él no suma para el hito.\n"
+        + f"function {NS}:item/eternal_feast/eaten\n"
+        + (f"scoreboard players remove @s[scores={{sm.f.{base}=1..}}] sm.f.{base} 1\n" if base in FOOD_STATS else "")
+        + f"execute if items entity @s weapon.mainhand {mark} run item replace entity @s weapon.mainhand with {item}\n"
+        + f"execute if items entity @s weapon.offhand {mark} run item replace entity @s weapon.offhand with {item}\n",
+    )
+    print(f"banquete: {len(keys)} comidas")
+
+
+generate_food()
 generate_harvest()
 generate_hurt()
 generate_dash()

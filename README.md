@@ -22,6 +22,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | 13 | Conseguir las 4 piezas de armadura secretas (hitos 5, 9, 11 y 12) | **Españita Chaos Sword**: espada de netherita irrompible con Filo V, Castigo V, Perdición de los artrópodos V, Botín V y Barrido V; en la mano da Fuerza II, y sus golpes a veces dan un efecto negativo |
 | 14 | Cosechar cultivos maduros: 10.000 de trigo, zanahoria, papa, remolacha y verruga del Nether, y 5.000 melones y calabazas | **Thorfinn Harvest**: azada de netherita irrompible con Fortuna V y Eficiencia V; clic derecho en un cultivo la lanza como un boomerang que cosecha en cadena, replanta y vuelve con lo cosechado |
 | 15 | Conseguir las 4 herramientas secretas (un pico de los hitos 1 o 3, y los hitos 8, 10 y 14) | **Españita Chaos Mace**: mazo irrompible con Densidad V, Brecha IV y Carga de viento III; sus golpes pesados a veces lanzan por el aire a los mobs cercanos |
+| 16 | Comer 500 de cada comida del juego (40) | **Eternal Feast**: estofado que nunca se acaba; llena el hambre y la saturación y quita los efectos negativos, cada 15 segundos |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -203,6 +204,19 @@ Por Thorfinn, de Vinland Saga.
 - Cuenta haber **cobrado** los 4 hitos de herramientas: un pico (Chunk Destroyer Infinitum, 1, **o** Debris Finder, 3), Woodozer (8), Terra Magnet (10) y Thorfinn Harvest (14). No hace falta tenerlas encima, y perder una no lo quita.
 - Las que se sacan con "Obtener recompensa" del panel no cuentan.
 - Si ya cobró las 4 antes de esta versión, el mazo llega solo en el siguiente segundo.
+
+## Eternal Feast
+- **No se gasta:** al comerlo vuelve a la misma mano, listo para el siguiente. Se come como cualquier comida (1,6 segundos) y **siempre se puede comer**, aunque no tengas hambre.
+- **Al comerlo:** llena el hambre y la saturación al máximo y quita los efectos negativos: Lentitud, Cansancio, Náusea, Ceguera, Hambre, Debilidad, Veneno, Wither, Levitación, Mala suerte, Oscuridad y los de las pociones de 1.21 (Infestación, Supuración, Tejido y Carga de viento). Los efectos buenos se quedan.
+- **Bendición:** cada vez que lo comes hay un **2%** de probabilidad de un efecto bueno al azar por **1 minuto**, más fuerte que cualquier poción, faro o manzana: Fuerza V, Velocidad III, Prisa III, Resistencia III, Regeneración III, Salto III, Absorción V o Vida extra III. Ninguno llega a perjudicar: no hay Velocidad que no se controla, Salto que mata al caer ni Resistencia V. Avisa en la barra de acción. Se cambia en `load` (`#feast_boost`, en milésimas) y la lista en `item/eternal_feast/boost`.
+- **Espera:** 15 segundos entre usos (`FEAST_COOLDOWN` en `tools/generate.py`).
+- Es un estofado de conejo por dentro, pero lo que comes con él no suma para el hito. El ítem se arma en `tools/generate.py` (`FEAST_*`): después de editarlo ejecuta `python tools/generate.py` y cambia también su item en `milestone/registry`.
+
+## Reglas del hito del banquete
+- Hay que comer **500 de cada una** de las 40 comidas: manzana, manzana de oro, zanahoria dorada, papa (también la venenosa y la asada), zanahoria, remolacha, pan, galleta, pastel de calabaza, melón, bayas dulces y luminosas, fruta de chorus, kelp seco, miel, los estofados (champiñones, conejo, remolacha y sospechoso), todas las carnes y pescados crudos y cocidos, pez globo, pez tropical, carne podrida y ojo de araña. Lo que pasa de 500 en una no suma para otra.
+- **Torta:** cuenta cada porción comida (una torta son 7).
+- **No entra la manzana de oro encantada:** no se craftea y solo sale en cofres, así que 500 sería casi imposible.
+- En creativo no suma. La lista está en `tools/generate.py` (`FOODS`). Después de editarla ejecuta `python tools/generate.py`, y cambia también los textos en `milestone/registry`.
 
 ## Contra los generadores de stone
 - **Cupo por zona:** cada zona de 16x16x16 (según dónde está parado el jugador) le cuenta hasta 5500 stone a cada jugador. En una zona natural caben 4096 bloques. Un generador fijo deja de sumar a los 5500, sin avisar.

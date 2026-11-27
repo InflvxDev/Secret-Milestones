@@ -25,6 +25,9 @@ execute as @a[scores={sm.crouch=1..}] run function secret_milestones:milestone/m
 execute as @a[scores={sm.sprint=1..}] run function secret_milestones:milestone/movement/sprint
 execute as @a[scores={sm.jump=1..}] run function secret_milestones:milestone/movement/jump
 
+# Eternal Feast: al comerlo queda una copia en la mano; se vuelve a llenar antes de sumar lo comido
+execute as @a if items entity @s weapon.* minecraft:rabbit_stew[minecraft:custom_data~{secret_milestones:"eternal_feast",refill:1b}] run function secret_milestones:gen/feast_refill
+
 # Los hitos se revisan una vez por segundo
 scoreboard players add #t sm.calc 1
 execute if score #t sm.calc matches 20.. run function secret_milestones:milestone/check_all
