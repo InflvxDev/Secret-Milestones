@@ -480,6 +480,23 @@
         ]
       }
     },
+    "frostbite": {
+      "trigger": "minecraft:killed_by_arrow",
+      "conditions": {
+        "fired_from_weapon": {
+          "items": "minecraft:bow"
+        },
+        "victims": [
+          {
+            "type": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:frostbite"
+            }
+          }
+        ]
+      }
+    },
     "ghast": {
       "trigger": "minecraft:killed_by_arrow",
       "conditions": {
@@ -1541,6 +1558,7 @@
       "evoker",
       "fox",
       "frog",
+      "frostbite",
       "ghast",
       "glow_squid",
       "goat",

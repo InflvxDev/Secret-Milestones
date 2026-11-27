@@ -28,6 +28,7 @@
     "minecraft:evoker",
     "minecraft:fox",
     "minecraft:frog",
+    "minecraft:frostbite",
     "minecraft:ghast",
     "minecraft:giant",
     "minecraft:glow_squid",
@@ -89,10 +90,6 @@
     "minecraft:zombie_horse",
     "minecraft:zombie_nautilus",
     "minecraft:zombie_villager",
-    "minecraft:zombified_piglin",
-    {
-      "id": "minecraft:frostbite",
-      "required": false
-    }
+    "minecraft:zombified_piglin"
   ]
 }

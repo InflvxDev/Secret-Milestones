@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8, 9, 10, 11, 12, 14 y 16.
 
-Hito 2 (Españita Chaos Bow): advancement/bow_kill.json y gen/bow_*, para la base
-(26.3) y para el overlay de 26.4.
+Hito 2 (Españita Chaos Bow): advancement/bow_kill.json y gen/bow_*.
 Hito 3 (Debris Finder): advancement/debris_place.json, gen/debris_* y gen/radar.
 Hito 6 (RedKeyStone): gen/red_* (lista de componentes y qué gira la llave).
 Hito 8 (Woodozer): gen/log_*, gen/fell_start y gen/fell/ (tipos de tronco y la tala).
@@ -31,7 +30,7 @@ NS = "secret_milestones"
 MOBS = """
 allay armadillo axolotl bat bee blaze bogged breeze camel camel_husk cat cave_spider
 chicken cod copper_golem cow creeper dolphin donkey drowned elder_guardian
-ender_dragon enderman endermite evoker fox frog ghast glow_squid goat guardian
+ender_dragon enderman endermite evoker fox frog frostbite ghast glow_squid goat guardian
 happy_ghast hoglin horse husk iron_golem llama magma_cube mooshroom mule
 nautilus ocelot panda parched parrot phantom pig piglin piglin_brute pillager
 polar_bear pufferfish rabbit ravager salmon sheep shulker silverfish skeleton
@@ -43,9 +42,6 @@ zombie_nautilus zombie_villager zombified_piglin
 
 # Solo estos se rematan con un golpe directo, con el arco en la mano principal
 MELEE = {"breeze", "wither"}
-
-# Carpeta del overlay (ver pack.mcmeta) -> mobs que agrega esa versión
-OVERLAYS = {"overlay_26_4": ["frostbite"]}
 
 HEADER = "# GENERADO por tools/generate.py: no editar a mano\n"
 
@@ -632,11 +628,8 @@ def generate_hurt():
         }
         write(os.path.join("data", NS, "advancement", f"hurt_{k}.json"), json.dumps(advancement, indent=2) + "\n")
         write(os.path.join(fn, f"hurt_{k}.mcfunction"), "".join(lines))
-    # Atacantes: los mobs del hito del arco más los que faltan. Los de un overlay van como no obligatorios,
-    # así el tag carga también en la versión que no los tiene.
-    extra = sorted({m for ms in OVERLAYS.values() for m in ms})
+    # Atacantes: los mobs del hito del arco más los que faltan.
     values = [f"minecraft:{m}" for m in sorted(set(MOBS + HURT_EXTRA))]
-    values += [{"id": f"minecraft:{m}", "required": False} for m in extra]
     tags = os.path.join("data", NS, "tags", "entity_type")
     write(os.path.join(tags, "attackers.json"), json.dumps({"values": values}, indent=2) + "\n")
     write(os.path.join(tags, "bosses.json"), json.dumps({"values": [f"minecraft:{m}" for m in BOSSES]}, indent=2) + "\n")
@@ -879,6 +872,4 @@ generate_logs()
 generate_redstone()
 generate_debris()
 generate("", sorted(MOBS))
-for directory, extra in OVERLAYS.items():
-    generate(directory, sorted(MOBS + extra))
-print(f"base: {len(MOBS)} mobs, " + ", ".join(f"{d}: {len(MOBS) + len(e)}" for d, e in OVERLAYS.items()))
+print(f"arco: {len(MOBS)} mobs")

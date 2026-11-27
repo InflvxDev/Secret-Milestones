@@ -1,6 +1,6 @@
 # Secret-Milestones
 
-Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al alcanzar hitos.
+Secretos e easter eggs para SMP (Minecraft 26.4) que dan recompensas al alcanzar hitos.
 
 **Spoilers:** este archivo revela los secretos.
 
@@ -8,7 +8,7 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 | # | Hito | Recompensa |
 |---|---|---|
 | 1 | Minar 1.000.000 de piedra (`minecraft:stone`) | **Chunk Destroyer Infinitum**: pico de netherita irrompible con Eficiencia X y Toque de seda |
-| 2 | Matar con arco cada tipo de mob (87 en 26.3, 88 en 26.4) | **Españita Chaos Bow**: arco con Poder V, Irrompibilidad III, Infinidad y Reparación |
+| 2 | Matar con arco cada tipo de mob (88) | **Españita Chaos Bow**: arco con Poder V, Irrompibilidad III, Infinidad y Reparación |
 | 3 | Minar 5904 de ancient debris: un beacon de netherita completo (164 bloques x 36) | **Debris Finder**: pico de netherita irrompible con Eficiencia V, Fortuna V, radar de debris y Resistencia al fuego en la mano |
 | 4 | Pescar 500 tesoros en aguas abiertas | **Anzuelo del Abismo**: caña irrompible con Suerte marina V y Atracción III, saca tesoros también en agua cerrada (revive las fish farms antiguas) |
 | 5 | Llegar al borde del mundo (las Farlands): 29.999.900 bloques en X o Z | **Farlands Explorer**: botas de netherita irrompibles con todas las protecciones y todos los encantamientos de botas, dan Velocidad II puestas |
@@ -37,7 +37,6 @@ Secretos e easter eggs para SMP (Minecraft 26.3 y 26.4) que dan recompensas al a
 - **Enderman:** cuenta con flecha. Solo la recibe si está montado (bote o vagoneta), suelto la esquiva.
 - **Breeze y Wither:** como son inmunes a las flechas, cuentan si el **último golpe** es cuerpo a cuerpo con un **arco en la mano principal**. Es la única excepción: con los demás no vale pegar con el arco.
 - **No entran**, porque sería imposible: Creaking (solo muere por su corazón), Giant e Illusioner (no salen en survival).
-- El Frostbite solo se pide en 26.4, con `overlay_26_4`.
 - La lista está en `tools/generate.py`. Después de editarla ejecuta `python tools/generate.py`.
 
 ## Debris Finder

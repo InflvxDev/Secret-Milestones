@@ -27,6 +27,7 @@ execute if entity @s[advancements={secret_milestones:bow_kill={endermite=true}}]
 execute if entity @s[advancements={secret_milestones:bow_kill={evoker=true}}] run function secret_milestones:milestone/bow_all/hit {m:"evoker"}
 execute if entity @s[advancements={secret_milestones:bow_kill={fox=true}}] run function secret_milestones:milestone/bow_all/hit {m:"fox"}
 execute if entity @s[advancements={secret_milestones:bow_kill={frog=true}}] run function secret_milestones:milestone/bow_all/hit {m:"frog"}
+execute if entity @s[advancements={secret_milestones:bow_kill={frostbite=true}}] run function secret_milestones:milestone/bow_all/hit {m:"frostbite"}
 execute if entity @s[advancements={secret_milestones:bow_kill={ghast=true}}] run function secret_milestones:milestone/bow_all/hit {m:"ghast"}
 execute if entity @s[advancements={secret_milestones:bow_kill={glow_squid=true}}] run function secret_milestones:milestone/bow_all/hit {m:"glow_squid"}
 execute if entity @s[advancements={secret_milestones:bow_kill={goat=true}}] run function secret_milestones:milestone/bow_all/hit {m:"goat"}
