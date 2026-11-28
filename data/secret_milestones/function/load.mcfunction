@@ -18,14 +18,14 @@ scoreboard players set #100000 sm.calc 100000
 # Id numérico de cada jugador (sale de su UUID) y si ya se guardó su nombre
 scoreboard objectives add sm.id dummy
 scoreboard objectives add sm.named dummy
-# Hito 1: lo minado y colocado desde el último tick, y el progreso válido
+# Hito 7: lo minado y colocado desde el último tick, y el progreso válido
 scoreboard objectives add sm.mined minecraft.mined:minecraft.stone
 scoreboard objectives add sm.placed minecraft.used:minecraft.stone
 scoreboard objectives add sm.valid dummy
 # Hito 2: tipos de mob matados con arco. La meta cambia con la versión del juego.
 scoreboard objectives add sm.bow dummy
 function secret_milestones:gen/bow_goal
-# Hito 3: debris minado desde el último tick y progreso válido.
+# Hito 8: debris minado desde el último tick y progreso válido.
 # Meta: 164 bloques de netherita x 9 lingotes x 4 de debris = 5904.
 scoreboard objectives add sm.dmined minecraft.mined:minecraft.ancient_debris
 scoreboard objectives add sm.debris dummy
@@ -35,9 +35,9 @@ scoreboard players set #debris_cap sm.calc 16
 # Debris Finder: lo tenía en la mano el tick anterior, y espera del radar
 scoreboard objectives add sm.held dummy
 scoreboard objectives add sm.radar dummy
-# Hito 4: tesoros pescados en aguas abiertas
+# Hito 1: tesoros pescados en aguas abiertas
 scoreboard objectives add sm.fish dummy
-# Hito 5: lo más lejos que llegó cada jugador del centro (X o Z), y la meta.
+# Hito 4: lo más lejos que llegó cada jugador del centro (X o Z), y la meta.
 # El borde del mundo vanilla está en 29999984: 29999900 es llegar a verlo.
 scoreboard objectives add sm.far dummy
 scoreboard players set #farlands sm.calc 29999900
@@ -49,7 +49,7 @@ scoreboard objectives add sm.red dummy
 # RedKeyStone: clic derecho con la caña con zanahoria y espera entre giros
 scoreboard objectives add sm.wrench minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add sm.wcd dummy
-# Hito 7: ticks vivo desde la última muerte (solo conectado), y muertes desde el último segundo.
+# Hito 16: ticks vivo desde la última muerte (solo conectado), y muertes desde el último segundo.
 # Meta: 1000 días de 24000 ticks.
 scoreboard objectives add sm.life dummy
 scoreboard objectives add sm.died deathCount
@@ -63,7 +63,7 @@ scoreboard players set #afk_limit sm.calc 120
 # Kars Totem: en qué mano está (1 principal, 2 segunda) y si estaba en la segunda el tick anterior
 scoreboard objectives add sm.khand dummy
 scoreboard objectives add sm.koff dummy
-# Hito 8: troncos talados y colocados de cada tipo, el total del tick, de qué tipo era y el progreso válido
+# Hito 5: troncos talados y colocados de cada tipo, el total del tick, de qué tipo era y el progreso válido
 function secret_milestones:gen/log_load
 scoreboard objectives add sm.lmined dummy
 scoreboard objectives add sm.lkind dummy
@@ -71,7 +71,7 @@ scoreboard objectives add sm.log dummy
 # Cuántos troncos le cuenta a cada jugador cada zona de 16x16x16, y cuántos tala el Woodozer de una vez
 scoreboard players set #log_cap sm.calc 1000
 scoreboard players set #fell_cap sm.calc 256
-# Hito 9: lo minado y colocado de cada bloque, cuántos llegaron a su meta, y el cupo por zona
+# Hito 14: lo minado y colocado de cada bloque, cuántos llegaron a su meta, y el cupo por zona
 # de los que se pueden poner y romper (natural: el deepslate llena la zona, una mancha de tuff tiene ~600)
 function secret_milestones:gen/deep_load
 scoreboard objectives add sm.deep dummy
@@ -79,7 +79,7 @@ scoreboard players set #cap_deepslate sm.calc 5500
 scoreboard players set #cap_tuff sm.calc 2000
 # DeepMine Crown: la tenía puesta el tick anterior
 scoreboard objectives add sm.crown dummy
-# Hito 10: bloques blandos excavados y colocados de cada tipo, el total del tick y el progreso válido
+# Hito 3: bloques blandos excavados y colocados de cada tipo, el total del tick y el progreso válido
 function secret_milestones:gen/soil_load
 scoreboard objectives add sm.smined dummy
 scoreboard objectives add sm.soil dummy
@@ -107,7 +107,7 @@ scoreboard objectives add sm.dair dummy
 scoreboard objectives add sm.dgo dummy
 scoreboard objectives add sm.dpb dummy
 scoreboard objectives add sm.dgt dummy
-# Hito 12: daño recibido antes de la armadura, en décimas de vida (1 corazón = 20), de cada tipo:
+# Hito 13: daño recibido antes de la armadura, en décimas de vida (1 corazón = 20), de cada tipo:
 # golpes, proyectiles, explosiones, fuego y lava, y jefes. Metas en milestone/check_all.
 scoreboard objectives add sm.hmel dummy
 scoreboard objectives add sm.hpro dummy
@@ -123,14 +123,14 @@ scoreboard players set #hcap_fir sm.calc 1000
 scoreboard players set #hcap_bos sm.calc 0
 # Aegis Heart: la tenía puesta el tick anterior
 scoreboard objectives add sm.aworn dummy
-# Hito 13: Españita Chaos Sword. La tenía en la mano el tick anterior, y su probabilidad de caos en milésimas:
+# Hito 15: Españita Chaos Sword. La tenía en la mano el tick anterior, y su probabilidad de caos en milésimas:
 # empieza en #chaos_base, sube #chaos_step por cada golpe sin suerte hasta #chaos_max, y al salir vuelve a empezar.
 scoreboard objectives add sm.sheld dummy
 scoreboard objectives add sm.chaos dummy
 scoreboard players set #chaos_base sm.calc 2
 scoreboard players set #chaos_step sm.calc 2
 scoreboard players set #chaos_max sm.calc 50
-# Hito 14: lo cosechado de cada cultivo desde el último tick, y cuántos llegaron a su meta (metas en tools/generate.py)
+# Hito 9: lo cosechado de cada cultivo desde el último tick, y cuántos llegaron a su meta (metas en tools/generate.py)
 function secret_milestones:gen/harvest_load
 scoreboard objectives add sm.harv dummy
 scoreboard players set #2 sm.calc 2
@@ -142,7 +142,7 @@ scoreboard objectives add sm.hg dummy
 scoreboard objectives add sm.hbs dummy
 scoreboard objectives add sm.hage dummy
 scoreboard objectives add sm.huse dummy
-# Hito 15: Españita Chaos Mace. Probabilidad de caos de cada golpe pesado, en milésimas (como la espada, más alta
+# Hito 10: Españita Chaos Mace. Probabilidad de caos de cada golpe pesado, en milésimas (como la espada, más alta
 # porque los golpes pesados son pocos): empieza en #mchaos_base, sube #mchaos_step por golpe sin suerte hasta #mchaos_max.
 # En promedio sale cada unos 10 golpes pesados. #mchaos_lift: fuerza hacia arriba con la que salen los mobs (milésimas).
 scoreboard objectives add sm.mchaos dummy
@@ -150,7 +150,7 @@ scoreboard players set #mchaos_base sm.calc 15
 scoreboard players set #mchaos_step sm.calc 15
 scoreboard players set #mchaos_max sm.calc 250
 scoreboard players set #mchaos_lift sm.calc 1100
-# Hito 16: lo comido de cada comida desde el último segundo, y cuántas llegaron a 500 (lista en tools/generate.py)
+# Hito 12: lo comido de cada comida desde el último segundo, y cuántas llegaron a 500 (lista en tools/generate.py)
 function secret_milestones:gen/feast_load
 scoreboard objectives add sm.food dummy
 # Eternal Feast: probabilidad de la bendición (un efecto bueno fuerte por 1 minuto) cada vez que se come, en milésimas

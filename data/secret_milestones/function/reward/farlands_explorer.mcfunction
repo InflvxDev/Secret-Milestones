@@ -1,3 +1,3 @@
-# Recompensa del hito 5. Si la cambias, cambia también su item en milestone/registry.
+# Recompensa del hito 4. Si la cambias, cambia también su item en milestone/registry.
 # custom_data es lo que reconoce item/farlands_explorer (Velocidad II puestas).
 give @s minecraft:netherite_boots[minecraft:custom_name={text:"Farlands Explorer",color:"aqua",italic:false},minecraft:enchantments={"minecraft:protection":4,"minecraft:fire_protection":4,"minecraft:blast_protection":4,"minecraft:projectile_protection":4,"minecraft:feather_falling":4,"minecraft:thorns":3,"minecraft:depth_strider":3,"minecraft:soul_speed":3,"minecraft:swift_sneak":3},minecraft:unbreakable={},minecraft:custom_data={secret_milestones:"farlands_explorer"}] 1

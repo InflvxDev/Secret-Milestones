@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 6, 8, 9, 10, 11, 12, 14 y 16.
+"""Secret-Milestones - genera lo repetitivo de los hitos 2, 3, 5, 6, 8, 9, 11, 12, 13 y 14.
 
 Hito 2 (Españita Chaos Bow): advancement/bow_kill.json y gen/bow_*.
-Hito 3 (Debris Finder): advancement/debris_place.json, gen/debris_* y gen/radar.
+Hito 8 (Debris Finder): advancement/debris_place.json, gen/debris_* y gen/radar.
 Hito 6 (RedKeyStone): gen/red_* (lista de componentes y qué gira la llave).
-Hito 8 (Woodozer): gen/log_*, gen/fell_start y gen/fell/ (tipos de tronco y la tala).
-Hito 9 (DeepMine Crown): gen/deep_* (bloques, metas y la fila del panel).
-Hito 10 (Terra Magnet): gen/soil_* y tags/item/soil.json (bloques blandos y lo que atrae).
+Hito 5 (Woodozer): gen/log_*, gen/fell_start y gen/fell/ (tipos de tronco y la tala).
+Hito 14 (DeepMine Crown): gen/deep_* (bloques, metas y la fila del panel).
+Hito 3 (Terra Magnet): gen/soil_* y tags/item/soil.json (bloques blandos y lo que atrae).
 Hito 11 (Dash Shadow): enchantment/dash.json (el empuje del dash en cada dirección).
-Hito 12 (Aegis Heart): advancement/hurt_*, gen/hurt_* y tags/entity_type/ (tramos de daño y atacantes).
-Hito 14 (Thorfinn Harvest): gen/harvest_*, tags/block/harvest_* y tags/item/harvest_* (cultivos, metas y la cadena).
-Hito 16 (Eternal Feast): gen/feast_* (lista de comidas y el ítem, que se vuelve a llenar al comerlo).
+Hito 13 (Aegis Heart): advancement/hurt_*, gen/hurt_* y tags/entity_type/ (tramos de daño y atacantes).
+Hito 9 (Thorfinn Harvest): gen/harvest_*, tags/block/harvest_* y tags/item/harvest_* (cultivos, metas y la cadena).
+Hito 12 (Eternal Feast): gen/feast_* (lista de comidas y el ítem, que se vuelve a llenar al comerlo).
 Uso: python tools/generate.py
 
 Casos especiales:
@@ -23,6 +23,7 @@ No entran (con ellos el hito sería imposible en survival):
 """
 import json
 import os
+import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NS = "secret_milestones"
@@ -128,7 +129,7 @@ def generate(folder, mobs):
     )
 
 
-# --- Hito 3: posición exacta del debris colocado
+# --- Hito 8: posición exacta del debris colocado
 # placed_block evalúa con origen en el centro del bloque, así que la distancia al
 # jugador en cada eje dice en qué franja [k, k+1) está. Quedan 8 bloques posibles
 # (+ o - en cada eje) y debris_candidates prueba cuál es.
@@ -306,7 +307,7 @@ def generate_redstone():
     print(f"redstone: {len(RED_ITEMS)} componentes, {len(ROTATE)} bloques que gira la llave")
 
 
-# --- Hito 8: talar 100.000 troncos, y el Woodozer que tala el árbol entero
+# --- Hito 5: talar 100.000 troncos, y el Woodozer que tala el árbol entero
 # Solo troncos y tallos de árbol: la madera (6 caras) y los pelados no salen en árboles naturales.
 LOGS = """
 oak_log spruce_log birch_log jungle_log acacia_log dark_oak_log mangrove_log
@@ -388,7 +389,7 @@ def generate_logs():
     print(f"troncos: {len(LOGS)} tipos")
 
 
-# --- Hito 9: minar en las cuevas profundas, y la DeepMine Crown
+# --- Hito 14: minar en las cuevas profundas, y la DeepMine Crown
 # (bloque, meta, nombre en el panel, cómo se protege)
 # Metas según cuánto sale de cada uno por chunk en deepslate (datos de 26.4): diamante ~29,
 # hierro ~28 más las vetas, oro ~26, redstone ~41, lapislázuli ~17, cobre ~8 (casi todo está sobre Y=0).
@@ -466,7 +467,7 @@ def generate_deep():
     print(f"cuevas profundas: {len(DEEP)} bloques")
 
 
-# --- Hito 10: excavar 250.000 bloques blandos, y la Terra Magnet que atrae lo que excava
+# --- Hito 3: excavar 250.000 bloques blandos, y la Terra Magnet que atrae lo que excava
 SOIL = """
 dirt grass_block coarse_dirt podzol mycelium rooted_dirt dirt_path sand red_sand gravel clay
 snow snow_block soul_sand soul_soil mud muddy_mangrove_roots
@@ -576,7 +577,7 @@ def generate_dash():
     print(f"dash: {len(entries)} direcciones")
 
 
-# Hito 12 (Aegis Heart): daño recibido antes de la armadura (damage.dealt de entity_hurt_player).
+# Hito 13 (Aegis Heart): daño recibido antes de la armadura (damage.dealt de entity_hurt_player).
 # Ninguna estadística guarda ese daño, así que cada tipo tiene un advancement con un criterio por
 # tramo de daño, y gen/hurt_<k> suma el valor del tramo que se cumplió. Todo va en décimas de vida
 # (1 corazón = 20). Tramos: de 0,5 en 0,5 hasta 40 de vida (exacto para el daño vanilla, que va
@@ -636,7 +637,7 @@ def generate_hurt():
     print(f"daño: {len(HURT)} tipos, {len(buckets)} tramos, {len(values)} atacantes")
 
 
-# Hito 14 (Thorfinn Harvest): cosechar cultivos maduros, y la cadena del boomerang.
+# Hito 9 (Thorfinn Harvest): cosechar cultivos maduros, y la cadena del boomerang.
 # Cultivos: (bloque, producto, mínimo de producto si está maduro, edad madura, semilla, meta, nombre).
 # Para saber si estaba maduro se mira lo que soltó en ese tick: el trigo y la remolacha solo sueltan su
 # producto maduros; la zanahoria, la papa y la verruga sueltan 1 verdes y 2 o más maduras.
@@ -757,7 +758,7 @@ def generate_harvest():
     print(f"cosecha: {len(CROPS)} cultivos y {len(FRUITS)} frutos")
 
 
-# --- Hito 16: comer 500 de cada comida, y el Eternal Feast que no se acaba
+# --- Hito 12: comer 500 de cada comida, y el Eternal Feast que no se acaba
 # Cuenta minecraft.used (se suma al terminar de comer). La torta no es un ítem que se use: va por la
 # estadística eat_cake_slice (cada porción). Sin la manzana de oro encantada: no se craftea, solo sale
 # en cofres, y 500 sería casi imposible.
@@ -900,7 +901,7 @@ def part(n, s="", k="", f="n", g=0, fn="get"):
 
 
 def stats_list():
-    """Un hito por entrada, en el MISMO orden que milestone/registry (de ahí sale el número)."""
+    """Un hito por entrada. El orden no importa: el número sale de milestone/registry."""
     deep = [part(name, "deep", "." + b, g=goal) for b, goal, name, _ in DEEP]
     crops = [part(c[6], "harvest", "." + c[0], g=c[5]) for c in CROPS] + [part(f[2], "harvest", "." + f[0], g=f[1]) for f in FRUITS]
     red = [part("Total", fn="red_sum", g=RED_GOAL * len(RED_ITEMS))] + [part(RED_NAMES[r], "redstone", "." + r, g=RED_GOAL) for r in RED_ITEMS]
@@ -948,8 +949,13 @@ def snbt(v):
 
 def generate_stats():
     fn = os.path.join("data", NS, "function", "gen")
-    hitos = [{"num": i + 1, "id": mid, "need": need, "atlas": atlas, "sprite": sprite, "parts": parts}
-             for i, (mid, need, atlas, sprite, parts) in enumerate(stats_list())]
+    # El número de cada hito es su posición en milestone/registry (lo mismo que usa el panel)
+    with open(os.path.join(ROOT, "data", NS, "function", "milestone", "registry.mcfunction"), encoding="utf-8") as f:
+        order = re.findall(r'milestones append value \{id:"([a-z0-9_]+)"', f.read())
+    defs = {d[0]: d for d in stats_list()}
+    assert sorted(order) == sorted(defs), f"stats_list y milestone/registry no tienen los mismos hitos: {sorted(set(order) ^ set(defs))}"
+    hitos = [{"num": i + 1, "id": mid, "need": defs[mid][1], "atlas": defs[mid][2], "sprite": defs[mid][3], "parts": defs[mid][4]}
+             for i, mid in enumerate(order)]
     write(
         os.path.join(fn, "stats.mcfunction"),
         HEADER + "# Lo que muestra StatsCraft de cada hito (ver tools/generate.py, stats_list). Lo lee link/.\n"

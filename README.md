@@ -7,27 +7,27 @@ Secretos e easter eggs para SMP (Minecraft 26.4) que dan recompensas al alcanzar
 ## Hitos
 | # | Hito | Recompensa |
 |---|---|---|
-| 1 | Minar 1.000.000 de piedra (`minecraft:stone`) | **Chunk Destroyer Infinitum**: pico de netherita irrompible con Eficiencia X y Toque de seda |
+| 1 | Pescar 500 tesoros en aguas abiertas | **Anzuelo del Abismo**: caña irrompible con Suerte marina V y Atracción III, saca tesoros también en agua cerrada (revive las fish farms antiguas) |
 | 2 | Matar con arco cada tipo de mob (88) | **Españita Chaos Bow**: arco con Poder V, Irrompibilidad III, Infinidad y Reparación |
-| 3 | Minar 5904 de ancient debris: un beacon de netherita completo (164 bloques x 36) | **Debris Finder**: pico de netherita irrompible con Eficiencia V, Fortuna V, radar de debris y Resistencia al fuego en la mano |
-| 4 | Pescar 500 tesoros en aguas abiertas | **Anzuelo del Abismo**: caña irrompible con Suerte marina V y Atracción III, saca tesoros también en agua cerrada (revive las fish farms antiguas) |
-| 5 | Llegar al borde del mundo (las Farlands): 29.999.900 bloques en X o Z | **Farlands Explorer**: botas de netherita irrompibles con todas las protecciones y todos los encantamientos de botas, dan Velocidad II puestas |
+| 3 | Excavar 250.000 bloques blandos (tierra, arena, grava, nieve, barro...) | **Terra Magnet**: pala de netherita irrompible con Eficiencia V y Toque de seda; lo que excava con ella va directo al inventario |
+| 4 | Llegar al borde del mundo (las Farlands): 29.999.900 bloques en X o Z | **Farlands Explorer**: botas de netherita irrompibles con todas las protecciones y todos los encantamientos de botas, dan Velocidad II puestas |
+| 5 | Talar 100.000 troncos | **Woodozer**: hacha de netherita irrompible con Filo V, Eficiencia V y Fortuna III que tala el árbol entero |
 | 6 | Craftear 1000 de cada componente de redstone (16) | **RedKeyStone**: llave irrompible (sin mostrarlo, en su lugar trae una explicación corta) que gira repetidores, comparadores, pistones, observadores, dispensadores, droppers y tolvas sin romperlos |
-| 7 | Sobrevivir 1000 días del juego sin morir, en tiempo jugado | **Kars Totem**: tótem encantado que vuelve cada vez que te salva y da Regeneración I en la segunda mano |
-| 8 | Talar 100.000 troncos | **Woodozer**: hacha de netherita irrompible con Filo V, Eficiencia V y Fortuna III que tala el árbol entero |
-| 9 | Minar en las cuevas profundas: 100.000 de deepslate, 25.000 de tuff y menas de deepslate: 3500 de diamante, 5000 de redstone, 3000 de oro, 3000 de hierro, 2000 de lapislázuli y 1000 de cobre | **DeepMine Crown**: casco de netherita irrompible con todas las protecciones, Respiración III, Afinidad acuática y Espinas III, da Visión nocturna e inmunidad a la Oscuridad puesto |
-| 10 | Excavar 250.000 bloques blandos (tierra, arena, grava, nieve, barro...) | **Terra Magnet**: pala de netherita irrompible con Eficiencia V y Toque de seda; lo que excava con ella va directo al inventario |
+| 7 | Minar 1.000.000 de piedra (`minecraft:stone`) | **Chunk Destroyer Infinitum**: pico de netherita irrompible con Eficiencia X y Toque de seda |
+| 8 | Minar 5904 de ancient debris: un beacon de netherita completo (164 bloques x 36) | **Debris Finder**: pico de netherita irrompible con Eficiencia V, Fortuna V, radar de debris y Resistencia al fuego en la mano |
+| 9 | Cosechar cultivos maduros: 10.000 de trigo, zanahoria, papa, remolacha y verruga del Nether, y 5.000 melones y calabazas | **Thorfinn Harvest**: azada de netherita irrompible con Fortuna V y Eficiencia V; clic derecho en un cultivo la lanza como un boomerang que cosecha en cadena, replanta y vuelve con lo cosechado |
+| 10 | Conseguir las 4 herramientas secretas (un pico de los hitos 7 o 8, y los hitos 3, 5 y 9) | **Españita Chaos Mace**: mazo irrompible con Densidad V, Brecha IV y Carga de viento III; sus golpes pesados a veces lanzan por el aire a los mobs cercanos |
 | 11 | Recorrer 300 km agachado, 1000 km corriendo y saltar 100.000 veces | **Dash Shadow**: pantalones de netherita irrompibles con todas las protecciones, Sigilo rápido V y Espinas III; doble espacio con WASD apretada da un dash hacia esa dirección |
-| 12 | Aguantar daño (antes de la armadura): 50.000 corazones de golpes, 25.000 de proyectiles, 10.000 de explosiones, 10.000 de fuego y lava y 5.000 de jefes | **Aegis Heart**: pechera de netherita irrompible con todas las protecciones y Espinas III; puesta da Resistencia II y te hace inmune al Wither |
-| 13 | Conseguir las 4 piezas de armadura secretas (hitos 5, 9, 11 y 12) | **Españita Chaos Sword**: espada de netherita irrompible con Filo V, Castigo V, Perdición de los artrópodos V, Botín V y Barrido V; en la mano da Fuerza II, y sus golpes a veces dan un efecto negativo |
-| 14 | Cosechar cultivos maduros: 10.000 de trigo, zanahoria, papa, remolacha y verruga del Nether, y 5.000 melones y calabazas | **Thorfinn Harvest**: azada de netherita irrompible con Fortuna V y Eficiencia V; clic derecho en un cultivo la lanza como un boomerang que cosecha en cadena, replanta y vuelve con lo cosechado |
-| 15 | Conseguir las 4 herramientas secretas (un pico de los hitos 1 o 3, y los hitos 8, 10 y 14) | **Españita Chaos Mace**: mazo irrompible con Densidad V, Brecha IV y Carga de viento III; sus golpes pesados a veces lanzan por el aire a los mobs cercanos |
-| 16 | Comer 500 de cada comida del juego (40) | **Eternal Feast**: estofado que nunca se acaba; llena el hambre y la saturación y quita los efectos negativos, cada 15 segundos |
-| 17 | Conseguir las 3 armas secretas (hitos 2, 13 y 15) | **Españita Chaos Trident**: tridente irrompible con Lealtad III, Canalización, Empalamiento V y Botín V; lanzado normal sale con Propulsión aunque no llueva, y agachado al lanzarlo vuela y a veces le cae un rayo a lo que golpea aunque no haya tormenta |
+| 12 | Comer 500 de cada comida del juego (40) | **Eternal Feast**: estofado que nunca se acaba; llena el hambre y la saturación y quita los efectos negativos, cada 15 segundos |
+| 13 | Aguantar daño (antes de la armadura): 50.000 corazones de golpes, 25.000 de proyectiles, 10.000 de explosiones, 10.000 de fuego y lava y 5.000 de jefes | **Aegis Heart**: pechera de netherita irrompible con todas las protecciones y Espinas III; puesta da Resistencia II y te hace inmune al Wither |
+| 14 | Minar en las cuevas profundas: 100.000 de deepslate, 25.000 de tuff y menas de deepslate: 3500 de diamante, 5000 de redstone, 3000 de oro, 3000 de hierro, 2000 de lapislázuli y 1000 de cobre | **DeepMine Crown**: casco de netherita irrompible con todas las protecciones, Respiración III, Afinidad acuática y Espinas III, da Visión nocturna e inmunidad a la Oscuridad puesto |
+| 15 | Conseguir las 4 piezas de armadura secretas (hitos 4, 11, 13 y 14) | **Españita Chaos Sword**: espada de netherita irrompible con Filo V, Castigo V, Perdición de los artrópodos V, Botín V y Barrido V; en la mano da Fuerza II, y sus golpes a veces dan un efecto negativo |
+| 16 | Sobrevivir 1000 días del juego sin morir, en tiempo jugado | **Kars Totem**: tótem encantado que vuelve cada vez que te salva y da Regeneración I en la segunda mano |
+| 17 | Conseguir las 3 armas secretas (hitos 2, 10 y 15) | **Españita Chaos Trident**: tridente irrompible con Lealtad III, Canalización, Empalamiento V y Botín V; lanzado normal sale con Propulsión aunque no llueva, y agachado al lanzarlo vuela y a veces le cae un rayo a lo que golpea aunque no haya tormenta |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
-- Del hito 1 solo cuenta `stone`: no deepslate, granito, cobblestone ni otras variantes. En creativo no suma.
+- Del hito 7 solo cuenta `stone`: no deepslate, granito, cobblestone ni otras variantes. En creativo no suma.
 - El aviso solo lo ve quien lo consigue.
 - Con el inventario lleno, muerto o en espectador, la recompensa queda esperando.
 
@@ -257,7 +257,7 @@ Si también está instalado [StatsCraft](../StatsCraft), el admin puede mostrarl
 - **Sin spoilers:** el hito sale como **Hito Secreto #N** (su número en esta lista), con el ícono de lo que se pide (piedra, trigo...), nunca con el nombre ni el ícono de la recompensa.
 - Cada jugador ve **qué se pide** y **cuánto lleva**, pero la meta sale como **???**: `12345 / ???`. Al llegar a la meta de una parte sale **✔ Completado** (sin el número, para no revelarla). En la lista de hitos, **✔** marca los que ya cobró.
 - Los hitos que piden varias cosas abren una lista con cada parte y lo que lleva en cada una, y cada parte tiene su ranking: cuevas profundas (8), cosecha (7), daño (5), movimiento (3), redstone (16 + total) y banquete (40 + total). El ranking incluye a los desconectados.
-- Lo que muestra cada hito está en `tools/generate.py` (`stats_list`, en el mismo orden que `milestone/registry`). Después de editarlo ejecuta `python tools/generate.py`.
+- Lo que muestra cada hito está en `tools/generate.py` (`stats_list`; el número de cada hito es su posición en `milestone/registry`, que va de más fácil a más difícil). Después de editarlo ejecuta `python tools/generate.py`.
 - **Si falta StatsCraft:** el panel avisa arriba en rojo y los botones de estadísticas dan un error de admin sin cambiar nada. Todo lo demás funciona igual. Lo activado queda guardado para cuando se instale.
 - Cómo se conectan: StatsCraft agrega `statscraft:api/ping` al tag `#secret_milestones:link/statscraft`, y este datapack agrega `link/export`, `link/values` y `link/me` a los tags `#statscraft:ext/*`. Sin el otro datapack los tags solo tienen una función vacía, así que ninguno da error.
 
@@ -272,6 +272,6 @@ Si también está instalado [StatsCraft](../StatsCraft), el admin puede mostrarl
 3. `function/milestone/<hito>/`: `check`, `check_run`, `complete` y `progress` (deja en `tmp line` el texto de la fila del panel).
 4. Una línea en `milestone/check_all` y su lista en `load`.
 5. Un bloque en `milestone/registry`. El panel lo muestra solo: no hay que tocar `admin/`.
-6. Su entrada en `stats_list` de `tools/generate.py` (en la misma posición que en el registry), para StatsCraft.
+6. Su entrada en `stats_list` de `tools/generate.py`, para StatsCraft (el número lo toma del registry solo).
 
 El ícono se genera con `python tools/icon.py`.

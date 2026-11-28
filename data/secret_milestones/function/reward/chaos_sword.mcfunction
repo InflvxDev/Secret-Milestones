@@ -1,4 +1,4 @@
-# Recompensa del hito 13. Si la cambias, cambia también su item en milestone/registry.
+# Recompensa del hito 15. Si la cambias, cambia también su item en milestone/registry.
 # Filo, Castigo y Perdición de los artrópodos juntos, y Botín y Barrido V, no se pueden en survival: solo salen por comando.
 # custom_data es lo que reconoce item/chaos_sword (Fuerza II en la mano).
 # El encantamiento secret_milestones:chaos es el que da los efectos al golpear (enchantment/chaos.json).

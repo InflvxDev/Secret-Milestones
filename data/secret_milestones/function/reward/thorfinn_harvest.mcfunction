@@ -1,4 +1,4 @@
-# Recompensa del hito 14. Si la cambias, cambia también su item en milestone/registry.
+# Recompensa del hito 9. Si la cambias, cambia también su item en milestone/registry.
 # Es una azada de verdad: el clic izquierdo y arar funcionan como siempre.
 # custom_data es lo que reconoce advancement/thorfinn_use. consumable hace que el clic derecho "use" la azada
 # (sin animación, sin sonido porque no lleva "sound", y sin consumirse: nunca llega a terminar) y así se detecta; use_effects quita la lentitud.

@@ -5,20 +5,20 @@ execute as @a unless score @s sm.leave matches 0 run function secret_milestones:
 execute as @a[scores={sm.admin=1..}] run function secret_milestones:admin/trigger
 execute as @a[tag=sm.admin] run function secret_milestones:admin/session
 
-# Hito 1: solo corre para quien minó o colocó stone en este tick
+# Hito 7: solo corre para quien minó o colocó stone en este tick
 execute as @a[scores={sm.placed=1..}] run function secret_milestones:milestone/stone_1m/on_place
 execute as @a[scores={sm.mined=1..}] run function secret_milestones:milestone/stone_1m/on_mine
-# Hito 3: solo corre para quien minó debris en este tick
+# Hito 8: solo corre para quien minó debris en este tick
 execute as @a[scores={sm.dmined=1..}] run function secret_milestones:milestone/debris_beacon/on_mine
-# Hito 8: solo corre para quien taló troncos en este tick (y ahí el Woodozer tala el árbol)
+# Hito 5: solo corre para quien taló troncos en este tick (y ahí el Woodozer tala el árbol)
 function secret_milestones:gen/log_mined
 execute as @a[scores={sm.lmined=1..}] run function secret_milestones:milestone/log_100k/on_mine
-# Hito 9: solo corre para quien minó deepslate, tuff o menas de deepslate en este tick
+# Hito 14: solo corre para quien minó deepslate, tuff o menas de deepslate en este tick
 function secret_milestones:gen/deep_mined
-# Hito 10: solo corre para quien excavó bloques blandos en este tick (y ahí atrae la Terra Magnet)
+# Hito 3: solo corre para quien excavó bloques blandos en este tick (y ahí atrae la Terra Magnet)
 function secret_milestones:gen/soil_mined
 execute as @a[scores={sm.smined=1..}] run function secret_milestones:milestone/soil_250k/on_mine
-# Hito 14: solo corre para quien cosechó en este tick (mira lo que soltó para saber si estaba maduro)
+# Hito 9: solo corre para quien cosechó en este tick (mira lo que soltó para saber si estaba maduro)
 function secret_milestones:gen/harvest_mined
 # Hito 11: cada tick, para revisar qué teclas aprieta mientras se mueve
 execute as @a[scores={sm.crouch=1..}] run function secret_milestones:milestone/movement/crouch
