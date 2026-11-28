@@ -1,0 +1,5 @@
+# Interno: botones de la lista para activar o desactivar todas las estadísticas de StatsCraft
+data modify storage secret_milestones:tmp ui.actions append value {width:260,label:{text:"◆ Activar todas las estadísticas",color:"green"},tooltip:{text:"Los jugadores ven en StatsCraft todos los hitos como «Hito Secreto #N», con lo que llevan y la meta en ???. Nunca se muestra el nombre de la recompensa.",color:"gray"},action:{type:"minecraft:run_command",command:"trigger sm.admin set 2"}}
+data modify storage secret_milestones:tmp ui.actions append value {width:260,label:{text:"◇ Desactivar todas las estadísticas",color:"red"},tooltip:{text:"Quita todos los hitos de StatsCraft. El progreso no se pierde.",color:"gray"},action:{type:"minecraft:run_command",command:"trigger sm.admin set 3"}}
+execute unless data storage secret_milestones:link statscraft run data modify storage secret_milestones:tmp ui.actions[-2].label.color set value "dark_gray"
+execute unless data storage secret_milestones:link statscraft run data modify storage secret_milestones:tmp ui.actions[-1].label.color set value "dark_gray"

@@ -246,8 +246,20 @@ La pantalla principal es la lista de hitos (8 por página). Al tocar uno se abre
 - **Obtener recompensa:** te da solo el ítem.
 - **Probar hito:** cierra el panel y reproduce lo que verá el jugador, con el ítem incluido.
 - **Ver progreso:** cuánto lleva cada jugador, también los desconectados.
+- **Activar estadística:** lo muestra a los jugadores en StatsCraft (ver *Estadísticas en StatsCraft*).
 
 Probar las recompensas no marca el hito como conseguido. Los botones solo funcionan para quien abrió el panel él mismo, durante **2 minutos desde el último botón**, o hasta que sale o se usa `/reload`. Al quitarle el OP a alguien usa `/reload` para cortarle el permiso al instante.
+
+## Estadísticas en StatsCraft
+Si también está instalado [StatsCraft](../StatsCraft), el admin puede mostrarles a los jugadores su progreso en los hitos.
+
+- **Activar estadística** (en el detalle de cada hito) lo muestra en StatsCraft, en **★ Hitos Secretos**. El mismo botón lo desactiva. En la lista, los hitos activos salen con **◆ Estadística**, y abajo están **Activar todas** y **Desactivar todas**.
+- **Sin spoilers:** el hito sale como **Hito Secreto #N** (su número en esta lista), con el ícono de lo que se pide (piedra, trigo...), nunca con el nombre ni el ícono de la recompensa.
+- Cada jugador ve **qué se pide** y **cuánto lleva**, pero la meta sale como **???**: `12345 / ???`. Al llegar a la meta de una parte sale **✔ Completado** (sin el número, para no revelarla). En la lista de hitos, **✔** marca los que ya cobró.
+- Los hitos que piden varias cosas abren una lista con cada parte y lo que lleva en cada una, y cada parte tiene su ranking: cuevas profundas (8), cosecha (7), daño (5), movimiento (3), redstone (16 + total) y banquete (40 + total). El ranking incluye a los desconectados.
+- Lo que muestra cada hito está en `tools/generate.py` (`stats_list`, en el mismo orden que `milestone/registry`). Después de editarlo ejecuta `python tools/generate.py`.
+- **Si falta StatsCraft:** el panel avisa arriba en rojo y los botones de estadísticas dan un error de admin sin cambiar nada. Todo lo demás funciona igual. Lo activado queda guardado para cuando se instale.
+- Cómo se conectan: StatsCraft agrega `statscraft:api/ping` al tag `#secret_milestones:link/statscraft`, y este datapack agrega `link/export`, `link/values` y `link/me` a los tags `#statscraft:ext/*`. Sin el otro datapack los tags solo tienen una función vacía, así que ninguno da error.
 
 ## Notas
 - Con **Wearbound**, el pico necesita el tier de diamante desbloqueado, como cualquier pico de netherita.
@@ -260,5 +272,6 @@ Probar las recompensas no marca el hito como conseguido. Los botones solo funcio
 3. `function/milestone/<hito>/`: `check`, `check_run`, `complete` y `progress` (deja en `tmp line` el texto de la fila del panel).
 4. Una línea en `milestone/check_all` y su lista en `load`.
 5. Un bloque en `milestone/registry`. El panel lo muestra solo: no hay que tocar `admin/`.
+6. Su entrada en `stats_list` de `tools/generate.py` (en la misma posición que en el registry), para StatsCraft.
 
 El ícono se genera con `python tools/icon.py`.

@@ -5,3 +5,4 @@ data modify storage secret_milestones:tmp ui.actions[-1].label.extra[0].sprite s
 data modify storage secret_milestones:tmp ui.actions[-1].label.extra[2].text set from storage secret_milestones:tmp m.name
 data modify storage secret_milestones:tmp ui.actions[-1].label.extra[2].color set from storage secret_milestones:tmp m.color
 data modify storage secret_milestones:tmp ui.actions[-1].tooltip.text set from storage secret_milestones:tmp m.goal
+function secret_milestones:admin/list_mark with storage secret_milestones:tmp m

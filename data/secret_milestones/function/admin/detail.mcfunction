@@ -6,6 +6,10 @@ data modify storage secret_milestones:tmp b set value {}
 execute store result storage secret_milestones:tmp b.get int 1 run scoreboard players add #v sm.calc 1
 execute store result storage secret_milestones:tmp b.test int 1 run scoreboard players add #v sm.calc 1
 execute store result storage secret_milestones:tmp b.progress int 1 run scoreboard players add #v sm.calc 1
+execute store result storage secret_milestones:tmp b.stat int 1 run scoreboard players add #v sm.calc 1
+# Número que ven los jugadores en StatsCraft: «Hito Secreto #N»
+scoreboard players operation #v sm.calc = #i sm.calc
+execute store result storage secret_milestones:tmp b.num int 1 run scoreboard players add #v sm.calc 1
 # Volver regresa a la página donde está este hito
 scoreboard players operation #v sm.calc = #i sm.calc
 scoreboard players operation #v sm.calc /= #page sm.calc
@@ -18,6 +22,9 @@ data modify storage secret_milestones:tmp ui.title.color set from storage secret
 data modify storage secret_milestones:tmp ui.body[0].item set from storage secret_milestones:tmp m.item
 data modify storage secret_milestones:tmp ui.body[0].description.contents.text set from storage secret_milestones:tmp m.goal
 data modify storage secret_milestones:tmp ui.body[1].contents.text set from storage secret_milestones:tmp m.rules
+# Botón de la estadística de StatsCraft: activa o no, y si StatsCraft está instalado
+function secret_milestones:link/check
+function secret_milestones:admin/stat_label with storage secret_milestones:tmp m
 execute if data storage secret_milestones:tmp status run data modify storage secret_milestones:tmp ui.body prepend value {type:"minecraft:plain_message",width:310,contents:""}
 execute if data storage secret_milestones:tmp status run data modify storage secret_milestones:tmp ui.body[0].contents set from storage secret_milestones:tmp status
 data remove storage secret_milestones:tmp status

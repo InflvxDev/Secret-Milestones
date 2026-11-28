@@ -1,5 +1,5 @@
 # Desinstalar: /function secret_milestones:uninstall y después quitar el datapack.
-# No borra claimed, players, stone, zones, bow, debris*, fishing, farlands, redstone, life, logs, log_zones, deep, deep_zones, soils, soil_zones, moves, jump_zones, hurt, hurt_zones, harvest, fruit_marks ni feast: sin esos registros, al reinstalar se
+# No borra claimed, players, stone, zones, bow, debris*, fishing, farlands, redstone, life, logs, log_zones, deep, deep_zones, soils, soil_zones, moves, jump_zones, hurt, hurt_zones, harvest, fruit_marks, feast ni link (qué estadísticas activó el admin): sin esos registros, al reinstalar se
 # repetirían premios, se perdería el progreso y se vaciarían los cupos de los generadores.
 scoreboard objectives remove sm.calc
 scoreboard objectives remove sm.leave
@@ -94,6 +94,15 @@ data remove storage secret_milestones:tmp zone
 data remove storage secret_milestones:tmp pos
 data remove storage secret_milestones:tmp place
 data remove storage secret_milestones:tmp queue
+data remove storage secret_milestones:db stats
+data remove storage secret_milestones:link statscraft
+data remove storage secret_milestones:tmp lq
+data remove storage secret_milestones:tmp lm
+data remove storage secret_milestones:tmp lp
+data remove storage secret_milestones:tmp lr
+data remove storage secret_milestones:tmp lu
+data remove storage secret_milestones:tmp la
+data remove storage secret_milestones:tmp lk
 data remove storage secret_milestones:tmp row
 data remove storage secret_milestones:tmp kill
 data remove storage secret_milestones:tmp status

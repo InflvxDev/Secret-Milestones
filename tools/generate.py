@@ -863,6 +863,109 @@ def generate_food():
     print(f"banquete: {len(keys)} comidas")
 
 
+# --- Estadísticas para StatsCraft (si está instalado) ---------------------------------------------
+# Lo que ven los jugadores en StatsCraft cuando el admin activa la estadística de un hito. Nunca sale el
+# nombre de la recompensa: el hito se llama "Hito Secreto #N" (N = su número en milestone/registry) y el
+# ícono es lo que se pide, no el premio. Cada parte es un ranking: los jugadores ven cuánto llevan,
+# y la meta (g) solo se usa para marcar "✔ Completado"; en su lugar sale "???".
+#   n  = nombre de la parte      f = formato en StatsCraft: n número, d distancia (cm), h corazones
+#                                    (décimas de vida), g días del juego (ticks), b bloques
+#   fn = cómo se lee (link/val/<fn>): "get" lee storage secret_milestones:<s> p<id><k>
+#   g  = meta (0 = la pone la carga, como la del arco que cambia con la versión)
+FOOD_NAMES = {
+    "apple": "Manzana", "baked_potato": "Papa asada", "beef": "Res cruda", "beetroot": "Remolacha",
+    "beetroot_soup": "Sopa de remolacha", "bread": "Pan", "carrot": "Zanahoria", "chicken": "Pollo crudo",
+    "chorus_fruit": "Fruta de chorus", "cod": "Bacalao crudo", "cooked_beef": "Filete", "cooked_chicken": "Pollo asado",
+    "cooked_cod": "Bacalao asado", "cooked_mutton": "Cordero asado", "cooked_porkchop": "Chuleta asada",
+    "cooked_rabbit": "Conejo asado", "cooked_salmon": "Salmón asado", "cookie": "Galleta", "dried_kelp": "Kelp seco",
+    "glow_berries": "Bayas luminosas", "golden_apple": "Manzana de oro", "golden_carrot": "Zanahoria dorada",
+    "honey_bottle": "Miel", "melon_slice": "Rodaja de melón", "mushroom_stew": "Estofado de champiñones",
+    "mutton": "Cordero crudo", "poisonous_potato": "Papa venenosa", "porkchop": "Chuleta cruda", "potato": "Papa",
+    "pufferfish": "Pez globo", "pumpkin_pie": "Pastel de calabaza", "rabbit": "Conejo crudo",
+    "rabbit_stew": "Estofado de conejo", "rotten_flesh": "Carne podrida", "salmon": "Salmón crudo",
+    "spider_eye": "Ojo de araña", "suspicious_stew": "Estofado sospechoso", "sweet_berries": "Bayas dulces",
+    "tropical_fish": "Pez tropical", "cake": "Torta (porción)",
+}
+RED_NAMES = {
+    "repeater": "Repetidor", "comparator": "Comparador", "piston": "Pistón", "sticky_piston": "Pistón pegajoso",
+    "observer": "Observador", "dispenser": "Dispensador", "dropper": "Dropper", "hopper": "Tolva",
+    "redstone_torch": "Antorcha de redstone", "redstone_lamp": "Lámpara de redstone", "lever": "Palanca",
+    "target": "Diana", "daylight_detector": "Sensor de luz solar", "tripwire_hook": "Gancho de cuerda",
+    "note_block": "Bloque musical", "crafter": "Crafter",
+}
+
+
+def part(n, s="", k="", f="n", g=0, fn="get"):
+    return {"n": n, "s": s, "k": k, "fn": fn, "f": f, "g": g}
+
+
+def stats_list():
+    """Un hito por entrada, en el MISMO orden que milestone/registry (de ahí sale el número)."""
+    deep = [part(name, "deep", "." + b, g=goal) for b, goal, name, _ in DEEP]
+    crops = [part(c[6], "harvest", "." + c[0], g=c[5]) for c in CROPS] + [part(f[2], "harvest", "." + f[0], g=f[1]) for f in FRUITS]
+    red = [part("Total", fn="red_sum", g=RED_GOAL * len(RED_ITEMS))] + [part(RED_NAMES[r], "redstone", "." + r, g=RED_GOAL) for r in RED_ITEMS]
+    food = [part("Total", fn="feast_sum", g=FOOD_GOAL * len(FOOD_STATS))] + [part(FOOD_NAMES[k], "feast", "." + k, g=FOOD_GOAL) for k in FOOD_STATS]
+    B, I = "minecraft:blocks", "minecraft:items"
+    return [
+        ("stone_1m", "Minar piedra (stone)", B, "block/stone", [part("Piedra (stone)", "stone", ".valid", g=1000000)]),
+        ("bow_all", "Matar con arco a cada tipo de mob", I, "item/arrow", [part("Tipos de mob", "bow", "")]),
+        ("debris_beacon", "Minar ancient debris", B, "block/ancient_debris_side", [part("Ancient debris", "debris", ".valid", g=5904)]),
+        ("treasure_500", "Pescar tesoros en aguas abiertas", I, "item/name_tag", [part("Tesoros pescados", "fishing", ".valid", g=500)]),
+        ("farlands", "Llegar lejos del centro del mundo (X o Z), en el Overworld o el End", I, "item/map",
+         [part("Distancia máxima", "farlands", "", f="b", g=29999900)]),
+        ("redstone_1000", "Craftear cada componente de redstone", I, "item/redstone", red),
+        ("life_1000", "Sobrevivir sin morir (tiempo jugado, sin AFK)", I, "item/clock_00",
+         [part("Días sin morir", "life", "", f="g", g=24000000)]),
+        ("log_100k", "Talar troncos", B, "block/oak_log", [part("Troncos", "logs", ".valid", g=100000)]),
+        ("deep_mine", "Minar en las cuevas profundas", B, "block/deepslate", deep),
+        ("soil_250k", "Excavar bloques blandos (tierra, arena, grava, nieve, barro...)", B, "block/dirt",
+         [part("Bloques blandos", "soils", ".valid", g=250000)]),
+        ("movement", "Moverte agachado, corriendo y saltando", I, "item/feather",
+         [part("Agachado", "moves", ".c", f="d", g=30000000), part("Corriendo", "moves", ".s", f="d", g=100000000),
+          part("Saltos", "moves", ".j", g=100000)]),
+        ("hurt", "Aguantar daño de los mobs (antes de la armadura)", I, "item/golden_apple",
+         [part("Golpes", "hurt", ".mel", f="h", g=1000000), part("Proyectiles", "hurt", ".pro", f="h", g=500000),
+          part("Explosiones", "hurt", ".exp", f="h", g=200000), part("Fuego y lava", "hurt", ".fir", f="h", g=200000),
+          part("Jefes", "hurt", ".bos", f="h", g=100000)]),
+        ("armor_set", "Conseguir las piezas de armadura secretas", I, "item/armor_stand",
+         [part("Piezas conseguidas", fn="armor_set", g=4)]),
+        ("harvest", "Cosechar cultivos maduros", I, "item/wheat", crops),
+        ("tool_set", "Conseguir las herramientas secretas", I, "item/iron_pickaxe", [part("Herramientas conseguidas", fn="tool_set", g=4)]),
+        ("feast_500", "Comer de cada comida del juego", I, "item/cooked_beef", food),
+        ("weapon_set", "Conseguir las armas secretas", I, "item/iron_sword", [part("Armas conseguidas", fn="weapon_set", g=3)]),
+    ]
+
+
+def snbt(v):
+    if isinstance(v, int):
+        return str(v)
+    if isinstance(v, str):
+        return json.dumps(v, ensure_ascii=False)
+    if isinstance(v, list):
+        return "[" + ",".join(snbt(x) for x in v) + "]"
+    return "{" + ",".join(f"{k}:{snbt(x)}" for k, x in v.items()) + "}"
+
+
+def generate_stats():
+    fn = os.path.join("data", NS, "function", "gen")
+    hitos = [{"num": i + 1, "id": mid, "need": need, "atlas": atlas, "sprite": sprite, "parts": parts}
+             for i, (mid, need, atlas, sprite, parts) in enumerate(stats_list())]
+    write(
+        os.path.join(fn, "stats.mcfunction"),
+        HEADER + "# Lo que muestra StatsCraft de cada hito (ver tools/generate.py, stats_list). Lo lee link/.\n"
+        + f"data modify storage {NS}:db stats set value {snbt(hitos)}\n"
+        + "# La meta del arco cambia con la versión del juego\n"
+        + f'execute store result storage {NS}:db stats[{{id:"bow_all"}}].parts[0].g int 1 run scoreboard players get #bow_goal sm.calc\n',
+    )
+    write(
+        os.path.join(fn, "stats_all_on.mcfunction"),
+        HEADER + "# Interno: activa la estadística de todos los hitos\n"
+        + "".join(f"data modify storage {NS}:link on.{h['id']} set value 1b\n" for h in hitos),
+    )
+    print(f"estadísticas: {len(hitos)} hitos, {sum(len(h['parts']) for h in hitos)} rankings")
+
+
+generate_stats()
 generate_food()
 generate_harvest()
 generate_hurt()

@@ -19,6 +19,12 @@ scoreboard players operation #v sm.calc = #p sm.calc
 scoreboard players add #v sm.calc 1
 execute store result storage secret_milestones:tmp h.p int 1 run scoreboard players get #v sm.calc
 function secret_milestones:admin/header with storage secret_milestones:tmp h
+# Estadísticas de StatsCraft: aviso si no está instalado, y el resultado del último botón
+function secret_milestones:link/check
+execute unless data storage secret_milestones:link statscraft run data modify storage secret_milestones:tmp ui.body append value {type:"minecraft:plain_message",width:310,contents:{text:"⚠ StatsCraft no está instalado: los botones de estadísticas no funcionan. El resto del panel sí.",color:"red"}}
+execute if data storage secret_milestones:tmp status run data modify storage secret_milestones:tmp ui.body append value {type:"minecraft:plain_message",width:310,contents:""}
+execute if data storage secret_milestones:tmp status run data modify storage secret_milestones:tmp ui.body[-1].contents set from storage secret_milestones:tmp status
+data remove storage secret_milestones:tmp status
 
 # Hitos de esta página: de #i hasta antes de #end
 scoreboard players operation #i sm.calc = #p sm.calc
@@ -32,6 +38,7 @@ execute if score #p sm.calc matches 1.. run function secret_milestones:admin/pag
 scoreboard players operation #v sm.calc = #p sm.calc
 scoreboard players add #v sm.calc 1
 execute if score #v sm.calc < #pages sm.calc run function secret_milestones:admin/page_next
+execute if score #total sm.calc matches 1.. run function secret_milestones:admin/stat_buttons
 # Un multi_action no admite cero botones
 execute if score #total sm.calc matches 0 run data modify storage secret_milestones:tmp ui.actions append value {width:260,label:{text:"Todavía no hay hitos",color:"gray"},action:{type:"minecraft:run_command",command:"trigger sm.admin set 1"}}
 function secret_milestones:admin/show with storage secret_milestones:tmp

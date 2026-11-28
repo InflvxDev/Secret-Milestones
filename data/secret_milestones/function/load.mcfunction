@@ -198,4 +198,8 @@ execute unless data storage secret_milestones:claimed tool_set run data modify s
 execute unless data storage secret_milestones:claimed feast_500 run data modify storage secret_milestones:claimed feast_500 set value []
 execute unless data storage secret_milestones:claimed weapon_set run data modify storage secret_milestones:claimed weapon_set set value []
 
+# Estadísticas para StatsCraft (si está instalado): qué muestra cada hito, y cuáles activó el admin
+# (on.<id> = 1b). Va después de gen/bow_goal porque usa su meta.
+function secret_milestones:gen/stats
+execute unless data storage secret_milestones:link on run data modify storage secret_milestones:link on set value {}
 execute as @a run function secret_milestones:player/login

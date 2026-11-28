@@ -1,6 +1,7 @@
 # Interno: @s tocó un botón del panel (/trigger sm.admin set <valor>)
 #   1 = lista, 100000+p = página p de la lista
-#   hito*10 + acción: 0 = detalle, 1 = obtener recompensa, 2 = probar hito, 3 = progreso
+#   2 / 3 = activar / desactivar todas las estadísticas de StatsCraft
+#   hito*10 + acción: 0 = detalle, 1 = obtener recompensa, 2 = probar hito, 3 = progreso, 4 = estadística
 #   (hito = su posición en milestone/registry, desde 1)
 scoreboard players operation #a sm.calc = @s sm.admin
 scoreboard players set @s sm.admin 0
@@ -12,6 +13,7 @@ scoreboard players enable @s sm.admin
 data remove storage secret_milestones:tmp status
 
 scoreboard players set #p sm.calc 0
+execute if score #a sm.calc matches 2..3 run return run function secret_milestones:admin/stat_all
 execute if score #a sm.calc matches ..9 run return run function secret_milestones:admin/main
 execute if score #a sm.calc matches 100000.. run scoreboard players operation #p sm.calc = #a sm.calc
 execute if score #a sm.calc matches 100000.. run scoreboard players operation #p sm.calc -= #100000 sm.calc

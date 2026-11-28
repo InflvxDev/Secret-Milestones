@@ -1,0 +1,19 @@
+# GENERADO por tools/generate.py: no editar a mano
+# Interno: activa la estadística de todos los hitos
+data modify storage secret_milestones:link on.stone_1m set value 1b
+data modify storage secret_milestones:link on.bow_all set value 1b
+data modify storage secret_milestones:link on.debris_beacon set value 1b
+data modify storage secret_milestones:link on.treasure_500 set value 1b
+data modify storage secret_milestones:link on.farlands set value 1b
+data modify storage secret_milestones:link on.redstone_1000 set value 1b
+data modify storage secret_milestones:link on.life_1000 set value 1b
+data modify storage secret_milestones:link on.log_100k set value 1b
+data modify storage secret_milestones:link on.deep_mine set value 1b
+data modify storage secret_milestones:link on.soil_250k set value 1b
+data modify storage secret_milestones:link on.movement set value 1b
+data modify storage secret_milestones:link on.hurt set value 1b
+data modify storage secret_milestones:link on.armor_set set value 1b
+data modify storage secret_milestones:link on.harvest set value 1b
+data modify storage secret_milestones:link on.tool_set set value 1b
+data modify storage secret_milestones:link on.feast_500 set value 1b
+data modify storage secret_milestones:link on.weapon_set set value 1b
