@@ -27,6 +27,7 @@ execute as @a[scores={sm.jump=1..}] run function secret_milestones:milestone/mov
 
 # Eternal Feast: al comerlo queda una copia en la mano; se vuelve a llenar antes de sumar lo comido
 execute as @a if items entity @s weapon.* minecraft:rabbit_stew[minecraft:custom_data~{secret_milestones:"eternal_feast",refill:1b}] run function secret_milestones:gen/feast_refill
+execute as @a[scores={sm.fsync=1..}] run function secret_milestones:item/eternal_feast/sync
 
 # Los hitos se revisan una vez por segundo
 scoreboard players add #t sm.calc 1
@@ -60,7 +61,7 @@ scoreboard players set @a[scores={sm.dgt=0,sm.dgo=1..}] sm.dgo 0
 execute as @e[type=minecraft:item_display,tag=sm.hb] at @s run function secret_milestones:item/thorfinn/fly
 # sm.huse: 2 mientras mantiene el clic derecho con la azada; baja a 0 al soltar (un lanzamiento por clic)
 scoreboard players remove @a[scores={sm.huse=1..}] sm.huse 1
-# Españita Chaos Trident: cada tridente nuevo se revisa una vez (agachado al lanzarlo sale con Propulsión).
+# Españita Chaos Trident: cada tridente nuevo se revisa una vez (lanzado normal sale con Propulsión; agachado vuela y puede invocar rayos).
 # Los rayos van por enchantment/trident_chaos.json. Sin daño de caída hasta tocar el suelo (después de 10 ticks).
 execute as @e[type=minecraft:trident,tag=!sm.tseen] run function secret_milestones:item/chaos_trident/thrown
 scoreboard players remove @a[scores={sm.tcd=1..}] sm.tcd 1

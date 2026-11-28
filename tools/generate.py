@@ -855,6 +855,7 @@ def generate_food():
         HEADER + "# Interno: cada tick, para quien tiene en una mano la copia que dejó al comerlo.\n"
         + "# Vuelve a poner el Eternal Feast completo, y lo comido con él no suma para el hito.\n"
         + f"function {NS}:item/eternal_feast/eaten\n"
+        + "scoreboard players set @s sm.fsync 20\n"
         + (f"scoreboard players remove @s[scores={{sm.f.{base}=1..}}] sm.f.{base} 1\n" if base in FOOD_STATS else "")
         + f"execute if items entity @s weapon.mainhand {mark} run item replace entity @s weapon.mainhand with {item}\n"
         + f"execute if items entity @s weapon.offhand {mark} run item replace entity @s weapon.offhand with {item}\n",

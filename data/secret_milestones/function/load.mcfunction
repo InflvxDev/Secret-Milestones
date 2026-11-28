@@ -155,10 +155,12 @@ function secret_milestones:gen/feast_load
 scoreboard objectives add sm.food dummy
 # Eternal Feast: probabilidad de la bendición (un efecto bueno fuerte por 1 minuto) cada vez que se come, en milésimas
 scoreboard players set #feast_boost sm.calc 20
+# sm.fsync: ticks que faltan para volver a mandarle el Eternal Feast al cliente (item/eternal_feast/sync)
+scoreboard objectives add sm.fsync dummy
 # Hito 17: Españita Chaos Trident. Probabilidad de caos de cada impacto del tridente lanzado, en milésimas (como el mazo):
 # empieza en #tchaos_base, sube #tchaos_step por impacto sin suerte hasta #tchaos_max. sm.tproc: el rayo va a salir.
-# Propulsión (agachado al lanzarlo): sm.tgo = empujar este tick, sm.tfall = sin daño de caída (ticks),
-# sm.tcd = espera hasta la siguiente (#tide_cd, en ticks).
+# Propulsión (lanzarlo sin agacharse): sm.tgo = empujar este tick, sm.tfall = sin daño de caída (ticks),
+# sm.tcd = espera hasta la siguiente (#tide_cd, en ticks; 0 = sin espera, se puede spamear como la vanilla).
 scoreboard objectives add sm.tchaos dummy
 scoreboard objectives add sm.tproc dummy
 scoreboard objectives add sm.tgo dummy
@@ -167,9 +169,10 @@ scoreboard objectives add sm.tcd dummy
 scoreboard players set #tchaos_base sm.calc 20
 scoreboard players set #tchaos_step sm.calc 20
 scoreboard players set #tchaos_max sm.calc 300
-scoreboard players set #tide_cd sm.calc 60
+scoreboard players set #tide_cd sm.calc 0
 scoreboard players set @a sm.tproc 0
 scoreboard players set @a sm.tgo 0
+scoreboard players set @a sm.tcd 0
 # Cuánto stone le cuenta a cada jugador cada zona de 16x16x16
 scoreboard players set #cap sm.calc 5500
 execute unless data storage secret_milestones:players list run data modify storage secret_milestones:players list set value []

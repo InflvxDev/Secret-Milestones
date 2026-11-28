@@ -23,7 +23,7 @@ Secretos e easter eggs para SMP (Minecraft 26.4) que dan recompensas al alcanzar
 | 14 | Cosechar cultivos maduros: 10.000 de trigo, zanahoria, papa, remolacha y verruga del Nether, y 5.000 melones y calabazas | **Thorfinn Harvest**: azada de netherita irrompible con Fortuna V y Eficiencia V; clic derecho en un cultivo la lanza como un boomerang que cosecha en cadena, replanta y vuelve con lo cosechado |
 | 15 | Conseguir las 4 herramientas secretas (un pico de los hitos 1 o 3, y los hitos 8, 10 y 14) | **Españita Chaos Mace**: mazo irrompible con Densidad V, Brecha IV y Carga de viento III; sus golpes pesados a veces lanzan por el aire a los mobs cercanos |
 | 16 | Comer 500 de cada comida del juego (40) | **Eternal Feast**: estofado que nunca se acaba; llena el hambre y la saturación y quita los efectos negativos, cada 15 segundos |
-| 17 | Conseguir las 3 armas secretas (hitos 2, 13 y 15) | **Españita Chaos Trident**: tridente irrompible con Lealtad III, Canalización, Empalamiento V y Botín V; lanzado, a veces le cae un rayo a lo que golpea aunque no haya tormenta, y agachado al lanzarlo sale con Propulsión aunque no llueva |
+| 17 | Conseguir las 3 armas secretas (hitos 2, 13 y 15) | **Españita Chaos Trident**: tridente irrompible con Lealtad III, Canalización, Empalamiento V y Botín V; lanzado normal sale con Propulsión aunque no llueva, y agachado al lanzarlo vuela y a veces le cae un rayo a lo que golpea aunque no haya tormenta |
 
 - Cada jugador cobra cada hito **una sola vez**.
 - **Cuenta desde que se instala** el datapack: todos empiezan en 0.
@@ -208,10 +208,10 @@ Por Thorfinn, de Vinland Saga.
 ## Españita Chaos Trident
 - **Encantamientos:** Lealtad III, Canalización, Empalamiento V y Botín V. En vanilla el tridente no acepta Botín. Sin maldiciones. Trae también **Caos**, un encantamiento propio del datapack (otro que el de la espada y el del mazo, con el mismo nombre) que es el que invoca los rayos y hace la Propulsión.
 - **Botín V** solo se nota cuerpo a cuerpo: lanzado, el juego mira lo que tienes en la mano y el tridente va volando.
-- **Caos:** cada vez que el tridente **lanzado** le da a un mob puede **invocarle un rayo** encima, aunque no haya tormenta ni cielo abierto (la Canalización vanilla sigue funcionando igual en las tormentas). La probabilidad es **acumulable**, el mismo sistema que la espada y el mazo: empieza en 2%, sube 2% por cada impacto sin suerte hasta un máximo de 30%, y cuando sale vuelve a 2%. En promedio sale cada unos 7 impactos. Se cambia en `load` (`#tchaos_base`, `#tchaos_step` y `#tchaos_max`, en milésimas).
+- **Caos:** cada vez que el tridente **lanzado agachado** le da a un mob puede **invocarle un rayo** encima, aunque no haya tormenta ni cielo abierto (la Canalización vanilla sigue funcionando igual en las tormentas). La probabilidad es **acumulable**, el mismo sistema que la espada y el mazo: empieza en 2%, sube 2% por cada impacto sin suerte hasta un máximo de 30%, y cuando sale vuelve a 2%. En promedio sale cada unos 7 impactos. Se cambia en `load` (`#tchaos_base`, `#tchaos_step` y `#tchaos_max`, en milésimas).
 - **Solo mobs** (`tags/entity_type/attackers.json`): no le cae a jugadores, aldeanos ni vendedores ambulantes (el rayo los volvería brujas) ni a mascotas. Ojo: el rayo puede prender fuego alrededor y convertir a otros mobs como en vanilla (cerdos, creepers, champiñacas). Cuerpo a cuerpo no sale, para que el rayo no te caiga a ti.
-- **Propulsión:** **agachado al lanzarlo**, en vez de volar te lleva hacia donde miras, aunque no estés en el agua ni llueva. El tridente se queda en tu mano. Mientras lo tengas en la mano no recibes daño de caída hasta tocar el suelo (como mucho 5 segundos).
-- **Espera:** 3 segundos entre Propulsiones (`#tide_cd` en `load`, en ticks). Durante la espera, o con algo en la mano principal, agachado se lanza normal. No funciona en creativo.
+- **Propulsión:** **al lanzarlo normal** (sin agacharte), en vez de volar te lleva hacia donde miras, aunque no estés en el agua ni llueva. El tridente se queda en tu mano. Mientras lo tengas en la mano no recibes daño de caída hasta tocar el suelo (como mucho 5 segundos).
+- **Sin espera:** se puede spamear como la Propulsión vanilla, solo hay que cargar el tridente cada vez. Si quieres ponerle espera, cambia `#tide_cd` en `load` (en ticks); durante la espera, o con algo en la mano principal, el tridente sale volando como un lanzamiento normal. No funciona en creativo.
 - Cada jugador lleva su propia probabilidad, aparte de la de la espada y el mazo; se reinicia con `/reload`.
 - **Ojo:** la piedra de afilar le quita los encantamientos, también el Caos.
 
@@ -221,7 +221,7 @@ Por Thorfinn, de Vinland Saga.
 - Si ya cobró las 3 antes de esta versión, el tridente llega solo en el siguiente segundo.
 
 ## Eternal Feast
-- **No se gasta:** al comerlo vuelve a la misma mano, listo para el siguiente. Se come como cualquier comida (1,6 segundos) y **siempre se puede comer**, aunque no tengas hambre.
+- **No se gasta:** al comerlo vuelve a la misma mano, listo para el siguiente. Se come como cualquier comida (1,6 segundos) y **siempre se puede comer**, aunque no tengas hambre. Si justo al terminar de comer ves un cuenco vacío, es solo visual: en menos de un segundo vuelve a verse lleno.
 - **Al comerlo:** llena el hambre y la saturación al máximo y quita los efectos negativos: Lentitud, Cansancio, Náusea, Ceguera, Hambre, Debilidad, Veneno, Wither, Levitación, Mala suerte, Oscuridad y los de las pociones de 1.21 (Infestación, Supuración, Tejido y Carga de viento). Los efectos buenos se quedan.
 - **Bendición:** cada vez que lo comes hay un **2%** de probabilidad de un efecto bueno al azar por **1 minuto**, más fuerte que cualquier poción, faro o manzana: Fuerza V, Velocidad III, Prisa III, Resistencia III, Regeneración III, Salto III, Absorción V o Vida extra III. Ninguno llega a perjudicar: no hay Velocidad que no se controla, Salto que mata al caer ni Resistencia V. Avisa en la barra de acción. Se cambia en `load` (`#feast_boost`, en milésimas) y la lista en `item/eternal_feast/boost`.
 - **Espera:** 15 segundos entre usos (`FEAST_COOLDOWN` en `tools/generate.py`).

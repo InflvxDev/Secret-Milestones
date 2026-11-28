@@ -67,6 +67,7 @@ scoreboard objectives remove sm.tproc
 scoreboard objectives remove sm.tgo
 scoreboard objectives remove sm.tfall
 scoreboard objectives remove sm.tcd
+scoreboard objectives remove sm.fsync
 function secret_milestones:gen/feast_uninstall
 scoreboard objectives remove sm.food
 kill @e[type=minecraft:marker,tag=sm.mimp]
